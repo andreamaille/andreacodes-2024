@@ -1,12 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./pages/**/*.{html,js}"],
+  content: ['./pages/**/*.{html,js}', './components/**/*.{html,js}'],
   theme: {
     colors: {
-      'pink': '#F4ECF0',
-      'orange': '#C65833',
-      'white': '#fff',
-      'black': '#333'
+      pink: '#F4ECF0',
+      orange: '#C65833',
+      white: '#fff',
+      black: '#333',
+      transparent: 'transparent',
     },
     fontSize: {
       xxs: '0.625rem', // 10px
@@ -21,10 +22,12 @@ module.exports = {
       '5xl': '3.25rem', // 52px
       '6xl': '4rem', // 64px
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        butlerSemibold: ['Butler SemiBold', 'serif'],
+        workSans: ['Work Sans', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }
-
-
-

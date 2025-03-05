@@ -2,12 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Fonts */
+
+@font-face {
+  font-family: 'Butler SemiBold';
+  src:
+    url('../public/fonts/Butler-Free-SBd.ttf') format('truetype'),
+    url('../public/fonts/Butler-Free-SBd.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  src: url('../public/fonts/WorkSans-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Global */
+
 html,
 body {
   @apply bg-pink;
+  @apply text-orange;
   padding: 0;
   margin: 0;
   font-family:
+    'Work Sans',
     Inter,
     -apple-system,
     BlinkMacSystemFont,
@@ -22,6 +44,19 @@ body {
     sans-serif;
 }
 
+svg {
+  fill: #c65833;
+}
+
+h1 {
+  font-family: 'Butler SemiBold', sans-serif;
+  line-height: 1.2;
+}
+
+body {
+  margin: auto 60px;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -32,6 +67,9 @@ a {
 }
 
 img {
+  width: 100%;
   max-width: 100%;
   height: auto;
 }
+
+/* Custom */

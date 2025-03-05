@@ -1,11 +1,32 @@
 {
-    "homepageHero": {
-        "headline": "Technical Lead & Web Developer",
-        "name": "Andrea Harkins"
+  "hero": {
+    "headline": "Andrea Harkins",
+    "name": "Technical Lead & Front End Engineer"
+  },
+  "nav": {
+    "home": {
+      "title": "Home",
+      "url": "/"
+    },
+    "portfolio": {
+      "title": "Portfolio",
+      "url": "/portfolio"
     },
     "about": {
-        "title": "About Me",
-        "description": "Lorem Impsum"
+      "title": "About",
+      "url": "/about"
+    },
+    "skills": {
+      "title": "Skills",
+      "url": "/skills"
+    },
+    "contact": {
+      "title": "Contact",
+      "url": "/contact"
     }
+  },
+  "about": {
+    "title": "About Me",
+    "description": "Lorem Impsum"
+  }
 }
-

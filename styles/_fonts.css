@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'Butler SemiBold';
+  src: url('../public/fonts/Butler-Free-SBd.ttf'),
+    url('../public/fonts/Butler-Free-SBd.otf');
+  font-weight: normal;
+  font-style: normal;
+}
