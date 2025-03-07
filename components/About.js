@@ -1,19 +1,22 @@
 import en from '../data/en.json'
-import { socials, navLinks } from '../data/data'
 
 const About = () => {
   return (
-    <section>
-      <div>
-        <span></span>
+    <section className="my-8" id="about">
+      <div className="mb-8 w-[75px]">
+        <img src={'/about_stars.svg'} alt="" />
       </div>
-      <div>
-        <div>
+      <div className="items-start justify-between lg:flex">
+        <div className="mr-8 lg:w-1/2">
           <h2>{en.about.title}</h2>
-          <p>{en.about.description}</p>
+          <div dangerouslySetInnerHTML={{ __html: en.about.description }}></div>
         </div>
-        <div>
-          <img src={'/about.svg'} alt />
+        <div className="mt-8 px-8 lg:w-1/2">
+          <img
+            src={'/about_andy.svg'}
+            alt=""
+            className="m-auto max-w-[400px]"
+          />
         </div>
       </div>
     </section>

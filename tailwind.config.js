@@ -26,6 +26,8 @@ module.exports = {
       fontFamily: {
         butlerSemibold: ['Butler SemiBold', 'serif'],
         workSans: ['Work Sans', 'sans-serif'],
+        workSansMedium: ['Work Sans Medium', 'sans-serif'],
+        workSansSemibold: ['Work Sans SemiBold', 'sans-serif'],
       },
     },
   },

@@ -38,16 +38,34 @@ export const socials = [
 export const projects = [
   {
     title: 'Commerce Dynamics',
-    description: 'Lorem Impsum',
-    image: '',
-    techStack: ['React', 'Node', 'MongoDB'],
-    type: 'Professional',
+    description:
+      'Sports and Loyalty programs on a custom back-end with a strong emphasis on auction experiences. I worked on sites for major sports leagues across the world from the NFL to AFL. Bringing that auction flavour to the loyalty world in order to auction off experiences for flight reward programs to art auctions.',
+    image: '/cdi_749x578.png',
+    techStack: [
+      'Ecommerce',
+      'Java',
+      'Velocity',
+      'Bootstrap',
+      'Adobe XD',
+      'JS',
+      'SaaS',
+    ],
+    type: 'professional',
   },
   {
     title: 'Endy',
-    description: 'Lorem Impsum',
-    image: '',
-    techStack: ['React', 'Node', 'MongoDB'],
+    description:
+      'Sports and Loyalty programs on a custom back-end with a strong emphasis on auction experiences. I worked on sites for major sports leagues across the world from the NFL to AFL. Bringing that auction flavour to the loyalty world in order to auction off experiences for flight reward programs to art auctions.',
+    image: '/endy_745x578.png',
+    techStack: [
+      'Shopify Plus',
+      'Headless Ecommerce',
+      'Sanity CMS',
+      'Styled Components',
+      'React',
+      'Typescript',
+      'Storybook',
+    ],
     type: 'professional',
   },
   {
@@ -65,5 +83,23 @@ export const projects = [
     image: '',
     techStack: ['React', 'Next', 'Figma'],
     type: 'case-study',
+  },
+]
+
+export const skills = [
+  {
+    title: 'JavaScript',
+    icon: '',
+    type: 'web-dev',
+  },
+  {
+    title: 'React',
+    icon: '/react-brands.svg',
+    type: 'web-dev',
+  },
+  {
+    title: 'Shopify',
+    icon: '',
+    type: 'web-dev',
   },
 ]
