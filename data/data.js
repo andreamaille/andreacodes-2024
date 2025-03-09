@@ -9,7 +9,7 @@ export const navLinks = [
   },
   {
     title: 'Skills',
-    url: '#portfolio',
+    url: '#skills',
   },
   {
     title: 'Contact',
@@ -37,18 +37,21 @@ export const socials = [
 
 export const projects = [
   {
-    title: 'Commerce Dynamics',
+    title: 'Domaine',
     description:
       'Sports and Loyalty programs on a custom back-end with a strong emphasis on auction experiences. I worked on sites for major sports leagues across the world from the NFL to AFL. Bringing that auction flavour to the loyalty world in order to auction off experiences for flight reward programs to art auctions.',
-    image: '/cdi_749x578.png',
+    image: '/domaine_749x578.png',
     techStack: [
+      'Shopify Plus',
+      'Liquid',
+      'React',
+      'Figma',
+      'Headless',
+      'Javascript',
+      'Agency',
+      'Custom Solutions',
       'Ecommerce',
-      'Java',
-      'Velocity',
-      'Bootstrap',
-      'Adobe XD',
-      'JS',
-      'SaaS',
+      'App Integrations',
     ],
     type: 'professional',
   },
@@ -65,6 +68,22 @@ export const projects = [
       'React',
       'Typescript',
       'Storybook',
+    ],
+    type: 'professional',
+  },
+  {
+    title: 'Commerce Dynamics',
+    description:
+      'Sports and Loyalty programs on a custom back-end with a strong emphasis on auction experiences. I worked on sites for major sports leagues across the world from the NFL to AFL. Bringing that auction flavour to the loyalty world in order to auction off experiences for flight reward programs to art auctions.',
+    image: '/cdi_749x578.png',
+    techStack: [
+      'Ecommerce',
+      'Java',
+      'Velocity',
+      'Bootstrap',
+      'Adobe XD',
+      'JS',
+      'SaaS',
     ],
     type: 'professional',
   },
@@ -86,20 +105,241 @@ export const projects = [
   },
 ]
 
+export const skillCategories = [
+  {
+    title: 'Featured',
+    type: 'featured',
+  },
+  {
+    title: 'Code',
+    type: 'web-dev',
+  },
+  {
+    title: 'Design',
+    type: 'design',
+  },
+  {
+    title: 'Workflows',
+    type: 'workflows',
+  },
+  {
+    title: 'Other Things',
+    type: 'other',
+  },
+]
+
 export const skills = [
   {
     title: 'JavaScript',
-    icon: '',
-    type: 'web-dev',
+    icon: 'icons/javascript.svg',
+    type: ['web-dev', 'featured'],
   },
   {
     title: 'React',
-    icon: '/react-brands.svg',
-    type: 'web-dev',
+    icon: '/icons/react.svg',
+    type: ['web-dev', 'featured'],
   },
   {
-    title: 'Shopify',
-    icon: '',
-    type: 'web-dev',
+    title: 'TypeScript',
+    icon: '/icons/typescript.svg',
+    type: ['web-dev', 'featured'],
+  },
+  {
+    title: 'NextJS',
+    icon: '/icons/next.svg',
+    type: ['web-dev', 'featured'],
+  },
+  {
+    title: 'Tailwind',
+    icon: '/icons/tailwind.svg',
+    type: ['web-dev', 'featured'],
+  },
+  {
+    title: 'Shopify Plus',
+    icon: 'icons/shopify.svg',
+    type: ['web-dev', 'featured'],
+  },
+  {
+    title: 'Vue',
+    icon: '/icons/vue.svg',
+    type: ['web-dev', 'featured'],
+  },
+  {
+    title: 'Figma',
+    icon: '/icons/figma.svg',
+    type: ['web-dev', 'design', 'featured'],
+  },
+  {
+    title: 'HTML',
+    icon: '/icons/html.svg',
+    type: ['web-dev'],
+  },
+  {
+    title: 'Storybook',
+    icon: '/icons/storybook.svg',
+    type: ['web-dev', 'design'],
+  },
+  {
+    title: 'WCAG',
+    icon: '/icons/accessibility.svg',
+    type: ['web-dev', 'featured'],
+  },
+  {
+    title: 'Agile',
+    icon: '/icons/agile.svg',
+    type: ['workflows', 'featured'],
+  },
+  {
+    title: 'Analytics',
+    icon: '/icons/analytics.svg',
+    type: ['web-dev'],
+  },
+  {
+    title: 'APIs',
+    icon: '/icons/apis.svg',
+    type: ['web-dev'],
+  },
+  {
+    title: 'Bootstrap',
+    icon: '/icons/bootstrap.svg',
+    type: ['web-dev'],
+  },
+  {
+    title: 'Confluence',
+    icon: '/icons/confluence.svg',
+    type: ['workflows'],
+  },
+  {
+    title: 'CSS',
+    icon: '/icons/css.svg',
+    type: ['web-dev'],
+  },
+  {
+    title: 'Firebase',
+    icon: '/icons/firebase.svg',
+    type: ['web-dev'],
+  },
+  {
+    title: 'Github',
+    icon: '/icons/github.svg',
+    type: ['web-dev', 'workflows', 'featured'],
+  },
+  {
+    title: 'Github Actions',
+    icon: '/icons/githubactions.svg',
+    type: ['web-dev', 'workflows', 'featured'],
+  },
+  {
+    title: 'Markets',
+    icon: '/icons/internationalization.svg',
+    type: ['web-dev'],
+  },
+  {
+    title: 'Jamstack',
+    icon: '/icons/jamstack.svg',
+    type: ['web-dev'],
+  },
+  {
+    title: 'Jira',
+    icon: '/icons/jira.svg',
+    type: ['workflows'],
+  },
+  {
+    title: 'JQuery',
+    icon: '/icons/jquery.svg',
+    type: ['web-dev'],
+  },
+  {
+    title: 'Notion',
+    icon: '/icons/notion.svg',
+    type: ['workflows'],
+  },
+  {
+    title: 'Photoshop',
+    icon: '/icons/photoshop.svg',
+    type: ['design', 'featured'],
+  },
+  {
+    title: 'Migrations',
+    icon: '/icons/platform-migrations.svg',
+    type: ['web-dev'],
+  },
+  {
+    title: 'Sanity',
+    icon: '/icons/sanity.svg',
+    type: ['web-dev', 'featured'],
+  },
+  {
+    title: 'Sass',
+    icon: '/icons/sass.svg',
+    type: ['web-dev'],
+  },
+  {
+    title: 'Sketch',
+    icon: '/icons/sketch.svg',
+    type: ['web-dev', 'design'],
+  },
+  {
+    title: 'Styled Components',
+    icon: '/icons/styled-components.svg',
+    type: ['web-dev'],
+  },
+  {
+    title: 'SVG Animations',
+    icon: '/icons/svgs.svg',
+    type: ['web-dev'],
+  },
+  {
+    title: 'Velocity',
+    icon: '/icons/velocity.svg',
+    type: ['web-dev'],
+  },
+  {
+    title: 'Wrike',
+    icon: '/icons/wrike.svg',
+    type: ['workflows'],
+  },
+  {
+    title: 'Netlify',
+    icon: '/icons/netlify.svg',
+    type: ['web-dev', 'featured'],
+  },
+  {
+    title: 'Vercel',
+    icon: '/icons/vercel.svg',
+    type: ['web-dev', 'featured'],
+  },
+  {
+    title:
+      'Graduated with a BA Degree in English Literature & Communication Studies at York University',
+    icon: '👩🏻‍🎓',
+    type: ['other'],
+  },
+  {
+    title: `Graduate of Juno College's Web Development Immersive Program`,
+    icon: '💻',
+    type: ['other'],
+  },
+  {
+    title: `High chance that I am working on some type of Arts & Crafts. My favourites are bullet journalling, gem art, and building minitatures`,
+    icon: '🎨',
+    type: ['other'],
+  },
+  {
+    title:
+      'Drop me in any city! I love to travel and learn about other cultures.',
+    icon: '✈️',
+    type: ['other'],
+  },
+  {
+    title: `I always have a book on the go and you'll see me at any company book club. I read everything from the most depressing Dostoevsky to the latest #booktok romance.`,
+    icon: '📚',
+    type: ['other'],
+  },
+  {
+    title:
+      'For 6 years, I ran my own small business on Etsy selling stationery.',
+    icon: '🛍️',
+    type: ['other'],
   },
 ]

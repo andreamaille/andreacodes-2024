@@ -108,3 +108,7 @@ img {
 }
 
 /* Custom */
+
+.section-filter {
+  @apply mr-16 border-b-2 text-lg;
+}

@@ -32,24 +32,24 @@ const Projects = () => {
   return (
     <section id="portfolio" className="my-8">
       <h2>{en.projects.title}</h2>
-      <div>
+      <div className="mb-16">
         {projectTypes.map((projectType) => (
           <button
             onClick={() => setCurrentFilter(projectType.type)}
             key={projectType.type}
-            className={`mr-16 border-b-2 text-xl ${projectType.type === currentFilter ? 'border-orange' : 'border-transparent'}`}
+            className={`section-filter ${projectType.type === currentFilter ? 'border-orange' : 'border-transparent'}`}
           >
             {projectType.title}
           </button>
         ))}
       </div>
 
-      <div className="relative mt-12">
+      <div className="relative">
         <span className="absolute right-0 top-[-50px] hidden md:block">
           <img src="/project_star-cluster.svg" alt="" className="w-[75px]" />
         </span>
         {currentProjects.map((project) => (
-          <div key={project.title} className="my-16 md:flex">
+          <div key={project.title} className="mb-16 md:flex">
             <div className="max-w-[450px] md:mr-16 md:w-1/3">
               <img src={project.image} alt="" />
             </div>

@@ -3,10 +3,15 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "tailwind": "npx tailwindcss -i ./styles/tailwind.css -o ./styles/tailwind.min.css --watch",
+    "watch": "npx tailwindcss -i ./styles/tailwind.css -o ./styles/tailwind.min.css --watch",
     "start": "next start"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-regular-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0"
