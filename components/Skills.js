@@ -18,8 +18,14 @@ const Skills = () => {
     }
   }, [currentFilter])
 
+  //   display: grid;
+  // grid-template-columns: repeat(5, 1fr);
+  // grid-template-rows: repeat(5, 1fr);
+  // grid-column-gap: 0px;
+  // grid-row-gap: 0px;
+
   return (
-    <section className="my-8" id="skills">
+    <section className="mt-8" id="skills">
       <h2>{en.skills.title}</h2>
       <div className="mb-10">
         {skillCategories.map((category) => (
@@ -32,27 +38,29 @@ const Skills = () => {
           </button>
         ))}
       </div>
-      <div className="flex flex-wrap items-center justify-start">
+      <div
+        className={`${currentFilter === 'other' ? 'flex flex-wrap justify-between' : 'grid grid-cols-3 gap-4 md:grid-cols-8 lg:grid-cols-10 lg:gap-6'}`}
+      >
         {currentSkills.map((skill) => (
           <Fragment key={skill.title}>
             {skill.type.includes('other') ? (
               <div
                 key={skill.title}
-                className="mb-8 flex w-1/2 items-center pr-16"
+                className="mb-8 flex items-center justify-between md:pr-16"
               >
-                <span className="p2 mr-4 block text-2xl">{skill.icon}</span>
-                <span className="">{skill.title}</span>
+                <span className="p4 mr-4 block text-2xl">{skill.icon}</span>
+                <span className="md:text-center">{skill.title}</span>
               </div>
             ) : (
               <div
                 key={skill.title}
-                className="mb-8 mr-10 flex flex-col items-center"
+                className="flex flex-col items-center justify-start"
               >
-                <span className="block w-[75px] w-[85px] p-2">
+                <span className="block w-[75px] p-2">
                   <img
                     src={skill.icon}
                     alt=""
-                    className="m-automax-h-[70px]"
+                    className="h-[70px]"
                     loading="lazy"
                   />
                 </span>

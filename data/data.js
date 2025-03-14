@@ -310,6 +310,21 @@ export const skills = [
     type: ['web-dev', 'featured'],
   },
   {
+    title: 'Chromatic',
+    icon: '/icons/chromatic.svg',
+    type: ['web-dev', 'design'],
+  },
+  {
+    title: 'SEO',
+    icon: '/icons/seo.svg',
+    type: ['web-dev'],
+  },
+  {
+    title: 'Lit',
+    icon: '/icons/lit.svg',
+    type: ['web-dev'],
+  },
+  {
     title:
       'Graduated with a BA Degree in English Literature & Communication Studies at York University',
     icon: '👩🏻‍🎓',
