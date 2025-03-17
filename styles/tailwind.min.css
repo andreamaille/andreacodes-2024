@@ -578,32 +578,32 @@ video {
   position: relative;
 }
 
+.sticky {
+  position: sticky;
+}
+
 .right-0 {
   right: 0px;
-}
-
-.top-\[-50px\] {
-  top: -50px;
-}
-
-.right-4 {
-  right: 1rem;
-}
-
-.right-6 {
-  right: 1.5rem;
-}
-
-.top-0 {
-  top: 0px;
 }
 
 .right-2 {
   right: 0.5rem;
 }
 
+.top-0 {
+  top: 0px;
+}
+
 .top-2 {
   top: 0.5rem;
+}
+
+.top-\[-50px\] {
+  top: -50px;
+}
+
+.z-40 {
+  z-index: 40;
 }
 
 .z-50 {
@@ -614,31 +614,22 @@ video {
   margin: 4rem;
 }
 
-.m-auto {
-  margin: auto;
-}
-
-.m-4 {
-  margin: 1rem;
-}
-
 .m-6 {
   margin: 1.5rem;
 }
 
-.my-8 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-.my-4 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+.m-auto {
+  margin: auto;
 }
 
 .my-6 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+}
+
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .mb-10 {
@@ -693,20 +684,16 @@ video {
   margin-top: 2rem;
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
+.mr-6 {
+  margin-right: 1.5rem;
+}
+
+.mt-16 {
+  margin-top: 4rem;
 }
 
 .block {
   display: block;
-}
-
-.inline-block {
-  display: inline-block;
-}
-
-.inline {
-  display: inline;
 }
 
 .flex {
@@ -733,8 +720,28 @@ video {
   height: 70px;
 }
 
+.max-h-\[200px\] {
+  max-height: 200px;
+}
+
+.max-h-\[400px\] {
+  max-height: 400px;
+}
+
+.max-h-\[600px\] {
+  max-height: 600px;
+}
+
+.w-4 {
+  width: 1rem;
+}
+
 .w-\[75px\] {
   width: 75px;
+}
+
+.w-\[85px\] {
+  width: 85px;
 }
 
 .w-auto {
@@ -745,12 +752,8 @@ video {
   width: 100%;
 }
 
-.w-\[48px\] {
-  width: 48px;
-}
-
-.w-\[85px\] {
-  width: 85px;
+.w-1\/2 {
+  width: 50%;
 }
 
 .max-w-\[400px\] {
@@ -822,13 +825,18 @@ video {
   border-color: rgb(198 88 51 / var(--tw-border-opacity));
 }
 
+.border-pink {
+  --tw-border-opacity: 1;
+  border-color: rgb(244 236 240 / var(--tw-border-opacity));
+}
+
 .border-transparent {
   border-color: transparent;
 }
 
-.border-pink {
-  --tw-border-opacity: 1;
-  border-color: rgb(244 236 240 / var(--tw-border-opacity));
+.bg-pink {
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 236 240 / var(--tw-bg-opacity));
 }
 
 .p-2 {
@@ -869,12 +877,24 @@ video {
   padding-bottom: 2rem;
 }
 
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
 .pb-4 {
   padding-bottom: 1rem;
 }
 
 .pr-4 {
   padding-right: 1rem;
+}
+
+.pt-8 {
+  padding-top: 2rem;
+}
+
+.pt-16 {
+  padding-top: 4rem;
 }
 
 .text-center {
@@ -952,6 +972,13 @@ video {
   font-weight: 600;
 
   font-style: normal;
+}
+
+/* Variables - For reference in custom styles in this file */
+
+:root {
+  --orange: #c65833;
+  /* Custom color */
 }
 
 /* Global */
@@ -1113,24 +1140,28 @@ textarea::placeholder {
   width: 80%;
 }
 
-.last\:mx-0:last-child {
-  margin-left: 0px;
-  margin-right: 0px;
+.slide-in-out {
+  --tw-text-opacity: 1;
+  color: rgb(198 88 51 / var(--tw-text-opacity));
+  padding: 2px;
+  text-decoration: none;
+  background-image: linear-gradient(var(--orange), var(--orange));
+  background-size: 0% 2px;
+  background-position-y: 100%;
+  background-position-x: 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.2s ease-in-out;
+}
+
+.slide-in-out:hover,
+.slide-in-out:focus {
+  background-size: 100% 2px;
+  background-position-x: 0%;
 }
 
 .last\:px-0:last-child {
   padding-left: 0px;
   padding-right: 0px;
-}
-
-.hover\:border-orange:hover {
-  --tw-border-opacity: 1;
-  border-color: rgb(198 88 51 / var(--tw-border-opacity));
-}
-
-.hover\:border-pink:hover {
-  --tw-border-opacity: 1;
-  border-color: rgb(244 236 240 / var(--tw-border-opacity));
 }
 
 .hover\:opacity-80:hover {
@@ -1152,6 +1183,10 @@ textarea::placeholder {
 
   .md\:block {
     display: block;
+  }
+
+  .md\:flex {
+    display: flex;
   }
 
   .md\:h-\[500px\] {
@@ -1212,6 +1247,10 @@ textarea::placeholder {
 }
 
 @media (min-width: 1024px) {
+  .lg\:static {
+    position: static;
+  }
+
   .lg\:mb-0 {
     margin-bottom: 0px;
   }
@@ -1220,16 +1259,12 @@ textarea::placeholder {
     margin-bottom: 4rem;
   }
 
-  .lg\:mb-8 {
-    margin-bottom: 2rem;
-  }
-
   .lg\:ml-\[-75px\] {
     margin-left: -75px;
   }
 
-  .lg\:mr-16 {
-    margin-right: 4rem;
+  .lg\:mr-6 {
+    margin-right: 1.5rem;
   }
 
   .lg\:mr-8 {

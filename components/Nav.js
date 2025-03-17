@@ -2,7 +2,8 @@ import en from '../data/en.json'
 import { navLinks } from '../data/data'
 
 import { useState, useEffect, useRef } from 'react'
-import { useLocation } from 'react-router-dom'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const HamburgerIcon = () => {
   return (
@@ -34,7 +35,7 @@ const ExitIcon = () => {
       <path
         d="M2.06889 1.94766L28.7284 29.0266M1.81128 28.9311L28.8902 2.2716"
         stroke="#C65833"
-        stroke-width="3"
+        strokeWidth="3"
       />
     </svg>
   )
@@ -44,11 +45,12 @@ const Nav = () => {
   const [isOpen, setIsOpen] = useState(false)
   const menuRef = useRef(null)
   const hamburgerRef = useRef(null)
-  const location = useLocation()
+  const location = useRouter()
+  const [currentUrl, setCurrentUrl] = useState('/')
 
-  console.log(location.pathname)
-
-  //   const [currentUR]
+  useEffect(() => {
+    setCurrentUrl(location.asPath)
+  }, [location])
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -74,10 +76,6 @@ const Nav = () => {
     }
   }, [isOpen])
 
-  //   useEffect(() => {
-  //     console.log(location.pathname)
-  //   }, [location])
-
   return (
     <div>
       <div className="fixed right-2 top-2 z-50 lg:hidden">
@@ -94,31 +92,34 @@ const Nav = () => {
         {/* Mobile Nav */}
         <nav
           ref={menuRef}
-          className={`mobile-nav-container ${isOpen ? 'block' : 'hidden'}`}
+          className={`mobile-nav-container relative ${isOpen ? 'block' : 'hidden'}`}
         >
           <div className="m-6">
             <div className="w-[85px]">
               <img src="/nav_katman.svg" alt="" />
             </div>
-            <div className="my-6">
-              <ul>
-                {navLinks.map((navLink) => (
-                  <li key={navLink.title} className="mb-6 last:mx-0">
-                    <a
-                      href={navLink.url}
-                      className={`border-b-2 border-transparent font-butlerSemibold text-2xl`}
-                      onClick={() => {
-                        setIsOpen(false)
-                        // ${activeLink === navLink.title ? 'border-pink' : ''}
-                      }}
-                    >
-                      {navLink.title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ul className="my-6 flex flex-col">
+              {navLinks.map((navLink) => (
+                <li className="mb-6" key={navLink.url}>
+                  <Link
+                    href={navLink.url}
+                    className={`border-b-2 pb-2 font-butlerSemibold text-2xl ${currentUrl.includes(navLink.url) ? 'border-pink' : 'border-transparent'}`}
+                    onClick={() => {
+                      setIsOpen(false)
+                    }}
+                  >
+                    {navLink.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
+          <div></div>
+          <img
+            src="/mobile-menu_stars.svg"
+            alt=""
+            className="absolute right-0 h-[400px] w-auto"
+          />
         </nav>
       </div>
       {/* Desktop Nav */}
@@ -127,10 +128,12 @@ const Nav = () => {
           <ul className="flex">
             {navLinks.map((navLink) => (
               <li
-                key={navLink.title}
-                className="mr-4 border-b-2 border-transparent font-butlerSemibold text-xl last:mx-0 hover:border-orange"
+                key={navLink.url}
+                className="slide-in-out mr-4 pb-2 font-butlerSemibold text-xl"
               >
-                <a href={navLink.url}>{navLink.title}</a>
+                <a href={navLink.url} className="">
+                  {navLink.title}
+                </a>
               </li>
             ))}
           </ul>

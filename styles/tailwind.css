@@ -34,6 +34,12 @@
   font-style: normal;
 }
 
+/* Variables - For reference in custom styles in this file */
+
+:root {
+  --orange: #c65833; /* Custom color */
+}
+
 /* Global */
 html {
   overflow-x: hidden;
@@ -143,4 +149,22 @@ textarea::placeholder {
 .mobile-nav-container {
   @apply fixed bottom-0 left-0 top-0 bg-orange text-pink;
   width: 80%;
+}
+
+.slide-in-out {
+  @apply text-orange;
+  padding: 2px;
+  text-decoration: none;
+  background-image: linear-gradient(var(--orange), var(--orange));
+  background-size: 0% 2px;
+  background-position-y: 100%;
+  background-position-x: 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.2s ease-in-out;
+}
+
+.slide-in-out:hover,
+.slide-in-out:focus {
+  background-size: 100% 2px;
+  background-position-x: 0%;
 }

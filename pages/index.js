@@ -3,20 +3,10 @@ import Hero from '../components/Hero'
 import About from '../components/About'
 import Projects from '../components/Projects'
 import Skills from '../components/Skills'
+import Facts from '../components/Facts'
 import Footer from '../components/Footer'
 
-const { library, config } = require('@fortawesome/fontawesome-svg-core')
-
-// Font Awesome Icons
-import {
-  faReact,
-  faJs,
-  faShopify,
-  faHtml5,
-} from '@fortawesome/free-brands-svg-icons'
-
 export default function Home() {
-  library.add(faReact, faJs, faShopify, faHtml5)
   return (
     <div>
       <Head>
@@ -29,6 +19,7 @@ export default function Home() {
         <About />
         <Projects />
         <Skills />
+        <Facts />
         <Footer />
       </main>
     </div>

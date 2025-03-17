@@ -54,6 +54,7 @@ export const projects = [
       'App Integrations',
     ],
     type: 'professional',
+    url: '',
   },
   {
     title: 'Endy',
@@ -70,6 +71,7 @@ export const projects = [
       'Storybook',
     ],
     type: 'professional',
+    url: '',
   },
   {
     title: 'Commerce Dynamics',
@@ -86,22 +88,90 @@ export const projects = [
       'SaaS',
     ],
     type: 'professional',
+    url: '',
   },
   {
-    title: 'Wedding Site',
+    title: 'K-POP Distro',
+    description: 'A demo headless shopify storefront deployed on Netlify.',
+    image: '/kpop-distro_749x578.png',
+    techStack: [
+      'React',
+      'Next',
+      'Styled Components',
+      'Storefront API',
+      'Headless',
+    ],
+    type: 'personal',
+    url: 'https://kpopdistro.netlify.app/',
+    githubUrl: 'https://github.com/andreamaille/kpopdistro-netlify-starter',
+  },
+  {
+    title: 'Andy & Maxx Get Married',
     description:
       "I got married in 2023 and couldn't pass up the opportunity to build and design my own wedding site.",
-    image: '',
+    image: '/wedding_749x578.png',
     techStack: ['React', 'Next', 'Figma'],
     type: 'personal',
+    url: 'https://andrea-maxx-wedding.netlify.app/',
+    githubUrl: 'https://github.com/andreamaille/wedding-2023',
   },
   {
-    title: 'Known Decimal x Endy',
+    title: 'Space Attack',
+    description: `A space invaders inspired game built with pure Vanilla JS. No framework/canvas used.`,
+    techStack: ['Vanilla JS', 'Game UI', 'Firebase', 'SASS'],
+    image: '/space-attack_749x578.png',
+    type: 'personal',
+    url: 'https://andreamaille.github.io/space-invaders/',
+    githubUrl: 'https://github.com/andreamaille/space-invaders',
+  },
+  {
+    title: 'Next on Shuffle',
     description:
-      'With complex logic, Endy needed a custom solution for fulfilment management.',
-    image: '',
-    techStack: ['React', 'Next', 'Figma'],
+      'React app that generates music suggestions using the Last.fm API and Firebase.',
+    image: '/next-on-shuffle_749x578.png',
+    techStack: ['React', 'Rest API', 'UI Design', 'Firebase', 'SASS'],
+    type: 'personal',
+    url: 'https://andreamaille.github.io/next-on-shuffle/',
+    githubUrl: 'https://github.com/andreamaille/next-on-shuffle',
+  },
+  {
+    title: 'TV Watchers',
+    description: `App where users can search for TV shows and add them to lists. TV shows can be up/down voted on community boards to determine the best shows to watch. App built in collaboration with Jeff Yeung, Tommy Lay, Brain Kan`,
+    image: '/tv-watchers_749x578.png',
+    techStack: ['Rest API', 'React', 'Git Collaboration', 'JS'],
+    type: 'personal',
+    url: 'https://superduperlatives.github.io/tvWatcher/',
+    githubUrl: 'https://github.com/superduperlatives/tvWatcher',
+  },
+  {
+    title: `What's for Dinner?`,
+    description: `A quiz based dinner recipe generator that takes user input to arrive a custom recipe.`,
+    image: '/whats-for-dinner_749x578.png',
+    techStack: ['JS', 'Firebase', 'jQuery', 'UI Design', 'Sass'],
+    type: 'personal',
+    url: 'https://andreamaille.github.io/whats-for-dinner/',
+    githubUrl: 'https://github.com/andreamaille/whats-for-dinner',
+  },
+  {
+    title: 'Domaine x Mejuri: Transitioning to a Unified Global Platform',
+    description: `Mejuri, renowned for transforming fine jewelry into everyday essentials, partnered with Domaine to overhaul its digital infrastructure. The project focused on migrating from legacy systems to a cohesive global platform, enhancing scalability and user experience. This transformation empowered Mejuri to seamlessly support its rapid international growth and continue making a positive impact on communities and the industry.`,
+    image: '/domaine-mejuri_749x470.png',
     type: 'case-study',
+    url: 'https://www.meetdomaine.com/work/mejuri/',
+  },
+  {
+    title: 'Endy Expands Reach with New Shopify Shipping App',
+    description: `Endy uses Shopify Plus for their e-commerce business. However, they faced a limitation in specifying shipping rules for certain remote northern territories in Canada. In order to provide shipping options to more remote areas, Endy needed a flexible solution that included the ability to increase the number of shipping carriers they could use.`,
+    image: '/endy-kd_749x470.png',
+    type: 'case-study',
+    url: 'https://knowndecimal.com/pages/endy-expands-reach-with-new-shopify-shipping-app',
+  },
+  {
+    title: 'Endy: 10 weeks to build and migrate to a new headless e-commerce',
+    description: `As part of Rangle’s collaboration with Endy, this project involved migrating the company’s e-commerce platform to a modern headless architecture using Sanity, Next.js, and Vercel. The replatforming significantly improved site performance, enabling pages to load 4x faster, while also empowering content teams with flexible management tools and streamlining development workflows. This transformation positioned Endy for seamless scalability and enhanced customer experiences.`,
+    image: '/endy-rangle_749x470.png',
+    type: 'case-study',
+    url: 'https://knowndecimal.com/pages/endy-expands-reach-with-new-shopify-shipping-app',
   },
 ]
 
@@ -356,5 +426,23 @@ export const skills = [
       'For 6 years, I ran my own small business on Etsy selling stationery.',
     icon: '🛍️',
     type: ['other'],
+  },
+]
+
+export const facts = [
+  {
+    emoji: '👩🏻‍🎓',
+    description:
+      'Graduated with a BA Degree in English Literature & Communication Studies at York University. I will be at any company book club. ',
+  },
+  {
+    emoji: '👩🏻‍🎓',
+    description:
+      'Graduated with a BA Degree in English Literature & Communication Studies at York University. I will be at any company book club. ',
+  },
+  {
+    emoji: '👩🏻‍🎓',
+    description:
+      'Graduated with a BA Degree in English Literature & Communication Studies at York University. I will be at any company book club. ',
   },
 ]

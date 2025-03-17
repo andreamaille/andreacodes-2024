@@ -35,7 +35,12 @@
   "skills": {
     "title": "Skills"
   },
+  "facts": {
+    "title": "Fun Facts About Andy"
+  },
   "global": {
-    "navAccessibility": "Open navigation"
+    "navAccessibility": "Open navigation",
+    "viewLive": "View Live",
+    "githubCode": "Github Code"
   }
 }
