@@ -31,6 +31,7 @@ const Hero = () => {
                   >
                     <a
                       href={social.url}
+                      target="_blank"
                       dangerouslySetInnerHTML={{ __html: social.svg }}
                     ></a>
                   </li>

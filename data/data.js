@@ -30,8 +30,13 @@ export const socials = [
   },
   {
     title: 'Instagram',
-    url: 'https://www.instagram.com/andreamaille/',
+    url: 'https://www.instagram.com/andreaharkins_/',
     svg: '<svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>',
+  },
+  {
+    title: 'Medium',
+    url: 'https://medium.com/@andrea_codes',
+    svg: '<svg xmlns="http://www.w3.org/2000/svg" height="26" width="25" viewBox="0 0 640 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M180.5 74.3C80.8 74.3 0 155.6 0 256S80.8 437.7 180.5 437.7 361 356.4 361 256 280.2 74.3 180.5 74.3zm288.3 10.6c-49.8 0-90.2 76.6-90.2 171.1s40.4 171.1 90.3 171.1 90.3-76.6 90.3-171.1H559C559 161.5 518.6 84.9 468.8 84.9zm139.5 17.8c-17.5 0-31.7 68.6-31.7 153.3s14.2 153.3 31.7 153.3S640 340.6 640 256C640 171.4 625.8 102.7 608.3 102.7z"/></svg>',
   },
 ]
 
@@ -39,7 +44,7 @@ export const projects = [
   {
     title: 'Domaine',
     description:
-      'Sports and Loyalty programs on a custom back-end with a strong emphasis on auction experiences. I worked on sites for major sports leagues across the world from the NFL to AFL. Bringing that auction flavour to the loyalty world in order to auction off experiences for flight reward programs to art auctions.',
+      'As a Technical Lead at Domaine, I deliver innovated digital solutions to beloved brands across the globe. Everyday, I help clients navigate the Shopify ecosystem to enhance customer experiences, drive sales and expand to new markets. Collaborating closely with our talented engineering team, I thrive on bringing ideas to life and developing creative, scalable solutions that ensure long-term maintainability. In this role, I have led a variety of e-commerce initiatives, including platform migrations, third-party integrations, new site builds, theme enhancements and headless implementations. ',
     image: '/domaine_749x578.png',
     techStack: [
       'Shopify Plus',
@@ -59,7 +64,7 @@ export const projects = [
   {
     title: 'Endy',
     description:
-      'Sports and Loyalty programs on a custom back-end with a strong emphasis on auction experiences. I worked on sites for major sports leagues across the world from the NFL to AFL. Bringing that auction flavour to the loyalty world in order to auction off experiences for flight reward programs to art auctions.',
+      'For three years, I created the dreamiest (quite literally!) e-commerce experiences at Endy, Canada’s leading mattress and sleep brand. As part of a mighty development team, I played a key role in migrating Endy’s online stores from an outdated hybrid theme to a custom, headless powerhouse storefront. Throughout my tenure and taking an agile approach, I shaped the technical architecture and development roadmap, elevate the brand’s digital presence, and foster a culture of collaboration and knowledge-sharing, all while mentoring developers to grow their skills and making my own contributions to the codebase. ',
     image: '/endy_745x578.png',
     techStack: [
       'Shopify Plus',
@@ -69,6 +74,9 @@ export const projects = [
       'React',
       'Typescript',
       'Storybook',
+      'Agile',
+      'Vercel',
+      'Vue',
     ],
     type: 'professional',
     url: '',
@@ -76,7 +84,7 @@ export const projects = [
   {
     title: 'Commerce Dynamics',
     description:
-      'Sports and Loyalty programs on a custom back-end with a strong emphasis on auction experiences. I worked on sites for major sports leagues across the world from the NFL to AFL. Bringing that auction flavour to the loyalty world in order to auction off experiences for flight reward programs to art auctions.',
+      'Diving into the world of sports and entertainment, I worked on sites for major sport leagues worldwide, from the NFL to AFL. At this agency, I helped develop and enhance the company’s SaaS auction platform, enabling brands to create a suite of auction experiences. Expanding beyond sports, our team evolved the platform to support auctions for airline points programs, art auctions and hotel loyalty programs. ',
     image: '/cdi_749x578.png',
     techStack: [
       'Ecommerce',

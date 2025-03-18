@@ -1,7 +1,7 @@
 {
   "hero": {
     "headline": "Andrea Harkins",
-    "name": "Tech Lead & Front End Engineer"
+    "name": "Tech Lead & Senior Engineer"
   },
   "nav": {
     "home": {
@@ -27,7 +27,7 @@
   },
   "about": {
     "title": "About Me",
-    "description": "<p>Hello! My name is Andrea Harkins (nee Maille) but feel free to call me Andy. I am a Technical Lead and Front-End Engineer based in Toronto, Canada.</p><p>I’m a people-first leader who believes in transparency, collaboration and continuous learning. I strive for success but also deeply care about how we get there. As a developer, I'm dedicated to developing accessible, user-friendly websites that engage users through responsive design and artistic flairs. I am a strong advocate for ethical practices within the tech space and strive to create more accessible, inclusive environments wherever I go.</p><p>When I’m not coding, you can catch me building a Spotify playlist, bullet journaling, or planning my next adventure.</p>"
+    "description": "<p>Hello! My name is Andrea Harkins (nee Maille) but feel free to call me <strong>Andy</strong>. I’m a <strong>Senior Front End Engineer</strong> && <strong>Technical Lead</strong> based in Toronto, ON. Since 2019, I have worked in both brand and agency settings creating the <strong>dreamiest</strong> e-commerce experiences. I love the challenges that come with building brands in a digital landscape and truly value how each page view can create meaningful human experiences. <p>As a engineering leader, I believe in <strong>transparency, collaboration and continuous learning</strong>. I’m passionate about creating websites that engage users through thoughtful design and artistic flairs, while maintaining a <strong>scalable and high-performing</strong> codebase. While pursuing team and stakeholder goals, I focus not just on achieving success but also deeply care about how we get there. I am a strong advocate for ethical practices within tech spaces and strive to create more accessible, inclusive environments wherever I go. </p><p>When I’m not coding, you can catch me planning my next travel adventure, working on a DIY project or diving into a new book. </p>"
   },
   "projects": {
     "title": "My Work"

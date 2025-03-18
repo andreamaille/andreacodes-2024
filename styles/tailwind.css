@@ -115,6 +115,10 @@ p {
   box-sizing: border-box;
 }
 
+strong {
+  @apply font-workSansSemibold;
+}
+
 img {
   width: 100%;
   max-width: 100%;

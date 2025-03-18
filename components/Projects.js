@@ -69,7 +69,9 @@ const Projects = () => {
                           alt=""
                           className="mr-2 w-4"
                         />
-                        <a href={project.url}>{en.global.viewLive}</a>
+                        <a href={project.url} target="_blank">
+                          {en.global.viewLive}
+                        </a>
                       </li>
                       <li className="flex">
                         <img
@@ -77,7 +79,9 @@ const Projects = () => {
                           alt=""
                           className="mr-2 w-4"
                         />
-                        <a href={project.githubUrl}>{en.global.githubCode}</a>
+                        <a href={project.githubUrl} target="_blank">
+                          {en.global.githubCode}
+                        </a>
                       </li>
                     </ul>
                   </div>
