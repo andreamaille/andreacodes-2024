@@ -31,9 +31,9 @@ const Projects = () => {
 
   return (
     <section id="portfolio" className="my-8">
-      <div className="sticky top-0 z-40 bg-pink py-4 lg:static">
+      <div className="mb-6 py-4">
         <h2>{en.projects.title}</h2>
-        <div className="lg:mb-16">
+        <div className="lg:mb-4">
           {projectTypes.map((projectType) => (
             <button
               onClick={() => setCurrentFilter(projectType.type)}
@@ -73,16 +73,18 @@ const Projects = () => {
                           {en.global.viewLive}
                         </a>
                       </li>
-                      <li className="flex">
-                        <img
-                          src="/icons/github.svg"
-                          alt=""
-                          className="mr-2 w-4"
-                        />
-                        <a href={project.githubUrl} target="_blank">
-                          {en.global.githubCode}
-                        </a>
-                      </li>
+                      {project.githubUrl && (
+                        <li className="flex">
+                          <img
+                            src="/icons/github.svg"
+                            alt=""
+                            className="mr-2 w-4"
+                          />
+                          <a href={project.githubUrl} target="_blank">
+                            {en.global.githubCode}
+                          </a>
+                        </li>
+                      )}
                     </ul>
                   </div>
                 )}

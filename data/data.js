@@ -38,6 +38,11 @@ export const socials = [
     url: 'https://medium.com/@andrea_codes',
     svg: '<svg xmlns="http://www.w3.org/2000/svg" height="26" width="25" viewBox="0 0 640 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M180.5 74.3C80.8 74.3 0 155.6 0 256S80.8 437.7 180.5 437.7 361 356.4 361 256 280.2 74.3 180.5 74.3zm288.3 10.6c-49.8 0-90.2 76.6-90.2 171.1s40.4 171.1 90.3 171.1 90.3-76.6 90.3-171.1H559C559 161.5 518.6 84.9 468.8 84.9zm139.5 17.8c-17.5 0-31.7 68.6-31.7 153.3s14.2 153.3 31.7 153.3S640 340.6 640 256C640 171.4 625.8 102.7 608.3 102.7z"/></svg>',
   },
+  {
+    title: 'Bluesky',
+    url: 'https://bsky.app/profile/andreacodes.bsky.social',
+    svg: '<svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zM224 247.4c14.5-30 54-85.8 90.7-113.3c26.5-19.9 69.3-35.2 69.3 13.7c0 9.8-5.6 82.1-8.9 93.8c-11.4 40.8-53 51.2-90 44.9c64.7 11 81.2 47.5 45.6 84c-67.5 69.3-97-17.4-104.6-39.6c0 0 0 0 0 0l-.3-.9c-.9-2.6-1.4-4.1-1.8-4.1s-.9 1.5-1.8 4.1c-.1 .3-.2 .6-.3 .9c0 0 0 0 0 0c-7.6 22.2-37.1 108.8-104.6 39.6c-35.5-36.5-19.1-73 45.6-84c-37 6.3-78.6-4.1-90-44.9c-3.3-11.7-8.9-84-8.9-93.8c0-48.9 42.9-33.5 69.3-13.7c36.7 27.5 76.2 83.4 90.7 113.3z"/></svg>',
+  },
 ]
 
 export const projects = [
@@ -53,10 +58,12 @@ export const projects = [
       'Figma',
       'Headless',
       'Javascript',
+      'Lit Components',
       'Agency',
       'Custom Solutions',
       'Ecommerce',
       'App Integrations',
+      'Vercel',
     ],
     type: 'professional',
     url: '',
@@ -72,6 +79,7 @@ export const projects = [
       'Sanity CMS',
       'Styled Components',
       'React',
+      'NextJS',
       'Typescript',
       'Storybook',
       'Agile',
@@ -107,7 +115,7 @@ export const projects = [
       'Next',
       'Styled Components',
       'Storefront API',
-      'Headless',
+      'Headless Ecommerce',
     ],
     type: 'personal',
     url: 'https://kpopdistro.netlify.app/',
@@ -118,7 +126,7 @@ export const projects = [
     description:
       "I got married in 2023 and couldn't pass up the opportunity to build and design my own wedding site.",
     image: '/wedding_749x578.png',
-    techStack: ['React', 'Next', 'Figma'],
+    techStack: ['React', 'Next', 'Figma', 'Styled Components', 'Netlify'],
     type: 'personal',
     url: 'https://andrea-maxx-wedding.netlify.app/',
     githubUrl: 'https://github.com/andreamaille/wedding-2023',
@@ -179,7 +187,7 @@ export const projects = [
     description: `As part of Rangle’s collaboration with Endy, this project involved migrating the company’s e-commerce platform to a modern headless architecture using Sanity, Next.js, and Vercel. The replatforming significantly improved site performance, enabling pages to load 4x faster, while also empowering content teams with flexible management tools and streamlining development workflows. This transformation positioned Endy for seamless scalability and enhanced customer experiences.`,
     image: '/endy-rangle_749x470.png',
     type: 'case-study',
-    url: 'https://knowndecimal.com/pages/endy-expands-reach-with-new-shopify-shipping-app',
+    url: 'https://rangle.io/our-work/endy-headless-ecommerce',
   },
 ]
 
@@ -201,7 +209,7 @@ export const skillCategories = [
     type: 'workflows',
   },
   {
-    title: 'Other Things',
+    title: 'Vibes',
     type: 'other',
   },
 ]
@@ -218,6 +226,11 @@ export const skills = [
     type: ['web-dev', 'featured'],
   },
   {
+    title: 'Vue',
+    icon: '/icons/vue.svg',
+    type: ['web-dev', 'featured'],
+  },
+  {
     title: 'TypeScript',
     icon: '/icons/typescript.svg',
     type: ['web-dev', 'featured'],
@@ -228,8 +241,8 @@ export const skills = [
     type: ['web-dev', 'featured'],
   },
   {
-    title: 'Tailwind',
-    icon: '/icons/tailwind.svg',
+    title: 'Sanity',
+    icon: '/icons/sanity.svg',
     type: ['web-dev', 'featured'],
   },
   {
@@ -238,54 +251,9 @@ export const skills = [
     type: ['web-dev', 'featured'],
   },
   {
-    title: 'Vue',
-    icon: '/icons/vue.svg',
-    type: ['web-dev', 'featured'],
-  },
-  {
-    title: 'Figma',
-    icon: '/icons/figma.svg',
-    type: ['web-dev', 'design', 'featured'],
-  },
-  {
     title: 'HTML',
     icon: '/icons/html.svg',
     type: ['web-dev'],
-  },
-  {
-    title: 'Storybook',
-    icon: '/icons/storybook.svg',
-    type: ['web-dev', 'design'],
-  },
-  {
-    title: 'WCAG',
-    icon: '/icons/accessibility.svg',
-    type: ['web-dev', 'featured'],
-  },
-  {
-    title: 'Agile',
-    icon: '/icons/agile.svg',
-    type: ['workflows', 'featured'],
-  },
-  {
-    title: 'Analytics',
-    icon: '/icons/analytics.svg',
-    type: ['web-dev'],
-  },
-  {
-    title: 'APIs',
-    icon: '/icons/apis.svg',
-    type: ['web-dev'],
-  },
-  {
-    title: 'Bootstrap',
-    icon: '/icons/bootstrap.svg',
-    type: ['web-dev'],
-  },
-  {
-    title: 'Confluence',
-    icon: '/icons/confluence.svg',
-    type: ['workflows'],
   },
   {
     title: 'CSS',
@@ -293,8 +261,28 @@ export const skills = [
     type: ['web-dev'],
   },
   {
-    title: 'Firebase',
-    icon: '/icons/firebase.svg',
+    title: 'Tailwind',
+    icon: '/icons/tailwind.svg',
+    type: ['web-dev', 'featured'],
+  },
+  {
+    title: 'Styled Components',
+    icon: '/icons/styled-components.svg',
+    type: ['web-dev', 'featured'],
+  },
+  {
+    title: 'Bootstrap',
+    icon: '/icons/bootstrap.svg',
+    type: ['web-dev'],
+  },
+  {
+    title: 'Sass',
+    icon: '/icons/sass.svg',
+    type: ['web-dev'],
+  },
+  {
+    title: 'SVG Animations',
+    icon: '/icons/svgs.svg',
     type: ['web-dev'],
   },
   {
@@ -308,76 +296,6 @@ export const skills = [
     type: ['web-dev', 'workflows', 'featured'],
   },
   {
-    title: 'Markets',
-    icon: '/icons/internationalization.svg',
-    type: ['web-dev'],
-  },
-  {
-    title: 'Jamstack',
-    icon: '/icons/jamstack.svg',
-    type: ['web-dev'],
-  },
-  {
-    title: 'Jira',
-    icon: '/icons/jira.svg',
-    type: ['workflows'],
-  },
-  {
-    title: 'JQuery',
-    icon: '/icons/jquery.svg',
-    type: ['web-dev'],
-  },
-  {
-    title: 'Notion',
-    icon: '/icons/notion.svg',
-    type: ['workflows'],
-  },
-  {
-    title: 'Photoshop',
-    icon: '/icons/photoshop.svg',
-    type: ['design', 'featured'],
-  },
-  {
-    title: 'Migrations',
-    icon: '/icons/platform-migrations.svg',
-    type: ['web-dev'],
-  },
-  {
-    title: 'Sanity',
-    icon: '/icons/sanity.svg',
-    type: ['web-dev', 'featured'],
-  },
-  {
-    title: 'Sass',
-    icon: '/icons/sass.svg',
-    type: ['web-dev'],
-  },
-  {
-    title: 'Sketch',
-    icon: '/icons/sketch.svg',
-    type: ['web-dev', 'design'],
-  },
-  {
-    title: 'Styled Components',
-    icon: '/icons/styled-components.svg',
-    type: ['web-dev'],
-  },
-  {
-    title: 'SVG Animations',
-    icon: '/icons/svgs.svg',
-    type: ['web-dev'],
-  },
-  {
-    title: 'Velocity',
-    icon: '/icons/velocity.svg',
-    type: ['web-dev'],
-  },
-  {
-    title: 'Wrike',
-    icon: '/icons/wrike.svg',
-    type: ['workflows'],
-  },
-  {
     title: 'Netlify',
     icon: '/icons/netlify.svg',
     type: ['web-dev', 'featured'],
@@ -388,13 +306,38 @@ export const skills = [
     type: ['web-dev', 'featured'],
   },
   {
-    title: 'Chromatic',
-    icon: '/icons/chromatic.svg',
-    type: ['web-dev', 'design'],
+    title: 'WCAG',
+    icon: '/icons/accessibility.svg',
+    type: ['web-dev', 'featured'],
+  },
+  {
+    title: 'APIs',
+    icon: '/icons/apis.svg',
+    type: ['web-dev'],
+  },
+  {
+    title: 'Analytics',
+    icon: '/icons/analytics.svg',
+    type: ['web-dev'],
   },
   {
     title: 'SEO',
     icon: '/icons/seo.svg',
+    type: ['web-dev'],
+  },
+  {
+    title: 'Markets',
+    icon: '/icons/internationalization.svg',
+    type: ['web-dev'],
+  },
+  {
+    title: 'Migrations',
+    icon: '/icons/platform-migrations.svg',
+    type: ['web-dev'],
+  },
+  {
+    title: 'Firebase',
+    icon: '/icons/firebase.svg',
     type: ['web-dev'],
   },
   {
@@ -403,36 +346,100 @@ export const skills = [
     type: ['web-dev'],
   },
   {
+    title: 'JQuery',
+    icon: '/icons/jquery.svg',
+    type: ['web-dev'],
+  },
+  {
+    title: 'Velocity',
+    icon: '/icons/velocity.svg',
+    type: ['web-dev'],
+  },
+  {
+    title: 'Jamstack',
+    icon: '/icons/jamstack.svg',
+    type: ['web-dev', 'workflow'],
+  },
+  {
+    title: 'Figma',
+    icon: '/icons/figma.svg',
+    type: ['web-dev', 'design', 'featured'],
+  },
+  {
+    title: 'Sketch',
+    icon: '/icons/sketch.svg',
+    type: ['web-dev', 'design', 'featured'],
+  },
+  {
+    title: 'Photoshop',
+    icon: '/icons/photoshop.svg',
+    type: ['design', 'featured'],
+  },
+  {
+    title: 'Storybook',
+    icon: '/icons/storybook.svg',
+    type: ['web-dev', 'design', 'featured'],
+  },
+  {
+    title: 'Chromatic',
+    icon: '/icons/chromatic.svg',
+    type: ['web-dev', 'design'],
+  },
+  {
+    title: 'Agile',
+    icon: '/icons/agile.svg',
+    type: ['workflows', 'featured'],
+  },
+  {
+    title: 'Confluence',
+    icon: '/icons/confluence.svg',
+    type: ['workflows'],
+  },
+  {
+    title: 'Jira',
+    icon: '/icons/jira.svg',
+    type: ['workflows', 'featured'],
+  },
+  {
+    title: 'Notion',
+    icon: '/icons/notion.svg',
+    type: ['workflows'],
+  },
+  {
+    title: 'Wrike',
+    icon: '/icons/wrike.svg',
+    type: ['workflows'],
+  },
+  {
     title:
-      'Graduated with a BA Degree in English Literature & Communication Studies at York University',
-    icon: '👩🏻‍🎓',
+      'Graduated with a BA Degree in English Literature & Communication Studies at York University. I will be at any company book club!',
+    icon: '📖',
     type: ['other'],
   },
   {
-    title: `Graduate of Juno College's Web Development Immersive Program`,
-    icon: '💻',
-    type: ['other'],
-  },
-  {
-    title: `High chance that I am working on some type of Arts & Crafts. My favourites are bullet journalling, gem art, and building minitatures`,
+    title: `I am always working on some kind of DIY or craft project. Catch me building a miniature house or drawing in my journal.`,
     icon: '🎨',
     type: ['other'],
   },
   {
     title:
-      'Drop me in any city! I love to travel and learn about other cultures.',
+      'I ran my own Etsy store for 6 years selling stickers and stationary supplies. I love supporting small businesses and always got a recco! ',
+    icon: '🛍️',
+    type: ['other'],
+  },
+  {
+    title: `I love traveling and learning about different cultures. Some of my fav places I've visited so far have been Japan, the Philippines and Italy.`,
     icon: '✈️',
     type: ['other'],
   },
   {
-    title: `I always have a book on the go and you'll see me at any company book club. I read everything from the most depressing Dostoevsky to the latest #booktok romance.`,
-    icon: '📚',
+    title: `I usually miss the zeitgeist on tv shows or movies so you'll probably hear me raving about your favourite tv show from 10 years ago. `,
+    icon: '📺',
     type: ['other'],
   },
   {
-    title:
-      'For 6 years, I ran my own small business on Etsy selling stationery.',
-    icon: '🛍️',
+    title: `I worked at a music school for several years and love seeing live music in my city. If you are emo kid, k-pop fan or post-metal head, we'll definitely be friends.`,
+    icon: '🎶',
     type: ['other'],
   },
 ]
