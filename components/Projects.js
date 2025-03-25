@@ -59,35 +59,39 @@ const Projects = () => {
               <div className="md:m-auto md:max-w-[768px] md:text-center lg:text-left">
                 <h3 className="mb-6">{project.title}</h3>
                 <p className="lg:max-w-2xl">{project.description}</p>
-                {(project.type === 'personal' ||
-                  project.type === 'case-study') && (
-                  <div>
-                    <ul className="flex">
-                      <li className="mr-4 flex">
-                        <img
-                          src="/icons/link.svg"
-                          alt=""
-                          className="mr-2 w-4"
-                        />
-                        <a href={project.url} target="_blank">
-                          {en.global.viewLive}
-                        </a>
-                      </li>
-                      {project.githubUrl && (
-                        <li className="flex">
-                          <img
-                            src="/icons/github.svg"
-                            alt=""
-                            className="mr-2 w-4"
-                          />
-                          <a href={project.githubUrl} target="_blank">
-                            {en.global.githubCode}
-                          </a>
-                        </li>
-                      )}
-                    </ul>
-                  </div>
-                )}
+
+                <div className="flex">
+                  {project.url && (
+                    <div className="mr-4 flex">
+                      <img src="/icons/link.svg" alt="" className="mr-2 w-4" />
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        className="hover:opacity-80"
+                      >
+                        {en.global.viewLive}
+                      </a>
+                    </div>
+                  )}
+
+                  {project.githubUrl && (
+                    <div className="flex">
+                      <img
+                        src="/icons/github.svg"
+                        alt=""
+                        className="mr-2 w-4"
+                      />
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        className="hover:opacity-80"
+                      >
+                        {en.global.githubCode}
+                      </a>
+                    </div>
+                  )}
+                </div>
+
                 {project.techStack && (
                   <div className="mt-4 flex flex-wrap md:justify-center lg:max-w-2xl lg:justify-start">
                     {project.techStack.map((tech) => (
