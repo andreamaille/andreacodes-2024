@@ -41,6 +41,13 @@
   "global": {
     "navAccessibility": "Open navigation",
     "viewLive": "View Live",
-    "githubCode": "Github Code"
+    "githubCode": "Github Code",
+    "email": "Email Address",
+    "name": "Name",
+    "submit": "Submit"
+  },
+  "footer": {
+    "title": "Let's Make Something Great Together.",
+    "formSuccess": "Thanks for reaching out! I will be in touch as soon as possible."
   }
 }

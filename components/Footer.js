@@ -1,3 +1,4 @@
+import en from '../data/en.json'
 import { useForm, ValidationError } from '@formspree/react'
 
 const Divider = () => {
@@ -18,18 +19,16 @@ const Divider = () => {
 const ContactForm = () => {
   const [state, handleSubmit] = useForm('xldjwdbz')
   if (state.succeeded) {
-    return (
-      <p>Thanks for reaching out! I will be in touch as soon as possible.</p>
-    )
+    return <p>{en.footer.formSuccess}</p>
   }
   return (
     <form onSubmit={handleSubmit} className="flex flex-col lg:max-w-[80%]">
       <label htmlFor="name" className="sr-only">
-        Name
+        {en.global.name}
       </label>
       <input type="text" id="name" name="name" placeholder="Name" required />
       <label htmlFor="email" className="sr-only">
-        Email Address
+        {en.global.email}
       </label>
       <input
         id="email"
@@ -48,7 +47,7 @@ const ContactForm = () => {
       />
       <ValidationError prefix="Message" field="message" errors={state.errors} />
       <button type="submit" disabled={state.submitting} className="w-auto">
-        Send
+        {en.global.submit}
       </button>
     </form>
   )
@@ -71,7 +70,7 @@ const Footer = () => {
           />
         </div>
         <div className="md:w-[55%]">
-          <h2 className="footer-title">Let's Make Something Great Together.</h2>
+          <h2 className="footer-title">{en.footer.title}</h2>
           <ContactForm />
         </div>
       </div>
