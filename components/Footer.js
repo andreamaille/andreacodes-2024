@@ -16,9 +16,11 @@ const Divider = () => {
 }
 
 const ContactForm = () => {
-  const [state, handleSubmit] = useForm('andrea.maille@gmail.com')
+  const [state, handleSubmit] = useForm('xldjwdbz')
   if (state.succeeded) {
-    return <p>Thanks for joining!</p>
+    return (
+      <p>Thanks for reaching out! I will be in touch as soon as possible.</p>
+    )
   }
   return (
     <form onSubmit={handleSubmit} className="flex flex-col lg:max-w-[80%]">

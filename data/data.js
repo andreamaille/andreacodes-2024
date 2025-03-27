@@ -413,7 +413,7 @@ export const skills = [
     type: ['other'],
   },
   {
-    title: `I am always working on some kind of DIY or craft project. Catch me building a miniature house or drawing in my journal.`,
+    title: `I am always working on some kind of DIY or craft project. I love building miniatures, gem art and creative journaling.`,
     icon: '🎨',
     type: ['other'],
   },
