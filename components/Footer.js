@@ -16,9 +16,7 @@ const Divider = () => {
 }
 
 const ContactForm = () => {
-  const [state, handleSubmit] = useForm(
-    'https://formspree.io/f/andrea.maille@gmail.com',
-  )
+  const [state, handleSubmit] = useForm('andrea.maille@gmail.com')
   if (state.succeeded) {
     return <p>Thanks for joining!</p>
   }

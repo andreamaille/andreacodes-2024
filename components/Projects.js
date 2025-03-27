@@ -62,30 +62,22 @@ const Projects = () => {
 
                 <div className="flex">
                   {project.url && (
-                    <div className="mr-4 flex">
+                    <div className="mr-4 flex hover:opacity-80">
                       <img src="/icons/link.svg" alt="" className="mr-2 w-4" />
-                      <a
-                        href={project.url}
-                        target="_blank"
-                        className="hover:opacity-80"
-                      >
+                      <a href={project.url} target="_blank">
                         {en.global.viewLive}
                       </a>
                     </div>
                   )}
 
                   {project.githubUrl && (
-                    <div className="flex">
+                    <div className="flex hover:opacity-80">
                       <img
                         src="/icons/github.svg"
                         alt=""
                         className="mr-2 w-4"
                       />
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        className="hover:opacity-80"
-                      >
+                      <a href={project.githubUrl} target="_blank">
                         {en.global.githubCode}
                       </a>
                     </div>
