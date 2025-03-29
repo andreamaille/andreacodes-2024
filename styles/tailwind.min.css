@@ -578,10 +578,6 @@ video {
   position: relative;
 }
 
-.sticky {
-  position: sticky;
-}
-
 .right-0 {
   right: 0px;
 }
@@ -590,20 +586,12 @@ video {
   right: 0.5rem;
 }
 
-.top-0 {
-  top: 0px;
-}
-
 .top-2 {
   top: 0.5rem;
 }
 
 .top-\[-50px\] {
   top: -50px;
-}
-
-.z-40 {
-  z-index: 40;
 }
 
 .z-50 {
@@ -630,10 +618,6 @@ video {
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
-}
-
-.mb-10 {
-  margin-bottom: 2.5rem;
 }
 
 .mb-16 {
@@ -672,6 +656,10 @@ video {
   margin-top: 0.25rem;
 }
 
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -686,18 +674,6 @@ video {
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-
-.mb-4 {
-  margin-bottom: 1rem;
 }
 
 .block {
@@ -818,21 +794,16 @@ video {
 
 .border-orange {
   --tw-border-opacity: 1;
-  border-color: rgb(198 88 51 / var(--tw-border-opacity));
+  border-color: rgb(187 82 47 / var(--tw-border-opacity));
 }
 
 .border-pink {
   --tw-border-opacity: 1;
-  border-color: rgb(244 236 240 / var(--tw-border-opacity));
+  border-color: rgb(255 246 251 / var(--tw-border-opacity));
 }
 
 .border-transparent {
   border-color: transparent;
-}
-
-.bg-pink {
-  --tw-bg-opacity: 1;
-  background-color: rgb(244 236 240 / var(--tw-bg-opacity));
 }
 
 .p-2 {
@@ -913,19 +884,9 @@ video {
   font-size: 1.5rem;
 }
 
-.leading-none {
-  line-height: 1;
-}
-
 .text-orange {
   --tw-text-opacity: 1;
-  color: rgb(198 88 51 / var(--tw-text-opacity));
-}
-
-.shadow-md {
-  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  color: rgb(187 82 47 / var(--tw-text-opacity));
 }
 
 .filter {
@@ -979,7 +940,7 @@ video {
 /* Variables - For reference in custom styles in this file */
 
 :root {
-  --orange: #c65833;
+  --orange: #bb522f;
   /* Custom color */
 }
 
@@ -992,9 +953,9 @@ html {
 html,
 body {
   --tw-bg-opacity: 1;
-  background-color: rgb(244 236 240 / var(--tw-bg-opacity));
+  background-color: rgb(255 246 251 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
-  color: rgb(198 88 51 / var(--tw-text-opacity));
+  color: rgb(187 82 47 / var(--tw-text-opacity));
   padding: 0;
   margin: 0;
   font-family:
@@ -1015,7 +976,7 @@ body {
 }
 
 svg {
-  fill: #c65833;
+  fill: #bb522f;
 }
 
 h1,
@@ -1089,7 +1050,7 @@ label {
   border-radius: 0.25rem;
   border-width: 2px;
   --tw-border-opacity: 1;
-  border-color: rgb(198 88 51 / var(--tw-border-opacity));
+  border-color: rgb(187 82 47 / var(--tw-border-opacity));
   background-color: transparent;
   padding: 1rem;
 }
@@ -1098,7 +1059,7 @@ form > button {
   width: auto;
   border-radius: 0.25rem;
   --tw-bg-opacity: 1;
-  background-color: rgb(198 88 51 / var(--tw-bg-opacity));
+  background-color: rgb(187 82 47 / var(--tw-bg-opacity));
   padding: 1rem;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1110,13 +1071,13 @@ form > button:hover {
 
 input::-moz-placeholder, textarea::-moz-placeholder {
   --tw-text-opacity: 1;
-  color: rgb(198 88 51 / var(--tw-text-opacity));
+  color: rgb(187 82 47 / var(--tw-text-opacity));
 }
 
 input::placeholder,
 textarea::placeholder {
   --tw-text-opacity: 1;
-  color: rgb(198 88 51 / var(--tw-text-opacity));
+  color: rgb(187 82 47 / var(--tw-text-opacity));
 }
 
 /* Custom */
@@ -1140,15 +1101,15 @@ textarea::placeholder {
   left: 0px;
   top: 0px;
   --tw-bg-opacity: 1;
-  background-color: rgb(198 88 51 / var(--tw-bg-opacity));
+  background-color: rgb(187 82 47 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
-  color: rgb(244 236 240 / var(--tw-text-opacity));
+  color: rgb(255 246 251 / var(--tw-text-opacity));
   width: 80%;
 }
 
 .slide-in-out {
   --tw-text-opacity: 1;
-  color: rgb(198 88 51 / var(--tw-text-opacity));
+  color: rgb(187 82 47 / var(--tw-text-opacity));
   padding: 2px;
   text-decoration: none;
   background-image: linear-gradient(var(--orange), var(--orange));
@@ -1251,26 +1212,22 @@ textarea::placeholder {
     text-align: center;
   }
 
-  .md\:leading-none {
-    line-height: 1;
-  }
-
   .md\:leading-tight {
     line-height: 1.25;
   }
 }
 
 @media (min-width: 1024px) {
-  .lg\:static {
-    position: static;
-  }
-
   .lg\:mb-0 {
     margin-bottom: 0px;
   }
 
   .lg\:mb-16 {
     margin-bottom: 4rem;
+  }
+
+  .lg\:mb-4 {
+    margin-bottom: 1rem;
   }
 
   .lg\:ml-\[-75px\] {
@@ -1291,14 +1248,6 @@ textarea::placeholder {
 
   .lg\:mt-32 {
     margin-top: 8rem;
-  }
-
-  .lg\:mb-12 {
-    margin-bottom: 3rem;
-  }
-
-  .lg\:mb-4 {
-    margin-bottom: 1rem;
   }
 
   .lg\:block {

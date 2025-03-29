@@ -3,8 +3,8 @@ module.exports = {
   content: ['./pages/**/*.{html,js}', './components/**/*.{html,js}'],
   theme: {
     colors: {
-      pink: '#F4ECF0',
-      orange: '#C65833',
+      pink: '#FFF6FB',
+      orange: '#BB522F',
       white: '#fff',
       black: '#333',
       transparent: 'transparent',

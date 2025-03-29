@@ -16,7 +16,7 @@ const HamburgerIcon = () => {
     >
       <path
         d="M0 1.50001L38 1.5M0 13.5L38 13.5M0 25.5L38 25.5"
-        stroke="#C65833"
+        stroke="#BB522F"
         strokeWidth="3"
       />
     </svg>
@@ -34,7 +34,7 @@ const ExitIcon = () => {
     >
       <path
         d="M2.06889 1.94766L28.7284 29.0266M1.81128 28.9311L28.8902 2.2716"
-        stroke="#C65833"
+        stroke="#BB522F"
         strokeWidth="3"
       />
     </svg>
