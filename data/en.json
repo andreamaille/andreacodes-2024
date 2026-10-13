@@ -1,7 +1,9 @@
 {
   "hero": {
     "headline": "Andrea Harkins",
-    "name": "Tech Lead & Senior Engineer"
+    "name": "Tech Lead & Senior Engineer",
+    "statement": "Building the dreamiest e-commerce experiences on Shopify and headless stacks.",
+    "badge": "Tech Lead · Senior Engineer · Toronto ·"
   },
   "nav": {
     "home": {
@@ -44,7 +46,10 @@
     "githubCode": "Github Code",
     "email": "Email Address",
     "name": "Name",
-    "submit": "Submit"
+    "submit": "Submit",
+    "letsTalk": "Let's talk",
+    "seeMyWork": "See my work",
+    "scroll": "Scroll"
   },
   "footer": {
     "title": "Let's Make Something Great Together.",
