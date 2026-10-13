@@ -213,7 +213,7 @@ textarea::placeholder {
 .hero-name {
   margin: 0;
   padding-bottom: 0.08em;
-  font-size: 7.6cqw;
+  font-size: 6cqw;
   line-height: 1;
   letter-spacing: -0.015em;
   white-space: nowrap;
@@ -261,7 +261,7 @@ textarea::placeholder {
 
 .hero-statement {
   max-width: 38cqw;
-  color: #8f3a1f;
+  color: var(--orange);
   font-size: max(15px, 1.4cqw);
   line-height: 1.55;
 }

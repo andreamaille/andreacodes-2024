@@ -6,8 +6,8 @@ import Nav from './Nav'
 import { useEffect, useRef } from 'react'
 
 // hero.svg sits inside an 800 x 1000 scene so the sun and orbits have room around it
-const HX = 180
-const HY = 110
+const HERO_OFFSET_X = 180
+const HERO_OFFSET_Y = 110
 const SUN = { x: 400, y: 420, r: 250 }
 const ORBIT_R = 335
 const SPARKLE =
@@ -43,29 +43,32 @@ const reduceMotion = () =>
   typeof window !== 'undefined' &&
   window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
+const PARTICLE_COUNT = 5
+
 // Small sparkles that drift out from a star when it is hovered
-const burst = (layer, x, y) => {
-  for (let i = 0; i < 5; i++) {
-    const p = document.createElement('span')
-    p.className = 'hero-particle'
-    p.innerHTML = `<svg viewBox="0 0 24 24"><path d="${SPARKLE}"/></svg>`
+const burst = (layer, originX, originY) => {
+  for (let particleIndex = 0; particleIndex < PARTICLE_COUNT; particleIndex++) {
+    const particle = document.createElement('span')
+    particle.className = 'hero-particle'
+    particle.innerHTML = `<svg viewBox="0 0 24 24"><path d="${SPARKLE}"/></svg>`
     const size = 5 + Math.random() * 5
-    p.style.width = p.style.height = `${size}px`
-    p.style.left = `${x}px`
-    p.style.top = `${y}px`
-    layer.appendChild(p)
-    const a = (i / 5) * Math.PI * 2 + Math.random() * 0.6
-    const d = 22 + Math.random() * 18
-    p.animate(
+    particle.style.width = particle.style.height = `${size}px`
+    particle.style.left = `${originX}px`
+    particle.style.top = `${originY}px`
+    layer.appendChild(particle)
+    const angle =
+      (particleIndex / PARTICLE_COUNT) * Math.PI * 2 + Math.random() * 0.6
+    const distance = 22 + Math.random() * 18
+    particle.animate(
       [
         { transform: 'translate(0,0) scale(.3)', opacity: 0 },
         {
-          transform: `translate(${Math.cos(a) * d * 0.45}px,${Math.sin(a) * d * 0.45}px) scale(1)`,
+          transform: `translate(${Math.cos(angle) * distance * 0.45}px,${Math.sin(angle) * distance * 0.45}px) scale(1)`,
           opacity: 1,
           offset: 0.3,
         },
         {
-          transform: `translate(${Math.cos(a) * d}px,${Math.sin(a) * d}px) scale(.4) rotate(60deg)`,
+          transform: `translate(${Math.cos(angle) * distance}px,${Math.sin(angle) * distance}px) scale(.4) rotate(60deg)`,
           opacity: 0,
         },
       ],
@@ -73,7 +76,7 @@ const burst = (layer, x, y) => {
         duration: 1300 + Math.random() * 400,
         easing: 'cubic-bezier(.22,1,.36,1)',
       },
-    ).onfinish = () => p.remove()
+    ).onfinish = () => particle.remove()
   }
 }
 
@@ -126,104 +129,110 @@ const Hero = () => {
   useEffect(() => {
     const root = rootRef.current
     if (!root) return
-    const q = (s) => root.querySelector(s)
-    const art = q('.hero-art')
-    const badge = q('.hero-badge')
-    const disc = q('.hero-sun')
-    const sunMove = q('.hero-sun-move')
-    const moon = q('.hero-moon')
-    const orbit2 = q('.hero-orbit2')
-    const ring2 = q('.hero-ring2')
-    const moon2 = q('.hero-moon2')
-    const badgeRing = q('.hero-badge__ring')
+    const select = (selector) => root.querySelector(selector)
+    const art = select('.hero-art')
+    const badge = select('.hero-badge')
+    const disc = select('.hero-sun')
+    const sunMove = select('.hero-sun-move')
+    const moon = select('.hero-moon')
+    const orbit2 = select('.hero-orbit2')
+    const ring2 = select('.hero-ring2')
+    const moon2 = select('.hero-moon2')
+    const badgeRing = select('.hero-badge__ring')
 
-    const st = {
-      h: 0,
-      ht: 0,
-      bh: 0,
-      bht: 0,
-      mx: 0,
-      my: 0,
-      mxt: 0,
-      myt: 0,
-      s: 1,
-      sv: 0,
+    const state = {
+      hover: 0,
+      hoverTarget: 0,
+      badgeHover: 0,
+      badgeHoverTarget: 0,
+      pointerX: 0,
+      pointerY: 0,
+      pointerXTarget: 0,
+      pointerYTarget: 0,
+      sunScale: 1,
+      sunScaleVelocity: 0,
       time: 0,
       moon: -1.2,
       moon2: 0.4,
       badge: 0,
     }
-    const on = (el, type, fn) => el.addEventListener(type, fn)
-    on(art, 'pointerenter', () => (st.ht = 1))
-    on(art, 'pointerleave', () => (st.ht = 0))
-    on(badge, 'pointerenter', () => (st.bht = 1))
-    on(badge, 'pointerleave', () => (st.bht = 0))
-    on(root, 'pointermove', (e) => {
-      const r = root.getBoundingClientRect()
-      st.mxt = (e.clientX - r.left) / r.width - 0.5
-      st.myt = (e.clientY - r.top) / r.height - 0.5
+    const listen = (element, eventType, handler) =>
+      element.addEventListener(eventType, handler)
+    listen(art, 'pointerenter', () => (state.hoverTarget = 1))
+    listen(art, 'pointerleave', () => (state.hoverTarget = 0))
+    listen(badge, 'pointerenter', () => (state.badgeHoverTarget = 1))
+    listen(badge, 'pointerleave', () => (state.badgeHoverTarget = 0))
+    listen(root, 'pointermove', (event) => {
+      const rootRect = root.getBoundingClientRect()
+      state.pointerXTarget =
+        (event.clientX - rootRect.left) / rootRect.width - 0.5
+      state.pointerYTarget =
+        (event.clientY - rootRect.top) / rootRect.height - 0.5
     })
-    on(root, 'pointerleave', () => {
-      st.mxt = 0
-      st.myt = 0
+    listen(root, 'pointerleave', () => {
+      state.pointerXTarget = 0
+      state.pointerYTarget = 0
     })
 
-    const place = (el, angle, r) => {
-      el.setAttribute('cx', (SUN.x + Math.cos(angle) * r).toFixed(1))
-      el.setAttribute('cy', (SUN.y + Math.sin(angle) * r).toFixed(1))
+    const place = (element, angle, radius) => {
+      element.setAttribute('cx', (SUN.x + Math.cos(angle) * radius).toFixed(1))
+      element.setAttribute('cy', (SUN.y + Math.sin(angle) * radius).toFixed(1))
     }
 
-    const frame = (dt) => {
-      const k = 1 - Math.exp(-dt * 3)
-      const km = 1 - Math.exp(-dt * 2.5)
-      st.time += dt
-      st.h += (st.ht - st.h) * k
-      st.bh += (st.bht - st.bh) * k
-      st.mx += (st.mxt - st.mx) * km
-      st.my += (st.myt - st.my) * km
-      const h = st.h
+    const frame = (deltaSeconds) => {
+      const hoverEase = 1 - Math.exp(-deltaSeconds * 3)
+      const pointerEase = 1 - Math.exp(-deltaSeconds * 2.5)
+      state.time += deltaSeconds
+      state.hover += (state.hoverTarget - state.hover) * hoverEase
+      state.badgeHover +=
+        (state.badgeHoverTarget - state.badgeHover) * hoverEase
+      state.pointerX += (state.pointerXTarget - state.pointerX) * pointerEase
+      state.pointerY += (state.pointerYTarget - state.pointerY) * pointerEase
+      const hover = state.hover
 
       // Sun swells with a soft spring on hover and breathes slightly at rest
-      const target = 1 + h * 0.07 + Math.sin(st.time * 1.1) * 0.008
-      st.sv += ((target - st.s) * 60 - st.sv * 9) * dt
-      st.s += st.sv * dt
+      const target = 1 + hover * 0.07 + Math.sin(state.time * 1.1) * 0.008
+      state.sunScaleVelocity +=
+        ((target - state.sunScale) * 60 - state.sunScaleVelocity * 9) *
+        deltaSeconds
+      state.sunScale += state.sunScaleVelocity * deltaSeconds
       disc.setAttribute(
         'transform',
-        `translate(${SUN.x} ${SUN.y}) scale(${st.s.toFixed(4)}) translate(${-SUN.x} ${-SUN.y})`,
+        `translate(${SUN.x} ${SUN.y}) scale(${state.sunScale.toFixed(4)}) translate(${-SUN.x} ${-SUN.y})`,
       )
       sunMove.setAttribute(
         'transform',
-        `translate(${(st.mx * (14 + h * 36)).toFixed(2)} ${(st.my * (10 + h * 28)).toFixed(2)})`,
+        `translate(${(state.pointerX * (14 + hover * 36)).toFixed(2)} ${(state.pointerY * (10 + hover * 28)).toFixed(2)})`,
       )
 
-      st.moon += dt * (0.14 + h * 0.9)
-      place(moon, st.moon, ORBIT_R)
+      state.moon += deltaSeconds * (0.14 + hover * 0.9)
+      place(moon, state.moon, ORBIT_R)
 
       // Second orbit only shows on hover. It grows out from the main orbit and
       // shares its centre, so it never crosses the sun
-      const r2 = ORBIT_R + h * 42
-      st.moon2 += dt * (0.1 + h * 0.7)
-      orbit2.setAttribute('opacity', h.toFixed(3))
-      ring2.setAttribute('r', r2.toFixed(1))
-      place(moon2, st.moon2, r2)
+      const secondOrbitRadius = ORBIT_R + hover * 42
+      state.moon2 += deltaSeconds * (0.1 + hover * 0.7)
+      orbit2.setAttribute('opacity', hover.toFixed(3))
+      ring2.setAttribute('r', secondOrbitRadius.toFixed(1))
+      place(moon2, state.moon2, secondOrbitRadius)
 
-      st.badge += dt * (14 + st.bh * 70)
-      badgeRing.style.transform = `rotate(${st.badge.toFixed(2)}deg)`
+      state.badge += deltaSeconds * (14 + state.badgeHover * 70)
+      badgeRing.style.transform = `rotate(${state.badge.toFixed(2)}deg)`
     }
 
     // Place the moons once; with reduced motion the scene stays still
     frame(0)
     if (reduceMotion()) return
 
-    let raf
+    let animationFrameId
     let last = performance.now()
     const loop = (now) => {
       frame(Math.min(0.05, (now - last) / 1000))
       last = now
-      raf = requestAnimationFrame(loop)
+      animationFrameId = requestAnimationFrame(loop)
     }
-    raf = requestAnimationFrame(loop)
-    return () => cancelAnimationFrame(raf)
+    animationFrameId = requestAnimationFrame(loop)
+    return () => cancelAnimationFrame(animationFrameId)
   }, [])
 
   const name = en.hero.headline
@@ -278,10 +287,10 @@ const Hero = () => {
                   />
                 </g>
               </g>
-              <g transform={`translate(${HX} ${HY})`}>
+              <g transform={`translate(${HERO_OFFSET_X} ${HERO_OFFSET_Y})`}>
                 <g className="hero-ink" clipPath="url(#hero-wipe)">
-                  {hand.map((d) => (
-                    <path key={d.slice(0, 12)} d={d} />
+                  {hand.map((pathData) => (
+                    <path key={pathData.slice(0, 12)} d={pathData} />
                   ))}
                 </g>
                 <g className="hero-ink hero-grow">
@@ -289,35 +298,46 @@ const Hero = () => {
                     <path d={branch} />
                   </g>
                 </g>
-                {stars.map(([d, x, y, r], k) => (
-                  <g key={k} className="hero-pop" style={{ '--k': k }}>
+                {stars.map(
+                  ([pathData, centerX, centerY, radius], starIndex) => (
                     <g
-                      className="hero-twinkle"
-                      style={{ '--d': `${-k * 1.6}s` }}
+                      key={starIndex}
+                      className="hero-pop"
+                      style={{ '--k': starIndex }}
                     >
-                      <g className="hero-star" onPointerEnter={glint}>
-                        <g className="hero-star-rays">
-                          <line
-                            x1={x - r * 1.6}
-                            y1={y}
-                            x2={x + r * 1.6}
-                            y2={y}
-                          />
-                          <line
-                            x1={x}
-                            y1={y - r * 1.6}
-                            x2={x}
-                            y2={y + r * 1.6}
-                          />
-                        </g>
-                        <g className="hero-glint">
-                          <circle className="hero-hit" cx={x} cy={y} r={r} />
-                          <path className="hero-ink-fill" d={d} />
+                      <g
+                        className="hero-twinkle"
+                        style={{ '--d': `${-starIndex * 1.6}s` }}
+                      >
+                        <g className="hero-star" onPointerEnter={glint}>
+                          <g className="hero-star-rays">
+                            <line
+                              x1={centerX - radius * 1.6}
+                              y1={centerY}
+                              x2={centerX + radius * 1.6}
+                              y2={centerY}
+                            />
+                            <line
+                              x1={centerX}
+                              y1={centerY - radius * 1.6}
+                              x2={centerX}
+                              y2={centerY + radius * 1.6}
+                            />
+                          </g>
+                          <g className="hero-glint">
+                            <circle
+                              className="hero-hit"
+                              cx={centerX}
+                              cy={centerY}
+                              r={radius}
+                            />
+                            <path className="hero-ink-fill" d={pathData} />
+                          </g>
                         </g>
                       </g>
                     </g>
-                  </g>
-                ))}
+                  ),
+                )}
               </g>
             </svg>
 
@@ -348,14 +368,14 @@ const Hero = () => {
 
           <div className="hero-copy">
             <h1 className="hero-name" aria-label={name}>
-              {name.split('').map((char, i) => (
+              {name.split('').map((character, characterIndex) => (
                 <span
-                  key={i}
+                  key={characterIndex}
                   className="hero-char"
-                  style={{ '--i': i }}
+                  style={{ '--i': characterIndex }}
                   aria-hidden="true"
                 >
-                  {char === ' ' ? ' ' : char}
+                  {character === ' ' ? ' ' : character}
                 </span>
               ))}
             </h1>
@@ -395,16 +415,16 @@ const Hero = () => {
             </ul>
           </div>
 
-          {sparks.map((s, i) => (
+          {sparks.map((spark, sparkIndex) => (
             <span
-              key={i}
-              className={`hero-spark hero-spark--${i + 1}`}
+              key={sparkIndex}
+              className={`hero-spark hero-spark--${sparkIndex + 1}`}
               style={{
-                '--x': s.left,
-                '--y': s.top,
-                '--s': `${s.size}px`,
-                '--d': `${s.delay}s`,
-                '--at': `${s.at}s`,
+                '--x': spark.left,
+                '--y': spark.top,
+                '--s': `${spark.size}px`,
+                '--d': `${spark.delay}s`,
+                '--at': `${spark.at}s`,
               }}
               onPointerEnter={glint}
               aria-hidden="true"
@@ -422,8 +442,8 @@ const Hero = () => {
           >
             <span>{en.global.scroll}</span>
             <span className="hero-cue__dots" aria-hidden="true">
-              {[0, 1, 2, 3].map((n) => (
-                <i key={n} style={{ '--n': n }} />
+              {[0, 1, 2, 3].map((dotIndex) => (
+                <i key={dotIndex} style={{ '--n': dotIndex }} />
               ))}
             </span>
           </a>
