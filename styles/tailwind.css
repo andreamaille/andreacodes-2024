@@ -806,13 +806,17 @@ textarea::placeholder {
   line-height: 1.7;
 }
 
-/* The portrait floats right and the copy follows the curve of the arch */
+/* The portrait floats right under the heading, so the copy steps in around the arch and runs on underneath it */
 @media screen(lg) {
+  .about-story {
+    max-width: 960px;
+  }
+
   .about-art {
     float: right;
-    width: min(54%, 600px);
+    width: 40%;
     max-width: none;
-    margin: -4% -1% 12px 24px;
+    margin: 0 0 8px 20px;
     shape-outside: polygon(
         70% 0,
         70% 13%,
@@ -833,6 +837,10 @@ textarea::placeholder {
 
   .about-lede {
     font-size: 2rem;
+  }
+
+  .about-copy p {
+    font-size: 1.125rem;
   }
 }
 
@@ -941,8 +949,13 @@ textarea::placeholder {
 
 /* Brands ticker */
 
-.about-brands {
+.about-story::after {
+  content: '';
+  display: block;
   clear: both;
+}
+
+.about-brands {
   margin-top: 20px;
   padding-top: 22px;
   border-top: 1.5px solid #bb522f;

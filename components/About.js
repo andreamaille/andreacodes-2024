@@ -47,20 +47,22 @@ const About = () => {
 
   return (
     <section className="about my-8" id="about" ref={sectionRef}>
-      <h2>{en.about.title}</h2>
-      <img
-        src={'/about_andy.svg'}
-        alt="Illustration of Andy in a peach arch with twinkling stars and a crescent moon"
-        className="about-art"
-      />
-      <p
-        className="about-lede"
-        dangerouslySetInnerHTML={{ __html: en.about.lede }}
-      ></p>
-      <div
-        className="about-copy"
-        dangerouslySetInnerHTML={{ __html: en.about.description }}
-      ></div>
+      <div className="about-story">
+        <h2>{en.about.title}</h2>
+        <img
+          src={'/about_andy.svg'}
+          alt="Illustration of Andy in a peach arch with twinkling stars and a crescent moon"
+          className="about-art"
+        />
+        <p
+          className="about-lede"
+          dangerouslySetInnerHTML={{ __html: en.about.lede }}
+        ></p>
+        <div
+          className="about-copy"
+          dangerouslySetInnerHTML={{ __html: en.about.description }}
+        ></div>
+      </div>
       <div className="about-brands">
         <h3 className="about-brands__title">{en.about.brandsTitle}</h3>
         <div className="about-brands__ticker">
