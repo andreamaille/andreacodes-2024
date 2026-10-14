@@ -780,3 +780,265 @@ textarea::placeholder {
     transition: none !important;
   }
 }
+
+/* About */
+
+.about {
+  --about-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --about-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --about-peach: #f8d9cb;
+}
+
+.about-art {
+  display: block;
+  max-width: 420px;
+  margin: 0 auto 24px;
+}
+
+.about-lede {
+  font-family: 'Butler SemiBold', serif;
+  font-size: 1.5rem;
+  line-height: 1.3;
+  padding-bottom: 20px;
+}
+
+.about-copy p {
+  line-height: 1.7;
+}
+
+/* The portrait floats right and the copy follows the curve of the arch */
+@media screen(lg) {
+  .about-art {
+    float: right;
+    width: min(54%, 600px);
+    max-width: none;
+    margin: -4% -1% 12px 24px;
+    shape-outside: polygon(
+        70% 0,
+        70% 13%,
+        9% 15%,
+        9% 21%,
+        22% 25%,
+        19% 29%,
+        16.5% 35%,
+        15.5% 42%,
+        15% 47%,
+        15% 100%,
+        100% 100%,
+        100% 0
+      )
+      border-box;
+    shape-margin: 18px;
+  }
+
+  .about-lede {
+    font-size: 2rem;
+  }
+}
+
+/* Notebook mark-up on key phrases */
+
+.mk {
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.nobr {
+  white-space: nowrap;
+}
+
+.mk-b {
+  @apply font-workSansSemibold;
+}
+
+.mk-hl {
+  margin: 0 -0.05em;
+  padding: 0 0.15em;
+  border-radius: 0.2em 0.5em 0.3em 0.6em;
+  background: linear-gradient(
+      100deg,
+      rgba(239, 185, 162, 0.6),
+      rgba(248, 217, 203, 0.95) 35%,
+      rgba(248, 217, 203, 0.95)
+    )
+    0 85% / 100% 0.62em no-repeat;
+}
+
+.mk-sq {
+  padding-bottom: 0.2em;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='6' viewBox='0 0 16 6'%3E%3Cpath d='M0 3 Q4 0 8 3 T16 3' fill='none' stroke='%23DE9C84' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E")
+    repeat-x 0 100% / 16px 6px;
+}
+
+.mk-sq:hover {
+  animation: mk-wiggle 1s linear infinite;
+}
+
+.mk-pill {
+  display: inline-block;
+  padding: 0 0.55em;
+  border-radius: 999px;
+  background: var(--about-peach);
+  line-height: 1.55;
+  white-space: nowrap;
+  transition: transform 400ms var(--about-spring);
+}
+
+.mk-pill:hover {
+  transform: scale(1.05);
+}
+
+/* Marks start blank once the script is ready, then draw in when scrolled into view */
+.about--armed:not(.about--inview) .mk-hl {
+  background-size: 0 0.62em;
+}
+
+.about--armed:not(.about--inview) .mk-sq,
+.about--armed:not(.about--inview) .mk-pill {
+  opacity: 0;
+}
+
+.about--inview .mk-hl {
+  animation: mk-swipe 1s var(--about-ease) both;
+  animation-delay: var(--mk-delay, 0s);
+}
+
+.about--inview .mk-sq {
+  animation: mk-fade 0.8s ease both;
+  animation-delay: var(--mk-delay, 0s);
+}
+
+.about--inview .mk-pill {
+  animation: mk-pop 0.6s var(--about-spring) both;
+  animation-delay: var(--mk-delay, 0s);
+}
+
+@keyframes mk-swipe {
+  from {
+    background-size: 0 0.62em;
+  }
+}
+
+@keyframes mk-fade {
+  from {
+    opacity: 0;
+    background-position: 0 140%;
+  }
+}
+
+@keyframes mk-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}
+
+@keyframes mk-wiggle {
+  to {
+    background-position: 16px 100%;
+  }
+}
+
+/* Brands ticker */
+
+.about-brands {
+  clear: both;
+  margin-top: 20px;
+  padding-top: 22px;
+  border-top: 1.5px solid #bb522f;
+}
+
+.about-brands__title {
+  @apply mb-2 font-butlerSemibold text-xl lg:text-2xl;
+  line-height: 1.1;
+}
+
+.about-brands__ticker {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.about-brands__track {
+  display: flex;
+  width: max-content;
+  animation: about-tick 30s linear infinite;
+}
+
+.about-brands__ticker:hover .about-brands__track {
+  animation-play-state: paused;
+}
+
+.about-brands__list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-brands__list li {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  padding: 16px 0 16px 56px;
+  white-space: nowrap;
+}
+
+.about-brands__list img {
+  width: auto;
+  max-width: none;
+  height: 40px;
+}
+
+.about-brands__list svg {
+  width: 14px;
+  height: 14px;
+  fill: #de9c84;
+}
+
+.about-brands__name {
+  font-family: 'Work Sans SemiBold', sans-serif;
+  font-size: 0.8125rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  transition:
+    opacity 300ms,
+    transform 450ms var(--about-spring);
+}
+
+.about-brands__list li:hover .about-brands__name {
+  display: inline-block;
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+@keyframes about-tick {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about *,
+  .about *::before,
+  .about *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .about--armed:not(.about--inview) .mk-hl {
+    background-size: 100% 0.62em;
+  }
+
+  .about--armed:not(.about--inview) .mk-sq,
+  .about--armed:not(.about--inview) .mk-pill {
+    opacity: 1;
+  }
+}

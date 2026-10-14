@@ -457,3 +457,12 @@ export const facts = [
       'Graduated with a BA Degree in English Literature & Communication Studies at York University. I will be at any company book club. ',
   },
 ]
+
+// Add a logo path (e.g. '/brands/saje.svg') to swap a placeholder for its SVG
+export const brands = [
+  { name: 'The Estée Lauder Companies', logo: null },
+  { name: 'Saje', logo: null },
+  { name: 'Motherhood', logo: null },
+  { name: 'Mavi', logo: null },
+  { name: 'Laura Mercier', logo: null },
+]
