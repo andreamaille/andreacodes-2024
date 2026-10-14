@@ -1715,18 +1715,14 @@ textarea::placeholder {
   line-height: 1.7;
 }
 
-/* The portrait floats right under the heading, so the copy steps in around the arch and runs on underneath it */
+/* The portrait floats right beside the lede and copy, which step in around the arch. Type scales with the viewport so the copy and portrait end together */
 
 @media (min-width: 1024px) {
-  .about-story {
-    max-width: 960px;
-  }
-
   .about-art {
     float: right;
     width: 40%;
-    max-width: none;
-    margin: 0 0 8px 20px;
+    max-width: 520px;
+    margin: 0 0 12px 32px;
     shape-outside: polygon(
         70% 0,
         70% 13%,
@@ -1746,11 +1742,11 @@ textarea::placeholder {
   }
 
   .about-lede {
-    font-size: 2rem;
+    font-size: clamp(1.75rem, 3vw, 2.75rem);
   }
 
   .about-copy p {
-    font-size: 1.125rem;
+    font-size: clamp(1.0625rem, 1.35vw, 1.25rem);
   }
 }
 

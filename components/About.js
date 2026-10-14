@@ -48,12 +48,12 @@ const About = () => {
   return (
     <section className="about my-8" id="about" ref={sectionRef}>
       <div className="about-story">
-        <h2>{en.about.title}</h2>
         <img
           src={'/about_andy.svg'}
           alt="Illustration of Andy in a peach arch with twinkling stars and a crescent moon"
           className="about-art"
         />
+        <h2>{en.about.title}</h2>
         <p
           className="about-lede"
           dangerouslySetInnerHTML={{ __html: en.about.lede }}
