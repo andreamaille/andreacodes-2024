@@ -36,6 +36,11 @@
   "projects": {
     "title": "My Work"
   },
+  "writing": {
+    "title": "Writing",
+    "description": "Notes on front end engineering, Shopify and leading teams, from my Medium blog.",
+    "viewAll": "View all on Medium"
+  },
   "skills": {
     "title": "Skills"
   },
