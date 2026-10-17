@@ -173,6 +173,37 @@ textarea::placeholder {
   background-position-x: 0%;
 }
 
+/* Writing */
+
+.writing-all-link {
+  @apply inline-flex min-h-[44px] items-center gap-2 border-b-2 border-orange font-workSansMedium hover:opacity-80;
+}
+
+.writing-list {
+  @apply m-0 grow list-none border-t-2 border-orange p-0;
+}
+
+.writing-list > li {
+  @apply border-b-2 border-orange;
+}
+
+.writing-item {
+  @apply flex items-start gap-4 py-6 hover:opacity-80 lg:gap-8 lg:py-7;
+}
+
+.writing-number {
+  @apply w-8 shrink-0 font-butlerSemibold text-xl lg:w-12 lg:text-2xl;
+  line-height: 1.2;
+}
+
+.writing-arrow {
+  @apply mt-0.5 h-6 w-6 shrink-0 lg:h-7 lg:w-7;
+}
+
+#writing svg {
+  fill: none;
+}
+
 /* Hero */
 
 .hero-header {

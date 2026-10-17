@@ -8,6 +8,10 @@ export const navLinks = [
     url: '#portfolio',
   },
   {
+    title: 'Writing',
+    url: '#writing',
+  },
+  {
     title: 'Skills',
     url: '#skills',
   },
