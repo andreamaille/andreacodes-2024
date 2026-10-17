@@ -606,6 +606,11 @@ video {
   margin: 1.5rem;
 }
 
+.my-16 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
 .my-6 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -740,10 +745,6 @@ video {
   flex-wrap: wrap;
 }
 
-.items-start {
-  align-items: flex-start;
-}
-
 .items-center {
   align-items: center;
 }
@@ -754,10 +755,6 @@ video {
 
 .justify-center {
   justify-content: center;
-}
-
-.justify-between {
-  justify-content: space-between;
 }
 
 .gap-4 {
@@ -1692,7 +1689,8 @@ textarea::placeholder {
 
 /* About */
 
-.about {
+.about,
+.bytes {
   --about-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --about-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
   --about-peach: #f8d9cb;
@@ -1804,26 +1802,32 @@ textarea::placeholder {
 
 /* Marks start blank once the script is ready, then draw in when scrolled into view */
 
-.about--armed:not(.about--inview) .mk-hl {
+.about--armed:not(.about--inview) .mk-hl,
+.bytes--armed:not(.bytes--inview) .mk-hl {
   background-size: 0 0.62em;
 }
 
 .about--armed:not(.about--inview) .mk-sq,
-.about--armed:not(.about--inview) .mk-pill {
+.about--armed:not(.about--inview) .mk-pill,
+.bytes--armed:not(.bytes--inview) .mk-sq,
+.bytes--armed:not(.bytes--inview) .mk-pill {
   opacity: 0;
 }
 
-.about--inview .mk-hl {
+.about--inview .mk-hl,
+.bytes--inview .mk-hl {
   animation: mk-swipe 1s var(--about-ease) both;
   animation-delay: var(--mk-delay, 0s);
 }
 
-.about--inview .mk-sq {
+.about--inview .mk-sq,
+.bytes--inview .mk-sq {
   animation: mk-fade 0.8s ease both;
   animation-delay: var(--mk-delay, 0s);
 }
 
-.about--inview .mk-pill {
+.about--inview .mk-pill,
+.bytes--inview .mk-pill {
   animation: mk-pop 0.6s var(--about-spring) both;
   animation-delay: var(--mk-delay, 0s);
 }
@@ -1960,19 +1964,156 @@ textarea::placeholder {
 @media (prefers-reduced-motion: reduce) {
   .about *,
   .about *::before,
-  .about *::after {
+  .about *::after,
+  .bytes *,
+  .bytes *::before,
+  .bytes *::after {
     animation: none !important;
     transition: none !important;
   }
 
-  .about--armed:not(.about--inview) .mk-hl {
+  .about--armed:not(.about--inview) .mk-hl,
+  .bytes--armed:not(.bytes--inview) .mk-hl {
     background-size: 100% 0.62em;
   }
 
   .about--armed:not(.about--inview) .mk-sq,
-  .about--armed:not(.about--inview) .mk-pill {
+  .about--armed:not(.about--inview) .mk-pill,
+  .bytes--armed:not(.bytes--inview) .mk-sq,
+  .bytes--armed:not(.bytes--inview) .mk-pill {
     opacity: 1;
   }
+}
+
+/* Bytes */
+
+.bytes-head {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  -moz-column-gap: 1.25rem;
+       column-gap: 1.25rem;
+}
+
+@media (min-width: 1024px) {
+  .bytes-head {
+    margin-bottom: 3rem;
+  }
+}
+
+.bytes-head h2 {
+  margin-bottom: 0px;
+}
+
+.bytes-subtitle {
+  font-size: 1.25rem;
+  padding-bottom: 0;
+}
+
+.bytes-list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    -moz-column-gap: 6vw;
+
+         column-gap: 6vw;
+  }
+}
+
+.bytes-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 24px;
+  padding-block: 26px;
+  border-top: 1.5px solid #bb522f;
+}
+
+.bytes-item p {
+  padding-bottom: 0;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+/* Only rules between facts: none above the first or below the last in each column */
+
+.bytes-item:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.bytes-item:last-child {
+  padding-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .bytes-item:nth-child(2) {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .bytes-item:nth-last-child(2) {
+    padding-bottom: 0;
+  }
+}
+
+.bytes-item__icon {
+  display: block;
+  width: 64px;
+  height: 64px;
+  transition: transform 450ms var(--about-spring);
+  @media (min-width: 1024px) {
+    width: 76px;
+
+    height: 76px;
+  }
+}
+
+.bytes-item:hover .bytes-item__icon {
+  transform: rotate(-6deg);
+}
+
+.bytes-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  fill: none;
+  stroke: #bb522f;
+  stroke-width: 1.45;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bytes-icon__fill {
+  fill: var(--about-peach);
+}
+
+.bytes-icon__solid {
+  fill: #bb522f;
+  stroke: none;
+}
+
+.bytes-icon__dots {
+  stroke-dasharray: 0 4.2;
+  stroke-width: 2.2;
+}
+
+/* On hover the sparkles hop to the icon's top-left corner and twinkle */
+
+.bytes-icon__sparkle {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 500ms var(--about-spring);
+}
+
+.bytes-item:hover .bytes-icon__sparkle {
+  transform: translate(-6px, -6px) scale(1.05) rotate(20deg);
 }
 
 .hover\:opacity-80:hover {
@@ -2032,16 +2173,8 @@ textarea::placeholder {
     justify-content: center;
   }
 
-  .md\:pr-16 {
-    padding-right: 4rem;
-  }
-
   .md\:text-center {
     text-align: center;
-  }
-
-  .md\:leading-tight {
-    line-height: 1.25;
   }
 }
 

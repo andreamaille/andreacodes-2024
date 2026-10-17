@@ -39,6 +39,10 @@
   "skills": {
     "title": "Skills"
   },
+  "bytes": {
+    "title": "Bytes",
+    "subtitle": "A few things about me when I’m off the clock."
+  },
   "facts": {
     "title": "Fun Facts About Andy"
   },
