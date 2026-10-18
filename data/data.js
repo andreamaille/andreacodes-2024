@@ -47,6 +47,9 @@ export const socials = [
 export const projects = [
   {
     title: 'Domaine',
+    kind: 'Agency · Shopify Plus',
+    summary:
+      'Leading Shopify builds, migrations and headless work for beloved brands around the world.',
     description:
       'As a Technical Lead at Domaine, I deliver innovated digital solutions to beloved brands across the globe. Everyday, I help clients navigate the Shopify ecosystem to enhance customer experiences, drive sales and expand to new markets. Collaborating closely with our talented engineering team, I thrive on bringing ideas to life and developing creative, scalable solutions that ensure long-term maintainability. In this role, I have led a variety of e-commerce initiatives, including platform migrations, third-party integrations, new site builds, theme enhancements and headless implementations. ',
     image: '/domaine_749x578.png',
@@ -69,6 +72,9 @@ export const projects = [
   },
   {
     title: 'Endy',
+    kind: 'Product · In-house',
+    summary:
+      'Took Canada’s leading sleep brand from a hybrid Shopify theme to a custom headless store.',
     description:
       'For three years, I created the dreamiest (quite literally!) e-commerce experiences at Endy, Canada’s leading mattress and sleep brand. As part of a small but mighty dev team, I played a key role in migrating Endy’s online stores from an outdated Shopify hybrid theme to a custom, headless powerhouse. Throughout my tenure and always taking an agile approach, I shaped the technical architecture and development roadmap, elevated the brand’s digital presence, and fostered a culture of collaboration and knowledge-sharing. All while mentoring developers to grow their skills and making my own contributions to the codebase.',
     image: '/endy_745x578.png',
@@ -90,6 +96,9 @@ export const projects = [
   },
   {
     title: 'Commerce Dynamics',
+    kind: 'Agency · SaaS',
+    summary:
+      'Built auction experiences for sports leagues from the NFL to the AFL, then airlines, art and hotels.',
     description:
       'Diving into the world of sports and entertainment, I worked on sites for major sport leagues worldwide, from the NFL to AFL. At this agency, I helped develop and enhance the company’s SaaS auction platform, enabling brands to create a suite of auction experiences. Expanding beyond sports, our team evolved the platform to support auctions for airline points programs, art auctions and hotel loyalty programs.',
     image: '/cdi_749x578.png',
@@ -107,6 +116,7 @@ export const projects = [
   },
   {
     title: 'K-POP Distro',
+    kind: 'Shopify · Headless',
     description: 'A demo headless shopify storefront deployed on Netlify.',
     image: '/kpop-distro_749x578.png',
     techStack: [
@@ -123,6 +133,7 @@ export const projects = [
   },
   {
     title: 'Andy & Maxx Get Married',
+    kind: 'Next · Design UI',
     description:
       "I got married in 2023 and couldn't pass up the opportunity to build and design my own wedding site.",
     image: '/wedding_749x578.png',
@@ -133,6 +144,7 @@ export const projects = [
   },
   {
     title: 'Space Attack',
+    kind: 'Game Development · JS',
     description: `A space invaders inspired game built with pure Vanilla JS. No framework/canvas used.`,
     techStack: ['Vanilla JS', 'Game UI', 'Firebase', 'SASS'],
     image: '/space-attack_749x578.png',
@@ -142,6 +154,7 @@ export const projects = [
   },
   {
     title: 'Next on Shuffle',
+    kind: 'React',
     description:
       'React app that generates music suggestions using the Last.fm API and Firebase.',
     image: '/next-on-shuffle_749x578.png',
@@ -152,6 +165,7 @@ export const projects = [
   },
   {
     title: 'TV Watchers',
+    kind: 'Juno College · Team Programming',
     description: `App where users can search for TV shows and add them to lists. TV shows can be up/down voted on community boards to determine the best shows to watch. App built in collaboration with Jeff Yeung, Tommy Lay, Brain Kan`,
     image: '/tv-watchers_749x578.png',
     techStack: ['Rest API', 'React', 'Git Collaboration', 'JS'],
@@ -161,6 +175,7 @@ export const projects = [
   },
   {
     title: `What's for Dinner?`,
+    kind: 'Juno College',
     description: `A quiz based dinner recipe generator that takes user input to arrive a custom recipe.`,
     image: '/whats-for-dinner_749x578.png',
     techStack: ['JS', 'Firebase', 'jQuery', 'UI Design', 'Sass'],
@@ -170,6 +185,9 @@ export const projects = [
   },
   {
     title: 'Domaine x Mejuri: Transitioning to a Unified Global Platform',
+    kind: 'Domaine',
+    summary:
+      'Moving Mejuri from legacy systems to one unified global platform.',
     description: `Mejuri, renowned for transforming fine jewelry into everyday essentials, partnered with Domaine to overhaul its digital infrastructure. The project focused on migrating from legacy systems to a cohesive global platform, enhancing scalability and user experience. This transformation empowered Mejuri to seamlessly support its rapid international growth and continue making a positive impact on communities and the industry.`,
     image: '/domaine-mejuri_749x470.png',
     type: 'case-study',
@@ -177,6 +195,9 @@ export const projects = [
   },
   {
     title: 'Endy Expands Reach with New Shopify Shipping App',
+    kind: 'Known Decimal',
+    summary:
+      'A custom shipping app so Endy could deliver to remote northern Canada.',
     description: `Endy uses Shopify Plus for their e-commerce business. However, they faced a limitation in specifying shipping rules for certain remote northern territories in Canada. In order to provide shipping options to more remote areas, Endy needed a flexible solution that included the ability to increase the number of shipping carriers they could use.`,
     image: '/endy-kd_749x470.png',
     type: 'case-study',
@@ -184,6 +205,9 @@ export const projects = [
   },
   {
     title: 'Endy: 10 weeks to build and migrate to a new headless e-commerce',
+    kind: 'Rangle',
+    summary:
+      'Replatformed onto Sanity, Next.js and Vercel, with pages loading 4x faster.',
     description: `As part of Rangle’s collaboration with Endy, this project involved migrating the company’s e-commerce platform to a modern headless architecture using Sanity, Next.js, and Vercel. The replatforming significantly improved site performance, enabling pages to load 4x faster, while also empowering content teams with flexible management tools and streamlining development workflows. This transformation positioned Endy for seamless scalability and enhanced customer experiences.`,
     image: '/endy-rangle_749x470.png',
     type: 'case-study',

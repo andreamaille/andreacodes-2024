@@ -70,7 +70,7 @@ const Footer = () => {
           />
         </div>
         <div className="md:w-[55%]">
-          <h2 className="footer-title">{en.footer.title}</h2>
+          <h2 className="text-3xl leading-[1.2] lg:text-6xl">{en.footer.title}</h2>
           <ContactForm />
         </div>
       </div>

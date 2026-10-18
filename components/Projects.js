@@ -2,6 +2,10 @@ import en from '../data/en.json'
 import { projects } from '../data/data'
 import { useState, useEffect } from 'react'
 
+// A smaller version of the hero buttons
+const buttonClasses =
+  'group/btn inline-flex items-center gap-[0.6em] rounded-full border-2 border-orange px-4 py-2 font-workSansSemibold text-sm leading-[1.2] transition-[background-color,color,border-color,transform] duration-300 ease-brand hover:-translate-y-0.5 motion-reduce:transition-none'
+
 const projectTypes = [
   {
     title: 'Professional',
@@ -38,7 +42,7 @@ const Projects = () => {
             <button
               onClick={() => setCurrentFilter(projectType.type)}
               key={projectType.type}
-              className={`section-filter ${projectType.type === currentFilter ? 'border-orange' : 'slide-in-out border-transparent'}`}
+              className={`mr-4 border-b-2 text-base lg:mr-16 lg:text-lg ${projectType.type === currentFilter ? 'border-orange' : 'slide-in-out border-transparent'}`}
             >
               {projectType.title}
             </button>
@@ -46,59 +50,83 @@ const Projects = () => {
         </div>
       </div>
 
-      <div className="relative">
-        <span className="absolute right-0 top-[-50px] hidden lg:block">
-          <img src="/project_star-cluster.svg" alt="" className="w-[75px]" />
-        </span>
+      <div className="grid gap-[72px] [container-type:inline-size] lg:mt-12 lg:gap-24">
         {currentProjects.map((project) => (
-          <div key={project.title} className="mb-16 lg:flex">
-            <div className="mb-8 max-w-[450px] md:m-auto md:mb-4 lg:mr-6 lg:w-1/3">
-              <img src={project.image} alt="" />
+          <article
+            key={project.title}
+            className="group grid items-center gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:gap-[clamp(32px,5cqw,80px)]"
+          >
+            {/* Every graphic sits in the same 749x578 box, bottom aligned, so all laptops render at one size */}
+            <div className="flex aspect-[749/578] w-full max-w-[450px] items-end">
+              <img
+                className="transition-transform duration-[600ms] ease-brand group-hover:-translate-y-1.5 motion-reduce:transition-none"
+                src={project.image}
+                alt=""
+              />
             </div>
-            <div className="lg:w-2/3">
-              <div className="md:m-auto md:max-w-[768px] md:text-center lg:text-left">
-                <h3 className="mb-6">{project.title}</h3>
-                <p className="lg:max-w-2xl">{project.description}</p>
+            <div className="grid min-w-0 gap-4 lg:max-w-3xl">
+              {project.kind && (
+                <span className="font-workSansSemibold text-xs uppercase tracking-[0.16em]">
+                  {project.kind}
+                </span>
+              )}
+              <h3 className="text-balance font-butlerSemibold text-[length:clamp(2rem,3.4cqw,2.75rem)] leading-[1.08]">
+                {project.title}
+              </h3>
+              {project.summary && (
+                <p className="p-0 font-butlerSemibold text-[1.3rem] leading-[1.35]">
+                  {project.summary}
+                </p>
+              )}
+              <p className="p-0 leading-[1.7]">{project.description}</p>
 
-                <div className="flex">
+              {project.techStack && (
+                <ul className="m-0 list-none border-t-[1.5px] border-orange pb-0 pt-3 font-workSansMedium text-sm leading-[1.8]">
+                  {project.techStack.map((tech) => (
+                    <li
+                      key={tech}
+                      className="inline-block whitespace-nowrap after:mx-[0.6em] after:align-[2px] after:text-[0.6rem] after:text-orange-light after:content-['✦'] last:after:content-none"
+                    >
+                      {tech}
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              {(project.url || project.githubUrl) && (
+                <div className="mt-1.5 flex flex-wrap gap-2.5">
                   {project.url && (
-                    <div className="mr-4 flex hover:opacity-80">
-                      <img src="/icons/link.svg" alt="" className="mr-2 w-4" />
-                      <a href={project.url} target="_blank">
-                        {en.global.viewLive}
-                      </a>
-                    </div>
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`${buttonClasses} bg-orange text-pink hover:border-orange-dark hover:bg-orange-dark`}
+                    >
+                      {project.type === 'case-study'
+                        ? en.global.readCaseStudy
+                        : en.global.viewLive}{' '}
+                      <span className="inline-block transition-transform duration-300 ease-brand group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5 motion-reduce:transition-none">
+                        ↗
+                      </span>
+                    </a>
                   )}
-
                   {project.githubUrl && (
-                    <div className="flex hover:opacity-80">
-                      <img
-                        src="/icons/github.svg"
-                        alt=""
-                        className="mr-2 w-4"
-                      />
-                      <a href={project.githubUrl} target="_blank">
-                        {en.global.githubCode}
-                      </a>
-                    </div>
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`${buttonClasses} bg-transparent text-orange hover:bg-orange hover:text-pink`}
+                    >
+                      {en.global.githubCode}{' '}
+                      <span className="inline-block transition-transform duration-300 ease-brand group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5 motion-reduce:transition-none">
+                        ↗
+                      </span>
+                    </a>
                   )}
                 </div>
-
-                {project.techStack && (
-                  <div className="mt-4 flex flex-wrap md:justify-center lg:max-w-2xl lg:justify-start">
-                    {project.techStack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="mr-2 mt-2 border-2 border-orange px-2 py-1 font-workSansMedium text-sm"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </div>
+              )}
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </section>
