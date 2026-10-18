@@ -43,7 +43,7 @@ export const socials = [
 export const projects = [
   {
     title: 'Domaine',
-    kind: 'Agency · Technical Lead',
+    kind: 'Agency · Shopify Plus',
     summary:
       'Leading Shopify builds, migrations and headless work for beloved brands around the world.',
     description:
@@ -68,7 +68,7 @@ export const projects = [
   },
   {
     title: 'Endy',
-    kind: 'In-house · Three years',
+    kind: 'Product · In-house',
     summary:
       'Took Canada’s leading sleep brand from a hybrid Shopify theme to a custom headless store.',
     description:
@@ -112,7 +112,7 @@ export const projects = [
   },
   {
     title: 'K-POP Distro',
-    kind: 'Personal',
+    kind: 'Shopify · Headless',
     description: 'A demo headless shopify storefront deployed on Netlify.',
     image: '/kpop-distro_749x578.png',
     techStack: [
@@ -129,7 +129,7 @@ export const projects = [
   },
   {
     title: 'Andy & Maxx Get Married',
-    kind: 'Personal',
+    kind: 'Next · Design UI',
     description:
       "I got married in 2023 and couldn't pass up the opportunity to build and design my own wedding site.",
     image: '/wedding_749x578.png',
@@ -140,7 +140,7 @@ export const projects = [
   },
   {
     title: 'Space Attack',
-    kind: 'Personal',
+    kind: 'Game Development · JS',
     description: `A space invaders inspired game built with pure Vanilla JS. No framework/canvas used.`,
     techStack: ['Vanilla JS', 'Game UI', 'Firebase', 'SASS'],
     image: '/space-attack_749x578.png',
@@ -150,7 +150,7 @@ export const projects = [
   },
   {
     title: 'Next on Shuffle',
-    kind: 'Personal',
+    kind: 'React',
     description:
       'React app that generates music suggestions using the Last.fm API and Firebase.',
     image: '/next-on-shuffle_749x578.png',
@@ -161,7 +161,7 @@ export const projects = [
   },
   {
     title: 'TV Watchers',
-    kind: 'Personal · Team of four',
+    kind: 'Juno College · Team Programming',
     description: `App where users can search for TV shows and add them to lists. TV shows can be up/down voted on community boards to determine the best shows to watch. App built in collaboration with Jeff Yeung, Tommy Lay, Brain Kan`,
     image: '/tv-watchers_749x578.png',
     techStack: ['Rest API', 'React', 'Git Collaboration', 'JS'],
@@ -171,7 +171,7 @@ export const projects = [
   },
   {
     title: `What's for Dinner?`,
-    kind: 'Personal',
+    kind: 'Juno College',
     description: `A quiz based dinner recipe generator that takes user input to arrive a custom recipe.`,
     image: '/whats-for-dinner_749x578.png',
     techStack: ['JS', 'Firebase', 'jQuery', 'UI Design', 'Sass'],
@@ -181,7 +181,7 @@ export const projects = [
   },
   {
     title: 'Domaine x Mejuri: Transitioning to a Unified Global Platform',
-    kind: 'Case study · Domaine',
+    kind: 'Domaine',
     summary:
       'Moving Mejuri from legacy systems to one unified global platform.',
     description: `Mejuri, renowned for transforming fine jewelry into everyday essentials, partnered with Domaine to overhaul its digital infrastructure. The project focused on migrating from legacy systems to a cohesive global platform, enhancing scalability and user experience. This transformation empowered Mejuri to seamlessly support its rapid international growth and continue making a positive impact on communities and the industry.`,
@@ -191,7 +191,7 @@ export const projects = [
   },
   {
     title: 'Endy Expands Reach with New Shopify Shipping App',
-    kind: 'Case study · Known Decimal',
+    kind: 'Known Decimal',
     summary:
       'A custom shipping app so Endy could deliver to remote northern Canada.',
     description: `Endy uses Shopify Plus for their e-commerce business. However, they faced a limitation in specifying shipping rules for certain remote northern territories in Canada. In order to provide shipping options to more remote areas, Endy needed a flexible solution that included the ability to increase the number of shipping carriers they could use.`,
@@ -201,7 +201,7 @@ export const projects = [
   },
   {
     title: 'Endy: 10 weeks to build and migrate to a new headless e-commerce',
-    kind: 'Case study · Rangle',
+    kind: 'Rangle',
     summary:
       'Replatformed onto Sanity, Next.js and Vercel, with pages loading 4x faster.',
     description: `As part of Rangle’s collaboration with Endy, this project involved migrating the company’s e-commerce platform to a modern headless architecture using Sanity, Next.js, and Vercel. The replatforming significantly improved site performance, enabling pages to load 4x faster, while also empowering content teams with flexible management tools and streamlining development workflows. This transformation positioned Endy for seamless scalability and enhanced customer experiences.`,

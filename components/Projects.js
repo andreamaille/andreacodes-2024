@@ -2,6 +2,10 @@ import en from '../data/en.json'
 import { projects } from '../data/data'
 import { useState, useEffect } from 'react'
 
+// A smaller version of the hero buttons
+const buttonClasses =
+  'group/btn inline-flex items-center gap-[0.6em] rounded-full border-2 border-orange px-4 py-2 font-workSansSemibold text-sm leading-[1.2] transition-[background-color,color,border-color,transform] duration-300 ease-brand hover:-translate-y-0.5 motion-reduce:transition-none'
+
 const projectTypes = [
   {
     title: 'Professional',
@@ -38,7 +42,7 @@ const Projects = () => {
             <button
               onClick={() => setCurrentFilter(projectType.type)}
               key={projectType.type}
-              className={`section-filter ${projectType.type === currentFilter ? 'border-orange' : 'slide-in-out border-transparent'}`}
+              className={`mr-4 border-b-2 text-base lg:mr-16 lg:text-lg ${projectType.type === currentFilter ? 'border-orange' : 'slide-in-out border-transparent'}`}
             >
               {projectType.title}
             </button>
@@ -46,44 +50,64 @@ const Projects = () => {
         </div>
       </div>
 
-      <div className="work-list">
+      <div className="grid gap-[72px] [container-type:inline-size] lg:mt-12 lg:gap-24">
         {currentProjects.map((project) => (
-          <article key={project.title} className="work-item">
+          <article
+            key={project.title}
+            className="group grid items-center gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:gap-[clamp(32px,5cqw,80px)]"
+          >
             {/* Every graphic sits in the same 749x578 box, bottom aligned, so all laptops render at one size */}
-            <div className="work-art">
-              <img src={project.image} alt="" />
+            <div className="flex aspect-[749/578] w-full max-w-[450px] items-end">
+              <img
+                className="transition-transform duration-[600ms] ease-brand group-hover:-translate-y-1.5 motion-reduce:transition-none"
+                src={project.image}
+                alt=""
+              />
             </div>
-            <div className="work-copy">
+            <div className="grid min-w-0 gap-4 lg:max-w-3xl">
               {project.kind && (
-                <span className="work-kind">{project.kind}</span>
+                <span className="font-workSansSemibold text-xs uppercase tracking-[0.16em]">
+                  {project.kind}
+                </span>
               )}
-              <h3 className="work-title">{project.title}</h3>
+              <h3 className="text-balance font-butlerSemibold text-[length:clamp(2rem,3.4cqw,2.75rem)] leading-[1.08]">
+                {project.title}
+              </h3>
               {project.summary && (
-                <p className="work-summary">{project.summary}</p>
+                <p className="p-0 font-butlerSemibold text-[1.3rem] leading-[1.35]">
+                  {project.summary}
+                </p>
               )}
-              <p>{project.description}</p>
+              <p className="p-0 leading-[1.7]">{project.description}</p>
 
               {project.techStack && (
-                <ul className="work-stack">
+                <ul className="m-0 list-none border-t-[1.5px] border-orange pb-0 pt-3 font-workSansMedium text-sm leading-[1.8]">
                   {project.techStack.map((tech) => (
-                    <li key={tech}>{tech}</li>
+                    <li
+                      key={tech}
+                      className="inline-block whitespace-nowrap after:mx-[0.6em] after:align-[2px] after:text-[0.6rem] after:text-orange-light after:content-['✦'] last:after:content-none"
+                    >
+                      {tech}
+                    </li>
                   ))}
                 </ul>
               )}
 
               {(project.url || project.githubUrl) && (
-                <div className="work-links">
+                <div className="mt-1.5 flex flex-wrap gap-2.5">
                   {project.url && (
                     <a
                       href={project.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="work-btn work-btn--solid"
+                      className={`${buttonClasses} bg-orange text-pink hover:border-orange-dark hover:bg-orange-dark`}
                     >
                       {project.type === 'case-study'
                         ? en.global.readCaseStudy
                         : en.global.viewLive}{' '}
-                      <span className="work-btn__arrow">↗</span>
+                      <span className="inline-block transition-transform duration-300 ease-brand group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5 motion-reduce:transition-none">
+                        ↗
+                      </span>
                     </a>
                   )}
                   {project.githubUrl && (
@@ -91,10 +115,12 @@ const Projects = () => {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="work-btn work-btn--line"
+                      className={`${buttonClasses} bg-transparent text-orange hover:bg-orange hover:text-pink`}
                     >
                       {en.global.githubCode}{' '}
-                      <span className="work-btn__arrow">↗</span>
+                      <span className="inline-block transition-transform duration-300 ease-brand group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5 motion-reduce:transition-none">
+                        ↗
+                      </span>
                     </a>
                   )}
                 </div>

@@ -4,7 +4,11 @@ module.exports = {
   theme: {
     colors: {
       pink: '#FFF6FB',
-      orange: '#BB522F',
+      orange: {
+        DEFAULT: '#BB522F',
+        dark: '#8F3A1F',
+        light: '#DE9C84',
+      },
       white: '#fff',
       black: '#333',
       transparent: 'transparent',
@@ -23,6 +27,9 @@ module.exports = {
       '6xl': '4rem', // 64px
     },
     extend: {
+      transitionTimingFunction: {
+        brand: 'cubic-bezier(0.22, 1, 0.36, 1)',
+      },
       fontFamily: {
         butlerSemibold: ['Butler SemiBold', 'serif'],
         workSans: ['Work Sans', 'sans-serif'],

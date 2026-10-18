@@ -26,7 +26,7 @@ const Skills = () => {
           <button
             key={category.type}
             onClick={() => setCurrentFilter(category.type)}
-            className={`section-filter ${category.type === currentFilter ? 'border-orange' : 'slide-in-out border-transparent'}`}
+            className={`mr-4 border-b-2 text-base lg:mr-16 lg:text-lg ${category.type === currentFilter ? 'border-orange' : 'slide-in-out border-transparent'}`}
           >
             {category.title}
           </button>

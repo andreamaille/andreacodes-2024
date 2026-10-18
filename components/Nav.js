@@ -92,7 +92,7 @@ const Nav = () => {
         {/* Mobile Nav */}
         <nav
           ref={menuRef}
-          className={`mobile-nav-container relative ${isOpen ? 'block' : 'hidden'}`}
+          className={`fixed inset-y-0 left-0 w-4/5 bg-orange text-pink ${isOpen ? 'block' : 'hidden'}`}
         >
           <div className="m-6">
             <div className="w-[85px]">
