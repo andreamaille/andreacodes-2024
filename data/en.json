@@ -36,8 +36,17 @@
   "projects": {
     "title": "My Work"
   },
+  "blog": {
+    "title": "Blog",
+    "description": "Thoughts on code, creativity and the state of tech.",
+    "viewAll": "View all on Medium"
+  },
   "skills": {
     "title": "Skills"
+  },
+  "bytes": {
+    "title": "Bytes",
+    "subtitle": "A few things about me when I’m off the clock."
   },
   "facts": {
     "title": "Fun Facts About Andy"
