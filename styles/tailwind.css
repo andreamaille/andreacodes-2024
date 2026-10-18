@@ -173,35 +173,92 @@ textarea::placeholder {
   background-position-x: 0%;
 }
 
-/* Writing */
+/* Blog */
 
-.writing-all-link {
-  @apply inline-flex min-h-[44px] items-center gap-2 border-b-2 border-orange font-workSansMedium hover:opacity-80;
+.blog {
+  --about-peach: #f8d9cb;
+  --about-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --blog-ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.writing-list {
-  @apply m-0 grow list-none border-t-2 border-orange p-0;
-}
-
-.writing-list > li {
-  @apply border-b-2 border-orange;
-}
-
-.writing-item {
-  @apply flex items-start gap-4 py-6 hover:opacity-80 lg:gap-8 lg:py-7;
-}
-
-.writing-number {
-  @apply w-8 shrink-0 font-butlerSemibold text-xl lg:w-12 lg:text-2xl;
-  line-height: 1.2;
-}
-
-.writing-arrow {
-  @apply mt-0.5 h-6 w-6 shrink-0 lg:h-7 lg:w-7;
-}
-
-#writing svg {
+.blog svg {
   fill: none;
+}
+
+.blog-all-link {
+  @apply inline-flex min-h-[44px] items-center gap-2 border-b-2 border-orange font-workSansMedium;
+}
+
+.blog-list {
+  @apply m-0 grow list-none p-0;
+}
+
+/* Lines sit only between posts */
+.blog-list > li + li {
+  border-top: 1.5px solid #bb522f;
+}
+
+.blog-list > li {
+  @apply py-6 lg:py-7;
+}
+
+.blog-list > li:first-child {
+  padding-top: 0;
+}
+
+.blog-list > li:last-child {
+  padding-bottom: 0;
+}
+
+.blog-item {
+  @apply flex items-start gap-4 lg:gap-6;
+}
+
+/* Beats .bytes-icon's full-size width and height */
+.blog .blog-moon {
+  @apply -mt-1 h-12 w-12 shrink-0 lg:h-16 lg:w-16;
+}
+
+.blog-moon__body {
+  transform-box: view-box;
+  transform-origin: 32px 32px;
+  transition: transform 600ms var(--about-spring);
+}
+
+.blog-item:hover .blog-moon__body {
+  transform: rotate(-14deg);
+}
+
+.blog-item:hover .bytes-icon__sparkle {
+  transform: scale(1.25) rotate(20deg);
+}
+
+.blog-item:hover .blog-title {
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px;
+}
+
+.blog-arrow {
+  @apply mt-0.5 h-5 w-5 shrink-0 lg:h-6 lg:w-6;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 300ms var(--blog-ease);
+}
+
+.blog-item:hover .blog-arrow,
+.blog-all-link:hover .blog-arrow {
+  transform: translate(3px, -3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blog-moon__body,
+  .blog-arrow,
+  .blog .bytes-icon__sparkle {
+    transition: none;
+  }
 }
 
 /* Hero */
@@ -814,7 +871,8 @@ textarea::placeholder {
 
 /* About */
 
-.about {
+.about,
+.bytes {
   --about-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --about-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
   --about-peach: #f8d9cb;
@@ -924,26 +982,32 @@ textarea::placeholder {
 }
 
 /* Marks start blank once the script is ready, then draw in when scrolled into view */
-.about--armed:not(.about--inview) .mk-hl {
+.about--armed:not(.about--inview) .mk-hl,
+.bytes--armed:not(.bytes--inview) .mk-hl {
   background-size: 0 0.62em;
 }
 
 .about--armed:not(.about--inview) .mk-sq,
-.about--armed:not(.about--inview) .mk-pill {
+.about--armed:not(.about--inview) .mk-pill,
+.bytes--armed:not(.bytes--inview) .mk-sq,
+.bytes--armed:not(.bytes--inview) .mk-pill {
   opacity: 0;
 }
 
-.about--inview .mk-hl {
+.about--inview .mk-hl,
+.bytes--inview .mk-hl {
   animation: mk-swipe 1s var(--about-ease) both;
   animation-delay: var(--mk-delay, 0s);
 }
 
-.about--inview .mk-sq {
+.about--inview .mk-sq,
+.bytes--inview .mk-sq {
   animation: mk-fade 0.8s ease both;
   animation-delay: var(--mk-delay, 0s);
 }
 
-.about--inview .mk-pill {
+.about--inview .mk-pill,
+.bytes--inview .mk-pill {
   animation: mk-pop 0.6s var(--about-spring) both;
   animation-delay: var(--mk-delay, 0s);
 }
@@ -1068,17 +1132,139 @@ textarea::placeholder {
 @media (prefers-reduced-motion: reduce) {
   .about *,
   .about *::before,
-  .about *::after {
+  .about *::after,
+  .bytes *,
+  .bytes *::before,
+  .bytes *::after {
     animation: none !important;
     transition: none !important;
   }
 
-  .about--armed:not(.about--inview) .mk-hl {
+  .about--armed:not(.about--inview) .mk-hl,
+  .bytes--armed:not(.bytes--inview) .mk-hl {
     background-size: 100% 0.62em;
   }
 
   .about--armed:not(.about--inview) .mk-sq,
-  .about--armed:not(.about--inview) .mk-pill {
+  .about--armed:not(.about--inview) .mk-pill,
+  .bytes--armed:not(.bytes--inview) .mk-sq,
+  .bytes--armed:not(.bytes--inview) .mk-pill {
     opacity: 1;
   }
+}
+
+/* Bytes */
+
+.bytes-head {
+  @apply mb-8 flex flex-wrap items-baseline gap-x-5 lg:mb-12;
+}
+
+.bytes-head h2 {
+  @apply mb-0;
+}
+
+.bytes-subtitle {
+  @apply text-lg;
+  padding-bottom: 0;
+}
+
+.bytes-list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @media screen(md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 6vw;
+  }
+}
+
+.bytes-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 24px;
+  padding-block: 26px;
+  border-top: 1.5px solid #bb522f;
+}
+
+.bytes-item p {
+  padding-bottom: 0;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+/* Only rules between facts: none above the first or below the last in each column */
+.bytes-item:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.bytes-item:last-child {
+  padding-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .bytes-item:nth-child(2) {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .bytes-item:nth-last-child(2) {
+    padding-bottom: 0;
+  }
+}
+
+.bytes-item__icon {
+  display: block;
+  width: 64px;
+  height: 64px;
+  transition: transform 450ms var(--about-spring);
+
+  @media screen(lg) {
+    width: 76px;
+    height: 76px;
+  }
+}
+
+.bytes-item:hover .bytes-item__icon {
+  transform: rotate(-6deg);
+}
+
+.bytes-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  fill: none;
+  stroke: #bb522f;
+  stroke-width: 1.45;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bytes-icon__fill {
+  fill: var(--about-peach);
+}
+
+.bytes-icon__solid {
+  fill: #bb522f;
+  stroke: none;
+}
+
+.bytes-icon__dots {
+  stroke-dasharray: 0 4.2;
+  stroke-width: 2.2;
+}
+
+/* On hover the sparkles hop to the icon's top-left corner and twinkle */
+.bytes-icon__sparkle {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 500ms var(--about-spring);
+}
+
+.bytes-item:hover .bytes-icon__sparkle {
+  transform: translate(-6px, -6px) scale(1.05) rotate(20deg);
 }

@@ -2,8 +2,9 @@ import Head from 'next/head'
 import Hero from '../components/Hero'
 import About from '../components/About'
 import Projects from '../components/Projects'
-import Writing from '../components/Writing'
+import Blog from '../components/Blog'
 import Skills from '../components/Skills'
+import Bytes from '../components/Bytes'
 import Facts from '../components/Facts'
 import Footer from '../components/Footer'
 import { getLatestArticles } from '../lib/medium'
@@ -20,8 +21,9 @@ export default function Home({ articles }) {
       <main>
         <About />
         <Projects />
-        <Writing articles={articles} />
+        <Blog articles={articles} />
         <Skills />
+        <Bytes />
         {/* <Facts /> */}
         <Footer />
       </main>

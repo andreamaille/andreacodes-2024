@@ -36,13 +36,17 @@
   "projects": {
     "title": "My Work"
   },
-  "writing": {
-    "title": "Writing",
+  "blog": {
+    "title": "Blog",
     "description": "Notes on front end engineering, Shopify and leading teams, from my Medium blog.",
     "viewAll": "View all on Medium"
   },
   "skills": {
     "title": "Skills"
+  },
+  "bytes": {
+    "title": "Bytes",
+    "subtitle": "A few things about me when I’m off the clock."
   },
   "facts": {
     "title": "Fun Facts About Andy"

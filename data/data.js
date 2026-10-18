@@ -8,8 +8,8 @@ export const navLinks = [
     url: '#portfolio',
   },
   {
-    title: 'Writing',
-    url: '#writing',
+    title: 'Blog',
+    url: '#blog',
   },
   {
     title: 'Skills',
@@ -207,10 +207,6 @@ export const skillCategories = [
   {
     title: 'Workflows',
     type: 'workflows',
-  },
-  {
-    title: 'Bytes',
-    type: 'other',
   },
 ]
 
@@ -410,37 +406,35 @@ export const skills = [
     icon: '/icons/wrike.svg',
     type: ['workflows'],
   },
+]
+
+export const bytes = [
   {
-    title:
-      'Graduated with a BA Degree in English Literature & Communication Studies at York University. I will be at any company book club!',
-    icon: '📖',
-    type: ['other'],
+    icon: 'book',
+    description:
+      'Graduated with a BA Degree in <span class="mk mk-hl">English Literature &amp; Communication Studies</span> at York University. I will be at any company book club!',
   },
   {
-    title: `I am always working on some kind of DIY or craft project. I love building miniatures, gem art and creative journaling.`,
-    icon: '🎨',
-    type: ['other'],
+    icon: 'palette',
+    description:
+      'I am always working on some kind of DIY or craft project. I love building <span class="mk mk-pill">miniatures</span>, gem art and creative journaling.',
   },
   {
-    title:
-      'I ran my own Etsy store for 6 years selling stickers and stationary supplies. I love supporting small businesses and always got a recco! ',
-    icon: '🛍️',
-    type: ['other'],
+    icon: 'bag',
+    description:
+      'I ran my own Etsy store for <span class="mk mk-b">6 years</span> selling stickers and stationery supplies. I love supporting small businesses and always got a recco!',
   },
   {
-    title: `I love traveling and learning about different cultures. Some of my fav places I've visited so far have been Japan, the Philippines and Italy.`,
-    icon: '✈️',
-    type: ['other'],
+    icon: 'plane',
+    description: `I love traveling and learning about different cultures. Some of my fav places I've visited so far have been <span class="mk mk-sq">Japan, the Philippines and Italy</span>.`,
   },
   {
-    title: `I usually miss the zeitgeist on tv shows or movies so you'll probably hear me raving about your favourite tv show from 10 years ago. `,
-    icon: '📺',
-    type: ['other'],
+    icon: 'tv',
+    description: `I usually miss the zeitgeist on tv shows or movies so you'll probably hear me raving about your favourite tv show from <span class="mk mk-hl">10 years ago</span>.`,
   },
   {
-    title: `I worked at a music school for several years and love seeing live music in my city. If you are emo kid, k-pop fan or post-metal head, we'll definitely be friends.`,
-    icon: '🎶',
-    type: ['other'],
+    icon: 'music',
+    description: `I worked at a music school for several years and love seeing live music in my city. If you are <span class="mk mk-pill">emo kid</span>, k-pop fan or post-metal head, we'll definitely be friends.`,
   },
 ]
 
