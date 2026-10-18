@@ -46,59 +46,61 @@ const Projects = () => {
         </div>
       </div>
 
-      <div className="relative">
-        <span className="absolute right-0 top-[-50px] hidden lg:block">
-          <img src="/project_star-cluster.svg" alt="" className="w-[75px]" />
-        </span>
+      <div className="work-list">
         {currentProjects.map((project) => (
-          <div key={project.title} className="mb-16 lg:flex">
-            <div className="mb-8 max-w-[450px] md:m-auto md:mb-4 lg:mr-6 lg:w-1/3">
+          <article key={project.title} className="work-item">
+            {/* Every graphic sits in the same 749x578 box, bottom aligned, so all laptops render at one size */}
+            <div className="work-art">
               <img src={project.image} alt="" />
             </div>
-            <div className="lg:w-2/3">
-              <div className="md:m-auto md:max-w-[768px] md:text-center lg:text-left">
-                <h3 className="mb-6">{project.title}</h3>
-                <p className="lg:max-w-2xl">{project.description}</p>
+            <div className="work-copy">
+              {project.kind && (
+                <span className="work-kind">{project.kind}</span>
+              )}
+              <h3 className="work-title">{project.title}</h3>
+              {project.summary && (
+                <p className="work-summary">{project.summary}</p>
+              )}
+              <p>{project.description}</p>
 
-                <div className="flex">
+              {project.techStack && (
+                <ul className="work-stack">
+                  {project.techStack.map((tech) => (
+                    <li key={tech}>{tech}</li>
+                  ))}
+                </ul>
+              )}
+
+              {(project.url || project.githubUrl) && (
+                <div className="work-links">
                   {project.url && (
-                    <div className="mr-4 flex hover:opacity-80">
-                      <img src="/icons/link.svg" alt="" className="mr-2 w-4" />
-                      <a href={project.url} target="_blank">
-                        {en.global.viewLive}
-                      </a>
-                    </div>
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="work-btn work-btn--solid"
+                    >
+                      {project.type === 'case-study'
+                        ? en.global.readCaseStudy
+                        : en.global.viewLive}{' '}
+                      <span className="work-btn__arrow">↗</span>
+                    </a>
                   )}
-
                   {project.githubUrl && (
-                    <div className="flex hover:opacity-80">
-                      <img
-                        src="/icons/github.svg"
-                        alt=""
-                        className="mr-2 w-4"
-                      />
-                      <a href={project.githubUrl} target="_blank">
-                        {en.global.githubCode}
-                      </a>
-                    </div>
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="work-btn work-btn--line"
+                    >
+                      {en.global.githubCode}{' '}
+                      <span className="work-btn__arrow">↗</span>
+                    </a>
                   )}
                 </div>
-
-                {project.techStack && (
-                  <div className="mt-4 flex flex-wrap md:justify-center lg:max-w-2xl lg:justify-start">
-                    {project.techStack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="mr-2 mt-2 border-2 border-orange px-2 py-1 font-workSansMedium text-sm"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </div>
+              )}
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </section>
