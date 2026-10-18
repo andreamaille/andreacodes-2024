@@ -36,6 +36,11 @@
   "projects": {
     "title": "My Work"
   },
+  "blog": {
+    "title": "Blog",
+    "description": "Thoughts on code, creativity and the state of tech.",
+    "viewAll": "View all on Medium"
+  },
   "skills": {
     "title": "Skills"
   },

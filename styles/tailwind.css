@@ -173,6 +173,94 @@ textarea::placeholder {
   background-position-x: 0%;
 }
 
+/* Blog */
+
+.blog {
+  --about-peach: #f8d9cb;
+  --about-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --blog-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.blog svg {
+  fill: none;
+}
+
+.blog-all-link {
+  @apply inline-flex min-h-[44px] items-center gap-2 border-b-2 border-orange font-workSansMedium;
+}
+
+.blog-list {
+  @apply m-0 grow list-none p-0;
+}
+
+/* Lines sit only between posts */
+.blog-list > li + li {
+  border-top: 1.5px solid #bb522f;
+}
+
+.blog-list > li {
+  @apply py-6 lg:py-7;
+}
+
+.blog-list > li:first-child {
+  padding-top: 0;
+}
+
+.blog-list > li:last-child {
+  padding-bottom: 0;
+}
+
+.blog-item {
+  @apply flex items-start gap-4 lg:gap-6;
+}
+
+/* Beats .bytes-icon's full-size width and height */
+.blog .blog-moon {
+  @apply -mt-1 h-12 w-12 shrink-0 lg:h-16 lg:w-16;
+}
+
+.blog-moon__body {
+  transform-box: view-box;
+  transform-origin: 32px 32px;
+  transition: transform 600ms var(--about-spring);
+}
+
+.blog-item:hover .blog-moon__body {
+  transform: rotate(-14deg);
+}
+
+.blog-item:hover .bytes-icon__sparkle {
+  transform: scale(1.25) rotate(20deg);
+}
+
+.blog-item:hover .blog-title {
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px;
+}
+
+.blog-arrow {
+  @apply mt-0.5 h-5 w-5 shrink-0 lg:h-6 lg:w-6;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 300ms var(--blog-ease);
+}
+
+.blog-item:hover .blog-arrow,
+.blog-all-link:hover .blog-arrow {
+  transform: translate(3px, -3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blog-moon__body,
+  .blog-arrow,
+  .blog .bytes-icon__sparkle {
+    transition: none;
+  }
+}
+
 /* Hero */
 
 .hero-header {

@@ -12,6 +12,10 @@ export const navLinks = [
     url: '#skills',
   },
   {
+    title: 'Blog',
+    url: '#blog',
+  },
+  {
     title: 'Contact',
     url: '#contact',
   },
