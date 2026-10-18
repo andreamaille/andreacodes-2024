@@ -1071,7 +1071,8 @@ textarea::placeholder {
   display: flex;
   align-items: flex-end;
   aspect-ratio: 749 / 578;
-  max-width: 642px;
+  width: 100%;
+  max-width: 450px;
 }
 
 .work-art img {
@@ -1195,26 +1196,32 @@ textarea::placeholder {
 /* Laptop and copy sit side by side, swapping sides every other project */
 @media screen(lg) {
   .work-list {
-    gap: clamp(72px, 9cqw, 128px);
+    gap: 96px;
     margin-top: 48px;
   }
 
+  /* Roughly a third for the laptop and the rest for the copy, as in the original layout */
   .work-item {
-    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-    gap: clamp(24px, 5cqw, 72px);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: clamp(32px, 5cqw, 80px);
   }
 
   .work-item:nth-child(even) {
-    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  }
+
+  .work-copy {
+    max-width: 768px;
+  }
+
+  .work-item:nth-child(even) .work-art {
+    justify-self: end;
   }
 
   .work-item:nth-child(even) .work-art {
     order: 2;
   }
 
-  .work-art {
-    max-width: none;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
