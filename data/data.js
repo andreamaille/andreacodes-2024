@@ -468,11 +468,11 @@ export const brands = [
   { name: 'Endy', logo: '/brands/endy.svg', height: 30 },
   { name: 'Laura Mercier', logo: '/brands/laura-mercier.svg', height: 30 },
   { name: 'Mavi', logo: '/brands/mavi.svg', height: 34 },
+  { name: 'Saje', logo: '/brands/saje.svg', height: 40 },
   { name: 'Clinique', logo: '/brands/clinique.svg', height: 34 },
   { name: 'Draper James', logo: '/brands/draper-james.svg', height: 20 },
+  { name: 'Motherhood', logo: '/brands/motherhood.svg', height: 24 },
   { name: 'Moose Knuckles', logo: '/brands/moose-knuckles.svg', height: 26 },
   { name: 'MLB Auction', logo: '/brands/mlb-auction.svg', height: 32 },
   { name: 'NFL Auction', logo: '/brands/nfl-auction.svg', height: 34 },
-  { name: 'Saje', logo: null },
-  { name: 'Motherhood', logo: null },
 ]
