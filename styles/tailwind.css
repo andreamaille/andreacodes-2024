@@ -1054,6 +1054,13 @@ textarea::placeholder {
 
 /* My Work */
 
+/* Project count beside each tab */
+.work-count {
+  margin-left: 3px;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
 .work-list {
   --work-ease: cubic-bezier(0.22, 1, 0.36, 1);
   display: grid;
