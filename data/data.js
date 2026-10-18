@@ -8,12 +8,12 @@ export const navLinks = [
     url: '#portfolio',
   },
   {
-    title: 'Blog',
-    url: '#blog',
-  },
-  {
     title: 'Skills',
     url: '#skills',
+  },
+  {
+    title: 'Blog',
+    url: '#blog',
   },
   {
     title: 'Contact',
