@@ -21,10 +21,10 @@ export default function Home({ articles }) {
       <main>
         <About />
         <Projects />
-        <Blog articles={articles} />
         <Skills />
         <Bytes />
         {/* <Facts /> */}
+        <Blog articles={articles} />
         <Footer />
       </main>
     </div>
