@@ -41,13 +41,6 @@ const Projects = () => {
               className={`section-filter ${projectType.type === currentFilter ? 'border-orange' : 'slide-in-out border-transparent'}`}
             >
               {projectType.title}
-              <sup className="work-count">
-                {
-                  projects.filter(
-                    (project) => project.type === projectType.type,
-                  ).length
-                }
-              </sup>
             </button>
           ))}
         </div>
