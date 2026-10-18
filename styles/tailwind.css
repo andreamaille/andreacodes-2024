@@ -1098,6 +1098,15 @@ textarea::placeholder {
   width: auto;
   max-width: none;
   height: 40px;
+  opacity: 0.85;
+  transition:
+    opacity 300ms,
+    transform 450ms var(--about-spring);
+}
+
+.about-brands__list li:hover img {
+  opacity: 1;
+  transform: translateY(-3px);
 }
 
 .about-brands__list svg {
