@@ -11,7 +11,11 @@ const BrandList = ({ hidden }) => (
     {brands.map((brand) => (
       <li key={brand.name}>
         {brand.logo ? (
-          <img src={brand.logo} alt={hidden ? '' : brand.name} />
+          <img
+            src={brand.logo}
+            alt={hidden ? '' : brand.name}
+            style={{ height: brand.height }}
+          />
         ) : (
           <span className="about-brands__name">{brand.name}</span>
         )}

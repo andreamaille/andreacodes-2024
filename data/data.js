@@ -481,10 +481,22 @@ export const facts = [
 ]
 
 // Add a logo path (e.g. '/brands/saje.svg') to swap a placeholder for its SVG
+// height is the logo's rendered height in px, tuned per mark so wide and stacked logos read at a similar size
 export const brands = [
-  { name: 'The Estée Lauder Companies', logo: null },
-  { name: 'Saje', logo: null },
-  { name: 'Motherhood', logo: null },
-  { name: 'Mavi', logo: null },
-  { name: 'Laura Mercier', logo: null },
+  {
+    name: 'The Estée Lauder Companies',
+    logo: '/brands/estee-lauder-companies.svg',
+    height: 46,
+  },
+  { name: 'Mejuri', logo: '/brands/mejuri.svg', height: 26 },
+  { name: 'Endy', logo: '/brands/endy.svg', height: 30 },
+  { name: 'Laura Mercier', logo: '/brands/laura-mercier.svg', height: 30 },
+  { name: 'Mavi', logo: '/brands/mavi.svg', height: 34 },
+  { name: 'Saje', logo: '/brands/saje.svg', height: 40 },
+  { name: 'Clinique', logo: '/brands/clinique.svg', height: 34 },
+  { name: 'Draper James', logo: '/brands/draper-james.svg', height: 20 },
+  { name: 'Motherhood', logo: '/brands/motherhood.svg', height: 24 },
+  { name: 'Moose Knuckles', logo: '/brands/moose-knuckles.svg', height: 26 },
+  { name: 'MLB Auction', logo: '/brands/mlb-auction.svg', height: 32 },
+  { name: 'NFL Auction', logo: '/brands/nfl-auction.svg', height: 34 },
 ]
