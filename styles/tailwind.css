@@ -1193,7 +1193,7 @@ textarea::placeholder {
   transform: translate(2px, -2px);
 }
 
-/* Laptop and copy sit side by side, swapping sides every other project */
+/* Laptop on the left, copy on the right */
 @media screen(lg) {
   .work-list {
     gap: 96px;
@@ -1206,20 +1206,8 @@ textarea::placeholder {
     gap: clamp(32px, 5cqw, 80px);
   }
 
-  .work-item:nth-child(even) {
-    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-  }
-
   .work-copy {
     max-width: 768px;
-  }
-
-  .work-item:nth-child(even) .work-art {
-    justify-self: end;
-  }
-
-  .work-item:nth-child(even) .work-art {
-    order: 2;
   }
 
 }
