@@ -53,10 +53,10 @@
     3.5rem
   ); /* 40 → 56, section titles */
   --text-h3: clamp(
-    1.75rem,
-    1.564rem + 0.7619vw,
-    2.25rem
-  ); /* 28 → 36, project titles, about intro */
+    1.5rem,
+    1.361rem + 0.5714vw,
+    1.875rem
+  ); /* 24 → 30, project titles, about intro, blog post titles */
   --text-title: clamp(
     1.25rem,
     1.157rem + 0.381vw,
