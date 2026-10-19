@@ -634,20 +634,12 @@ video {
   margin-bottom: 2rem;
 }
 
-.ml-\[-24px\] {
-  margin-left: -24px;
-}
-
 .mr-4 {
   margin-right: 1rem;
 }
 
 .mr-6 {
   margin-right: 1.5rem;
-}
-
-.mr-\[-24px\] {
-  margin-right: -24px;
 }
 
 .mt-1 {
@@ -660,10 +652,6 @@ video {
 
 .mt-10 {
   margin-top: 2.5rem;
-}
-
-.mt-2 {
-  margin-top: 0.5rem;
 }
 
 .mt-8 {
@@ -2416,6 +2404,76 @@ textarea::placeholder {
   transform: translate(-6px, -6px) scale(1.05) rotate(20deg);
 }
 
+/* Wave divider */
+
+/* Two waves cropped from the divider art so the ends line up and the tile loops without a seam */
+
+.wave-divider {
+  --wave-ratio: 0.26;
+  --wave-tile-ratio: calc(1511 / 409);
+  container-type: inline-size;
+  margin-bottom: 2rem;
+  margin-left: -24px;
+  margin-right: -24px;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 1024px) {
+  .wave-divider {
+    margin-bottom: 4rem;
+    margin-left: -75px;
+    margin-right: -75px;
+    margin-top: 8rem;
+  }
+}
+
+.wave-divider__star {
+  width: 6%;
+  margin-bottom: 2%;
+  margin-left: 22%;
+}
+
+@media (min-width: 1024px) {
+  .wave-divider {
+    --wave-ratio: calc(409 / 2338);
+  }
+
+  .wave-divider__star {
+    display: none;
+  }
+}
+
+.wave-divider__wave {
+  --wave-h: calc(100cqw * var(--wave-ratio));
+  --wave-tile: calc(var(--wave-h) * var(--wave-tile-ratio));
+  position: relative;
+  height: var(--wave-h);
+  overflow: hidden;
+}
+
+.wave-divider__wave::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: calc(100% + var(--wave-tile));
+  background: url('/doodle_wave-tile.svg') repeat-x 0 0 / var(--wave-tile) 100%;
+  transform: translateX(calc(-1 * var(--wave-tile)));
+  animation: wave-drift 48s linear infinite;
+  will-change: transform;
+}
+
+@keyframes wave-drift {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wave-divider__wave::before {
+    animation: none;
+  }
+}
+
 .after\:mx-\[0\.6em\]::after {
   content: var(--tw-content);
   margin-left: 0.6em;
@@ -2557,32 +2615,16 @@ textarea::placeholder {
     margin-bottom: 0px;
   }
 
-  .lg\:mb-16 {
-    margin-bottom: 4rem;
-  }
-
   .lg\:mb-4 {
     margin-bottom: 1rem;
-  }
-
-  .lg\:ml-\[-75px\] {
-    margin-left: -75px;
   }
 
   .lg\:mr-16 {
     margin-right: 4rem;
   }
 
-  .lg\:mr-\[-75px\] {
-    margin-right: -75px;
-  }
-
   .lg\:mt-12 {
     margin-top: 3rem;
-  }
-
-  .lg\:mt-32 {
-    margin-top: 8rem;
   }
 
   .lg\:block {

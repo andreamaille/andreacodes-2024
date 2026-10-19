@@ -3,15 +3,13 @@ import { useForm, ValidationError } from '@formspree/react'
 
 const Divider = () => {
   return (
-    <div className="mb-8 mt-2 lg:mb-16 lg:mt-32">
-      <div className="ml-[-24px] mr-[-24px] lg:ml-[-75px] lg:mr-[-75px]">
-        <img src="/doodle_star-divider.svg" alt="" className="lg:hidden" />
-        <img
-          src="/doodle_star-divider_desktop.svg"
-          alt=""
-          className="hidden lg:block"
-        />
-      </div>
+    <div className="wave-divider" aria-hidden="true">
+      <img
+        src="/doodle_divider-star.svg"
+        alt=""
+        className="wave-divider__star"
+      />
+      <div className="wave-divider__wave" />
     </div>
   )
 }

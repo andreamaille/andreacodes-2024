@@ -1262,3 +1262,60 @@ textarea::placeholder {
 .bytes-item:hover .bytes-icon__sparkle {
   transform: translate(-6px, -6px) scale(1.05) rotate(20deg);
 }
+
+/* Wave divider */
+
+/* Two waves cropped from the divider art so the ends line up and the tile loops without a seam */
+.wave-divider {
+  --wave-ratio: 0.26;
+  --wave-tile-ratio: calc(1511 / 409);
+  container-type: inline-size;
+  @apply mb-8 ml-[-24px] mr-[-24px] mt-2 lg:mb-16 lg:ml-[-75px] lg:mr-[-75px] lg:mt-32;
+}
+
+.wave-divider__star {
+  width: 6%;
+  margin-bottom: 2%;
+  margin-left: 22%;
+}
+
+@media screen(lg) {
+  .wave-divider {
+    --wave-ratio: calc(409 / 2338);
+  }
+
+  .wave-divider__star {
+    display: none;
+  }
+}
+
+.wave-divider__wave {
+  --wave-h: calc(100cqw * var(--wave-ratio));
+  --wave-tile: calc(var(--wave-h) * var(--wave-tile-ratio));
+  position: relative;
+  height: var(--wave-h);
+  overflow: hidden;
+}
+
+.wave-divider__wave::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: calc(100% + var(--wave-tile));
+  background: url('/doodle_wave-tile.svg') repeat-x 0 0 / var(--wave-tile) 100%;
+  transform: translateX(calc(-1 * var(--wave-tile)));
+  animation: wave-drift 48s linear infinite;
+  will-change: transform;
+}
+
+@keyframes wave-drift {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wave-divider__wave::before {
+    animation: none;
+  }
+}
