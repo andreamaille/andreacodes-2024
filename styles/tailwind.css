@@ -34,6 +34,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Work Sans Bold';
+  src: url('../public/fonts/WorkSans-VariableFont_wght.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
 /* Variables - For reference in custom styles in this file */
 
 :root {
@@ -153,6 +160,13 @@ body {
   margin: 0 auto;
   padding: 0 var(--gutter);
   max-width: 1550px;
+}
+
+/* The h3 level is the one sans heading: bold Work Sans, tracked in slightly */
+.type-h3 {
+  @apply text-h3;
+  font-family: 'Work Sans Bold', sans-serif;
+  letter-spacing: -0.015em;
 }
 
 /* Every section after the hero sits one rhythm step below the last */
@@ -970,8 +984,7 @@ textarea::placeholder {
 }
 
 .about-lede {
-  @apply text-h3;
-  font-family: 'Butler SemiBold', serif;
+  @apply type-h3;
   padding-bottom: 24px;
 }
 

@@ -931,11 +931,6 @@ video {
   letter-spacing: 0.16em;
 }
 
-.text-h3 {
-  font-size: var(--text-h3);
-  line-height: var(--leading-tight);
-}
-
 .text-small {
   font-size: var(--text-small);
   line-height: var(--leading-snug);
@@ -1040,6 +1035,16 @@ video {
   src: url('../public/fonts/WorkSans-VariableFont_wght.ttf') format('truetype');
 
   font-weight: 600;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Work Sans Bold';
+
+  src: url('../public/fonts/WorkSans-VariableFont_wght.ttf') format('truetype');
+
+  font-weight: 700;
 
   font-style: normal;
 }
@@ -1180,6 +1185,15 @@ body {
   margin: 0 auto;
   padding: 0 var(--gutter);
   max-width: 1550px;
+}
+
+/* The h3 level is the one sans heading: bold Work Sans, tracked in slightly */
+
+.type-h3 {
+  font-size: var(--text-h3);
+  line-height: var(--leading-tight);
+  font-family: 'Work Sans Bold', sans-serif;
+  letter-spacing: -0.015em;
 }
 
 /* Every section after the hero sits one rhythm step below the last */
@@ -2133,7 +2147,8 @@ textarea::placeholder {
 .about-lede {
   font-size: var(--text-h3);
   line-height: var(--leading-tight);
-  font-family: 'Butler SemiBold', serif;
+  font-family: 'Work Sans Bold', sans-serif;
+  letter-spacing: -0.015em;
   padding-bottom: 24px;
 }
 
