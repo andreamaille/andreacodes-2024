@@ -129,7 +129,7 @@ const Nav = () => {
             {navLinks.map((navLink) => (
               <li
                 key={navLink.url}
-                className="slide-in-out mr-4 pb-2 font-butlerSemibold text-xl"
+                className="slide-in-out ml-6 pb-2 font-butlerSemibold text-title"
               >
                 <a href={navLink.url} className="">
                   {navLink.title}

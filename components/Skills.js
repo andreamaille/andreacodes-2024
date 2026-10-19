@@ -19,21 +19,23 @@ const Skills = () => {
   }, [currentFilter])
 
   return (
-    <section className="mt-8" id="skills">
-      <h2>{en.skills.title}</h2>
-      <div className="">
-        {skillCategories.map((category) => (
-          <button
-            key={category.type}
-            onClick={() => setCurrentFilter(category.type)}
-            className={`mr-4 border-b-2 text-base lg:mr-16 lg:text-lg ${category.type === currentFilter ? 'border-orange' : 'slide-in-out border-transparent'}`}
-          >
-            {category.title}
-          </button>
-        ))}
+    <section className="section" id="skills">
+      <div className="section-head">
+        <h2>{en.skills.title}</h2>
+        <div className="tabs">
+          {skillCategories.map((category) => (
+            <button
+              key={category.type}
+              onClick={() => setCurrentFilter(category.type)}
+              className={`tab ${category.type === currentFilter ? 'border-orange' : 'slide-in-out border-transparent'}`}
+            >
+              {category.title}
+            </button>
+          ))}
+        </div>
       </div>
 
-      <div className="mt-10 grid grid-cols-3 gap-4 md:grid-cols-8 lg:grid-cols-10 lg:gap-6">
+      <div className="grid grid-cols-3 gap-x-4 gap-y-8 md:grid-cols-8 lg:grid-cols-10 lg:gap-x-6">
         {currentSkills.map((skill) => (
           <div
             key={skill.title}
@@ -47,7 +49,7 @@ const Skills = () => {
                 loading="lazy"
               />
             </span>
-            <span className="mt-1 text-center">{skill.title}</span>
+            <span className="mt-2 text-center text-small">{skill.title}</span>
           </div>
         ))}
       </div>

@@ -50,7 +50,7 @@ const About = () => {
   }, [])
 
   return (
-    <section className="about my-8" id="about" ref={sectionRef}>
+    <section className="about section" id="about" ref={sectionRef}>
       <div className="about-story">
         <img
           src={'/about_andy.svg'}

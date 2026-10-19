@@ -38,6 +38,32 @@
 
 :root {
   --orange: theme('colors.orange.DEFAULT'); /* Custom color */
+
+  /* Design tokens. Sizes grow fluidly from a 390px phone to a 1440px desktop */
+
+  /* Type scale: Butler for headings, Work Sans for everything you read */
+  --text-display: clamp(2.75rem, 2.1rem + 2.667vw, 4.5rem); /* 44 → 72, closing call to action */
+  --text-h2: clamp(2.5rem, 2.129rem + 1.524vw, 3.5rem); /* 40 → 56, section titles */
+  --text-h3: clamp(1.75rem, 1.564rem + 0.7619vw, 2.25rem); /* 28 → 36, project titles, about intro */
+  --text-title: clamp(1.25rem, 1.157rem + 0.381vw, 1.5rem); /* 20 → 24, subheads, post titles, nav */
+  --text-body-lg: clamp(1.125rem, 1.079rem + 0.1905vw, 1.25rem); /* 18 → 20, intros, tabs */
+  --text-body: clamp(1rem, 0.9768rem + 0.09524vw, 1.0625rem); /* 16 → 17, paragraphs */
+  --text-small: 0.875rem; /* 14, tags, buttons, labels */
+  --text-eyebrow: 0.75rem; /* 12, uppercase kickers */
+
+  --leading-tight: 1.1;
+  --leading-snug: 1.3;
+  --leading-body: 1.7;
+
+  /* Spacing: a 4px base, plus three rhythm steps for page layout */
+  --space-section: clamp(5rem, 3.514rem + 6.095vw, 9rem); /* 80 → 144, between sections */
+  --space-block: clamp(3rem, 2.257rem + 3.048vw, 5rem); /* 48 → 80, between blocks in a section */
+  --space-heading: clamp(1.5rem, 1.129rem + 1.524vw, 2.5rem); /* 24 → 40, section header to content */
+  --gutter: 24px;
+
+  @media screen(lg) {
+    --gutter: 80px;
+  }
 }
 
 /* Global */
@@ -79,21 +105,43 @@ h1,
 }
 
 h2 {
-  @apply mb-6 font-butlerSemibold text-4xl;
+  @apply m-0 font-butlerSemibold text-h2;
 }
 
 h3 {
-  @apply font-workSansSemibold text-xl;
+  @apply m-0 font-butlerSemibold text-title;
 }
 
 body {
+  @apply text-body;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 var(--gutter);
   max-width: 1550px;
+}
 
-  @media screen(lg) {
-    padding: 0 75px;
-  }
+/* Every section after the hero sits one rhythm step below the last */
+.section {
+  margin-top: var(--space-section);
+}
+
+/* Title, optional intro and tabs, then one heading step to the content */
+.section-head {
+  display: grid;
+  gap: 12px;
+  margin-bottom: var(--space-heading);
+}
+
+.section-intro {
+  @apply max-w-[44ch] text-body-lg;
+  padding: 0;
+}
+
+.tabs {
+  @apply mt-3 flex flex-wrap gap-x-6 gap-y-2 lg:gap-x-12;
+}
+
+.tab {
+  @apply border-b-2 text-body lg:text-body-lg;
 }
 
 a {
@@ -120,17 +168,13 @@ img {
 }
 
 input,
-textarea,
-label {
-  @apply mb-4 rounded border-2 border-orange bg-transparent p-4;
+textarea {
+  @apply mb-4 rounded-lg border-2 border-orange bg-transparent p-4 text-body;
 }
 
+/* Matches the solid pill buttons in the hero and project cards */
 form > button {
-  @apply w-auto rounded bg-orange p-4 text-white;
-}
-
-form > button:hover {
-  @apply opacity-80;
+  @apply self-start rounded-full border-2 border-orange bg-orange px-8 py-3 font-workSansSemibold text-small text-pink transition-[background-color,border-color,transform] duration-300 ease-brand hover:-translate-y-0.5 hover:border-orange-dark hover:bg-orange-dark motion-reduce:transition-none;
 }
 
 input::placeholder,
@@ -171,7 +215,7 @@ textarea::placeholder {
 }
 
 .blog-all-link {
-  @apply inline-flex min-h-[44px] items-center gap-2 border-b-2 border-orange font-workSansMedium;
+  @apply mt-3 inline-flex min-h-[44px] items-center gap-2 border-b-2 border-orange font-workSansMedium text-small;
 }
 
 .blog-list {
@@ -184,7 +228,7 @@ textarea::placeholder {
 }
 
 .blog-list > li {
-  @apply py-6 lg:py-7;
+  @apply py-6 lg:py-8;
 }
 
 .blog-list > li:first-child {
@@ -863,21 +907,40 @@ textarea::placeholder {
   --about-peach: #f8d9cb;
 }
 
+/* The hero already ends in breathing room, so About needs a smaller step */
+.about.section {
+  margin-top: var(--space-block);
+
+  @media screen(lg) {
+    margin-top: var(--space-heading);
+  }
+}
+
+/* On phones the title leads, then the portrait, then the story */
+.about-story {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-story h2 {
+  order: -1;
+  margin-bottom: var(--space-heading);
+}
+
 .about-art {
   display: block;
   max-width: 420px;
-  margin: 0 auto 24px;
+  margin: 0 auto var(--space-heading);
 }
 
 .about-lede {
+  @apply text-h3;
   font-family: 'Butler SemiBold', serif;
-  font-size: 1.5rem;
-  line-height: 1.3;
-  padding-bottom: 20px;
+  padding-bottom: 24px;
 }
 
 .about-copy p {
-  line-height: 1.7;
+  @apply text-body-lg;
 }
 
 /* The portrait floats right beside the lede and copy, which step in around the arch. Type scales with the viewport so the copy and portrait end together */
@@ -905,12 +968,8 @@ textarea::placeholder {
     shape-margin: 18px;
   }
 
-  .about-lede {
-    font-size: clamp(1.75rem, 3vw, 2.75rem);
-  }
-
-  .about-copy p {
-    font-size: clamp(1.0625rem, 1.35vw, 1.25rem);
+  .about-story {
+    display: block;
   }
 }
 
@@ -1032,14 +1091,13 @@ textarea::placeholder {
 }
 
 .about-brands {
-  margin-top: 20px;
-  padding-top: 22px;
+  margin-top: var(--space-block);
+  padding-top: 32px;
   border-top: 1.5px solid theme('colors.orange.DEFAULT');
 }
 
 .about-brands__title {
-  @apply mb-2 font-butlerSemibold text-xl lg:text-2xl;
-  line-height: 1.1;
+  @apply mb-2 font-butlerSemibold text-title;
 }
 
 .about-brands__ticker {
@@ -1101,9 +1159,8 @@ textarea::placeholder {
 }
 
 .about-brands__name {
+  @apply text-eyebrow;
   font-family: 'Work Sans SemiBold', sans-serif;
-  font-size: 0.8125rem;
-  letter-spacing: 0.16em;
   text-transform: uppercase;
   opacity: 0.8;
   transition:
@@ -1149,19 +1206,6 @@ textarea::placeholder {
 
 /* Bytes */
 
-.bytes-head {
-  @apply mb-8 flex flex-wrap items-baseline gap-x-5 lg:mb-12;
-}
-
-.bytes-head h2 {
-  @apply mb-0;
-}
-
-.bytes-subtitle {
-  @apply text-lg;
-  padding-bottom: 0;
-}
-
 .bytes-list {
   display: grid;
   margin: 0;
@@ -1179,14 +1223,12 @@ textarea::placeholder {
   grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
   gap: 24px;
-  padding-block: 26px;
+  padding-block: 24px;
   border-top: 1.5px solid #bb522f;
 }
 
 .bytes-item p {
   padding-bottom: 0;
-  font-size: 1.0625rem;
-  line-height: 1.7;
 }
 
 /* Only rules between facts: none above the first or below the last in each column */
@@ -1270,7 +1312,7 @@ textarea::placeholder {
   --wave-ratio: 0.26;
   --wave-tile-ratio: calc(1511 / 409);
   container-type: inline-size;
-  @apply mb-8 ml-[-24px] mr-[-24px] mt-2 lg:mb-16 lg:ml-[-75px] lg:mr-[-75px] lg:mt-32;
+  margin: var(--space-section) calc(-1 * var(--gutter)) var(--space-block);
 }
 
 .wave-divider__star {

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 
 // A smaller version of the hero buttons
 const buttonClasses =
-  'group/btn inline-flex items-center gap-[0.6em] rounded-full border-2 border-orange px-4 py-2 font-workSansSemibold text-sm leading-[1.2] transition-[background-color,color,border-color,transform] duration-300 ease-brand hover:-translate-y-0.5 motion-reduce:transition-none'
+  'group/btn inline-flex items-center gap-[0.6em] rounded-full border-2 border-orange px-5 py-2.5 font-workSansSemibold text-small leading-[1.2] transition-[background-color,color,border-color,transform] duration-300 ease-brand hover:-translate-y-0.5 motion-reduce:transition-none'
 
 const projectTypes = [
   {
@@ -34,15 +34,15 @@ const Projects = () => {
   }, [currentFilter])
 
   return (
-    <section id="portfolio" className="my-8">
-      <div className="mb-6 py-4">
+    <section id="portfolio" className="section">
+      <div className="section-head">
         <h2>{en.projects.title}</h2>
-        <div className="lg:mb-4">
+        <div className="tabs">
           {projectTypes.map((projectType) => (
             <button
               onClick={() => setCurrentFilter(projectType.type)}
               key={projectType.type}
-              className={`mr-4 border-b-2 text-base lg:mr-16 lg:text-lg ${projectType.type === currentFilter ? 'border-orange' : 'slide-in-out border-transparent'}`}
+              className={`tab ${projectType.type === currentFilter ? 'border-orange' : 'slide-in-out border-transparent'}`}
             >
               {projectType.title}
             </button>
@@ -50,7 +50,7 @@ const Projects = () => {
         </div>
       </div>
 
-      <div className="grid gap-[72px] [container-type:inline-size] lg:mt-12 lg:gap-24">
+      <div className="grid gap-block [container-type:inline-size]">
         {currentProjects.map((project) => (
           <article
             key={project.title}
@@ -66,22 +66,22 @@ const Projects = () => {
             </div>
             <div className="grid min-w-0 gap-4 lg:max-w-3xl">
               {project.kind && (
-                <span className="font-workSansSemibold text-xs uppercase tracking-[0.16em]">
+                <span className="font-workSansSemibold text-eyebrow uppercase">
                   {project.kind}
                 </span>
               )}
-              <h3 className="text-balance font-butlerSemibold text-[length:clamp(2rem,3.4cqw,2.75rem)] leading-[1.08]">
+              <h3 className="text-balance text-h3">
                 {project.title}
               </h3>
               {project.summary && (
-                <p className="p-0 font-butlerSemibold text-[1.3rem] leading-[1.35]">
+                <p className="p-0 font-butlerSemibold text-title">
                   {project.summary}
                 </p>
               )}
-              <p className="p-0 leading-[1.7]">{project.description}</p>
+              <p className="p-0">{project.description}</p>
 
               {project.techStack && (
-                <ul className="m-0 list-none border-t-[1.5px] border-orange pb-0 pt-3 font-workSansMedium text-sm leading-[1.8]">
+                <ul className="m-0 list-none border-t-[1.5px] border-orange pb-0 pt-3 font-workSansMedium text-small leading-[1.8]">
                   {project.techStack.map((tech) => (
                     <li
                       key={tech}
@@ -94,7 +94,7 @@ const Projects = () => {
               )}
 
               {(project.url || project.githubUrl) && (
-                <div className="mt-1.5 flex flex-wrap gap-2.5">
+                <div className="mt-2 flex flex-wrap gap-3">
                   {project.url && (
                     <a
                       href={project.url}
