@@ -1141,12 +1141,19 @@ textarea::placeholder {
 
 .about-brands {
   margin-top: var(--space-block);
-  padding-top: 32px;
-  border-top: 1.5px solid theme('colors.orange.DEFAULT');
 }
 
+/* The label sits in the middle of the rule, captioning the ticker below */
 .about-brands__title {
-  @apply mb-2 font-butlerSemibold text-title;
+  @apply mb-3 flex items-center gap-5 font-workSansSemibold text-eyebrow uppercase;
+}
+
+.about-brands__title::before,
+.about-brands__title::after {
+  content: '';
+  flex: 1;
+  height: 1.5px;
+  background: theme('colors.orange.DEFAULT');
 }
 
 .about-brands__ticker {
