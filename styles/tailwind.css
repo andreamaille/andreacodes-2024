@@ -1319,3 +1319,149 @@ textarea::placeholder {
     animation: none;
   }
 }
+
+/* Footer art */
+
+#contact {
+  --footer-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --footer-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --footer-sine: cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+.footer-art {
+  width: auto;
+  aspect-ratio: 432 / 1111;
+  overflow: visible;
+}
+
+/* The hand sways from the wrist and carries the planet with it */
+.footer-art__sway {
+  transform-box: view-box;
+  transform-origin: 260px 1111px;
+  animation: footer-sway 7s var(--footer-sine) infinite alternate;
+}
+
+.footer-art__float,
+.footer-art__drop,
+.footer-art__lift,
+.footer-art__pop,
+.footer-art__star {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.footer-art__float {
+  animation: footer-float 4.2s var(--footer-sine) infinite alternate;
+}
+
+.footer-art__star {
+  animation: footer-twinkle 4.8s var(--footer-sine) infinite;
+  animation-delay: var(--d);
+}
+
+.footer-art__star--spin {
+  animation:
+    footer-twinkle 4.8s var(--footer-sine) infinite,
+    footer-spin 22s linear infinite;
+}
+
+.footer-art__lift,
+.footer-art__pop {
+  transition: transform 600ms var(--footer-spring);
+}
+
+.footer-art:hover .footer-art__lift {
+  transform: translateY(-26px) rotate(-8deg);
+}
+
+.footer-art:hover .footer-art__pop {
+  transform: rotate(72deg) scale(1.15);
+}
+
+/* The art starts hidden once the script is ready, then plays in when scrolled into view */
+.contact--armed:not(.contact--inview) .footer-art__rise,
+.contact--armed:not(.contact--inview) .footer-art__drop,
+.contact--armed:not(.contact--inview) .footer-art__pop {
+  opacity: 0;
+}
+
+.contact--inview .footer-art__rise {
+  animation: footer-rise 1.4s var(--footer-ease) backwards;
+}
+
+.contact--inview .footer-art__drop {
+  animation: footer-drop 1.2s var(--footer-spring) 0.5s backwards;
+}
+
+.contact--inview .footer-art__pop {
+  animation: footer-pop 0.9s var(--footer-ease) backwards;
+  animation-delay: calc(0.9s + var(--i) * 0.16s);
+}
+
+@keyframes footer-sway {
+  from {
+    transform: rotate(-1.4deg);
+  }
+  to {
+    transform: rotate(1.6deg);
+  }
+}
+
+@keyframes footer-float {
+  from {
+    transform: translateY(6px) rotate(2deg);
+  }
+  to {
+    transform: translateY(-12px) rotate(-3deg);
+  }
+}
+
+@keyframes footer-twinkle {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.82);
+    opacity: 0.7;
+  }
+}
+
+@keyframes footer-spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes footer-rise {
+  from {
+    transform: translateY(120px);
+    opacity: 0;
+  }
+}
+
+@keyframes footer-drop {
+  from {
+    transform: translateY(-90px) scale(0.6) rotate(-30deg);
+    opacity: 0;
+  }
+}
+
+@keyframes footer-pop {
+  from {
+    transform: scale(0) rotate(-90deg);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-art * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .contact--armed .footer-art * {
+    opacity: 1 !important;
+  }
+}
