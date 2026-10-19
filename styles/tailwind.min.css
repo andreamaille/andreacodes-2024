@@ -2493,7 +2493,7 @@ textarea::placeholder {
   overflow: visible;
 }
 
-/* Both turn at the base of the arm, matching REACH_PIVOT in Footer.js */
+/* Both turn at the base of the arm, matching REACH_PIVOT_X in Footer.js */
 
 .footer-art__reach,
 .footer-art__sway {
@@ -2501,11 +2501,11 @@ textarea::placeholder {
   transform-origin: 187px 1111px;
 }
 
-/* Hovering leans the whole drawing toward the cursor */
+/* Hovering lets the whole drawing drift toward the cursor as calmly as the idle sway */
 
 .footer-art__reach {
   transform: rotate(var(--reach, 0deg));
-  transition: transform 900ms var(--footer-ease);
+  transition: transform 2.4s var(--footer-sine);
 }
 
 /* The hand sways from the wrist and carries the planet with it */
@@ -2516,7 +2516,6 @@ textarea::placeholder {
 
 .footer-art__float,
 .footer-art__drop,
-.footer-art__lift,
 .footer-art__pop,
 .footer-art__star {
   transform-box: fill-box;
@@ -2536,16 +2535,6 @@ textarea::placeholder {
   animation:
     footer-twinkle 4.8s var(--footer-sine) infinite,
     footer-spin 22s linear infinite;
-}
-
-.footer-art__lift {
-  transition: transform 600ms var(--footer-spring);
-}
-
-/* The planet lifts a little while the hand reaches */
-
-.footer-art:hover .footer-art__lift {
-  transform: translateY(-18px);
 }
 
 /* The art starts hidden once the script is ready, then plays in when scrolled into view */

@@ -7,9 +7,9 @@ import { useForm, ValidationError } from '@formspree/react'
 // Out-of-step twinkle delays, in the order of the stars in footerArt.js
 const TWINKLE_DELAYS = ['0s', '-1.6s', '-3.1s', '-0.8s']
 
-// The hand pivots at the base of the arm (viewBox units) and leans at most this far toward the cursor
-const REACH_PIVOT = { x: 187, y: 1111 }
-const REACH_MAX_DEG = 14
+// The hand pivots at the base of the arm (viewBox x) and drifts at most this far toward the cursor, about the size of its idle sway
+const REACH_PIVOT_X = 187
+const REACH_MAX_DEG = 3
 
 const Divider = () => {
   return (
@@ -64,19 +64,16 @@ const ContactForm = () => {
 const FooterArt = () => {
   const artRef = useRef(null)
 
-  // Reaching for the stars: the hand leans toward the cursor and carries the planet and stars with it
+  // Reaching for the stars: the hand drifts gently toward the cursor and carries the planet and stars with it
   useEffect(() => {
     const art = artRef.current
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
     const reach = (event) => {
       const box = art.getBoundingClientRect()
-      const pivotX = box.left + (REACH_PIVOT.x / 432) * box.width
-      const pivotY = box.top + (REACH_PIVOT.y / 1111) * box.height
-      const angle =
-        (Math.atan2(event.clientX - pivotX, pivotY - event.clientY) * 180) /
-        Math.PI
-      const lean = Math.max(-REACH_MAX_DEG, Math.min(REACH_MAX_DEG, angle))
+      const pivotX = box.left + (REACH_PIVOT_X / 432) * box.width
+      const side = (event.clientX - pivotX) / (box.width / 2)
+      const lean = Math.max(-1, Math.min(1, side)) * REACH_MAX_DEG
       art.style.setProperty('--reach', `${lean.toFixed(2)}deg`)
     }
     const release = () => art.style.setProperty('--reach', '0deg')
@@ -103,9 +100,7 @@ const FooterArt = () => {
           </g>
           <g className="footer-art__float">
             <g className="footer-art__drop">
-              <g className="footer-art__lift">
-                <path fillRule="evenodd" clipRule="evenodd" d={planet} />
-              </g>
+              <path fillRule="evenodd" clipRule="evenodd" d={planet} />
             </g>
           </g>
         </g>
