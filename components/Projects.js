@@ -70,9 +70,7 @@ const Projects = () => {
                   {project.kind}
                 </span>
               )}
-              <h3 className="text-balance text-h3">
-                {project.title}
-              </h3>
+              <h3 className="text-balance text-h3">{project.title}</h3>
               {project.summary && (
                 <p className="p-0 font-butlerSemibold text-title">
                   {project.summary}

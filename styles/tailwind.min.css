@@ -1051,17 +1051,41 @@ video {
   /* Custom color */
   /* Design tokens. Sizes grow fluidly from a 390px phone to a 1440px desktop */
   /* Type scale: Butler for headings, Work Sans for everything you read */
-  --text-display: clamp(2.75rem, 2.1rem + 2.667vw, 4.5rem);
+  --text-display: clamp(
+    2.75rem,
+    2.1rem + 2.667vw,
+    4.5rem
+  );
   /* 44 → 72, closing call to action */
-  --text-h2: clamp(2.5rem, 2.129rem + 1.524vw, 3.5rem);
+  --text-h2: clamp(
+    2.5rem,
+    2.129rem + 1.524vw,
+    3.5rem
+  );
   /* 40 → 56, section titles */
-  --text-h3: clamp(1.75rem, 1.564rem + 0.7619vw, 2.25rem);
+  --text-h3: clamp(
+    1.75rem,
+    1.564rem + 0.7619vw,
+    2.25rem
+  );
   /* 28 → 36, project titles, about intro */
-  --text-title: clamp(1.25rem, 1.157rem + 0.381vw, 1.5rem);
+  --text-title: clamp(
+    1.25rem,
+    1.157rem + 0.381vw,
+    1.5rem
+  );
   /* 20 → 24, subheads, post titles, nav */
-  --text-body-lg: clamp(1.125rem, 1.079rem + 0.1905vw, 1.25rem);
+  --text-body-lg: clamp(
+    1.125rem,
+    1.079rem + 0.1905vw,
+    1.25rem
+  );
   /* 18 → 20, intros, tabs */
-  --text-body: clamp(1rem, 0.9768rem + 0.09524vw, 1.0625rem);
+  --text-body: clamp(
+    1rem,
+    0.9768rem + 0.09524vw,
+    1.0625rem
+  );
   /* 16 → 17, paragraphs */
   --text-small: 0.875rem;
   /* 14, tags, buttons, labels */
@@ -1071,11 +1095,23 @@ video {
   --leading-snug: 1.3;
   --leading-body: 1.7;
   /* Spacing: a 4px base, plus three rhythm steps for page layout */
-  --space-section: clamp(5rem, 3.514rem + 6.095vw, 9rem);
+  --space-section: clamp(
+    5rem,
+    3.514rem + 6.095vw,
+    9rem
+  );
   /* 80 → 144, between sections */
-  --space-block: clamp(3rem, 2.257rem + 3.048vw, 5rem);
+  --space-block: clamp(
+    3rem,
+    2.257rem + 3.048vw,
+    5rem
+  );
   /* 48 → 80, between blocks in a section */
-  --space-heading: clamp(1.5rem, 1.129rem + 1.524vw, 2.5rem);
+  --space-heading: clamp(
+    1.5rem,
+    1.129rem + 1.524vw,
+    2.5rem
+  );
   /* 24 → 40, section header to content */
   --gutter: 24px;
   @media (min-width: 1024px) {
