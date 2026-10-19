@@ -96,14 +96,12 @@ const Blog = ({ articles = [] }) => {
               className="blog-item"
             >
               <MoonIcon phase={moonPhases[index % moonPhases.length]} />
-              <span className="flex min-w-0 grow flex-col gap-2">
-                <span className="blog-title font-butlerSemibold text-title">
-                  {article.title}
-                </span>
+              <div className="flex min-w-0 grow flex-col gap-2">
+                <h3 className="blog-title type-h3">{article.title}</h3>
                 {article.summary && (
-                  <span className="max-w-2xl">{article.summary}</span>
+                  <p className="max-w-2xl p-0">{article.summary}</p>
                 )}
-              </span>
+              </div>
               <ArrowIcon className="blog-arrow" />
             </a>
           </li>
