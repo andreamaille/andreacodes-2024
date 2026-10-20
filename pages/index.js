@@ -7,6 +7,12 @@ import Skills from '../components/Skills'
 import Bytes from '../components/Bytes'
 import Facts from '../components/Facts'
 import Footer from '../components/Footer'
+import {
+  ConstellationDivider,
+  GarlandDivider,
+  MoonDivider,
+  TrailDivider,
+} from '../components/Dividers'
 import { getLatestArticles } from '../lib/medium'
 
 export default function Home({ articles }) {
@@ -18,11 +24,15 @@ export default function Home({ articles }) {
       </Head>
 
       <Hero className="m-16" />
+      <GarlandDivider />
       <main>
         <About />
         <Projects />
+        <MoonDivider />
         <Skills />
+        <ConstellationDivider />
         <Bytes />
+        <TrailDivider />
         {/* <Facts /> */}
         <Blog articles={articles} />
         <Footer />
