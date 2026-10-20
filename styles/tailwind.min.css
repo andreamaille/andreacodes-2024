@@ -616,19 +616,9 @@ video {
   margin-right: auto;
 }
 
-.my-16 {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
-}
-
 .my-6 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-}
-
-.my-8 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
 }
 
 .mb-6 {
@@ -639,28 +629,20 @@ video {
   margin-bottom: 2rem;
 }
 
-.mr-4 {
-  margin-right: 1rem;
+.mb-heading {
+  margin-bottom: var(--space-heading);
+}
+
+.ml-6 {
+  margin-left: 1.5rem;
 }
 
 .mr-6 {
   margin-right: 1.5rem;
 }
 
-.mt-1 {
-  margin-top: 0.25rem;
-}
-
-.mt-1\.5 {
-  margin-top: 0.375rem;
-}
-
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
-.mt-8 {
-  margin-top: 2rem;
+.mt-2 {
+  margin-top: 0.5rem;
 }
 
 .block {
@@ -795,8 +777,8 @@ video {
   gap: 0.5rem;
 }
 
-.gap-2\.5 {
-  gap: 0.625rem;
+.gap-3 {
+  gap: 0.75rem;
 }
 
 .gap-4 {
@@ -811,8 +793,21 @@ video {
   gap: 0.6em;
 }
 
-.gap-\[72px\] {
-  gap: 72px;
+.gap-block {
+  gap: var(--space-block);
+}
+
+.gap-x-4 {
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+
+.gap-y-8 {
+  row-gap: 2rem;
+}
+
+.justify-self-start {
+  justify-self: start;
 }
 
 .whitespace-nowrap {
@@ -874,9 +869,9 @@ video {
   padding: 1rem;
 }
 
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 .py-2 {
@@ -884,9 +879,9 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.py-2\.5 {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
 }
 
 .pb-0 {
@@ -925,64 +920,37 @@ video {
   font-size: 2rem;
 }
 
-.text-3xl {
-  font-size: 2.5rem;
+.text-display {
+  font-size: var(--text-display);
+  line-height: var(--leading-tight);
 }
 
-.text-\[1\.3rem\] {
-  font-size: 1.3rem;
+.text-eyebrow {
+  font-size: var(--text-eyebrow);
+  line-height: var(--leading-snug);
+  letter-spacing: 0.16em;
 }
 
-.text-\[length\:clamp\(2rem\2c 3\.4cqw\2c 2\.75rem\)\] {
-  font-size: clamp(2rem,3.4cqw,2.75rem);
+.text-small {
+  font-size: var(--text-small);
+  line-height: var(--leading-snug);
 }
 
-.text-base {
-  font-size: 1rem;
-}
-
-.text-lg {
-  font-size: 1.25rem;
-}
-
-.text-sm {
-  font-size: 0.875rem;
-}
-
-.text-xl {
-  font-size: 1.5rem;
-}
-
-.text-xs {
-  font-size: 0.75rem;
+.text-title {
+  font-size: var(--text-title);
+  line-height: var(--leading-snug);
 }
 
 .uppercase {
   text-transform: uppercase;
 }
 
-.leading-\[1\.08\] {
-  line-height: 1.08;
-}
-
 .leading-\[1\.2\] {
   line-height: 1.2;
 }
 
-.leading-\[1\.35\] {
-  line-height: 1.35;
-}
-
-.leading-\[1\.7\] {
-  line-height: 1.7;
-}
-
 .leading-\[1\.8\] {
   line-height: 1.8;
-}
-
-.tracking-\[0\.16em\] {
-  letter-spacing: 0.16em;
 }
 
 .text-orange {
@@ -1076,6 +1044,74 @@ video {
 :root {
   --orange: #BB522F;
   /* Custom color */
+  /* Design tokens. Sizes grow fluidly from a 390px phone to a 1440px desktop */
+  /* Type scale: Butler for headings, Work Sans for everything you read */
+  --text-display: clamp(
+    2.75rem,
+    2.1rem + 2.667vw,
+    4.5rem
+  );
+  /* 44 → 72, closing call to action */
+  --text-h2: clamp(
+    2.5rem,
+    2.129rem + 1.524vw,
+    3.5rem
+  );
+  /* 40 → 56, section titles */
+  --text-h3: clamp(
+    1.5rem,
+    1.361rem + 0.5714vw,
+    1.875rem
+  );
+  /* 24 → 30, project titles, about intro, blog post titles */
+  --text-title: clamp(
+    1.25rem,
+    1.157rem + 0.381vw,
+    1.5rem
+  );
+  /* 20 → 24, subheads, post titles, nav */
+  --text-body-lg: clamp(
+    1.125rem,
+    1.079rem + 0.1905vw,
+    1.25rem
+  );
+  /* 18 → 20, intros, tabs */
+  --text-body: clamp(
+    1rem,
+    0.9768rem + 0.09524vw,
+    1.0625rem
+  );
+  /* 16 → 17, paragraphs */
+  --text-small: 0.875rem;
+  /* 14, tags, buttons, labels */
+  --text-eyebrow: 0.75rem;
+  /* 12, uppercase kickers */
+  --leading-tight: 1.1;
+  --leading-snug: 1.3;
+  --leading-body: 1.7;
+  /* Spacing: a 4px base, plus three rhythm steps for page layout */
+  --space-section: clamp(
+    5rem,
+    3.514rem + 6.095vw,
+    9rem
+  );
+  /* 80 → 144, between sections */
+  --space-block: clamp(
+    3rem,
+    2.257rem + 3.048vw,
+    5rem
+  );
+  /* 48 → 80, between blocks in a section */
+  --space-heading: clamp(
+    1.5rem,
+    1.129rem + 1.524vw,
+    2.5rem
+  );
+  /* 24 → 40, section header to content */
+  --gutter: 24px;
+  @media (min-width: 1024px) {
+    --gutter: 80px;
+  }
 }
 
 /* Global */
@@ -1120,22 +1156,83 @@ h1,
 }
 
 h2 {
-  margin-bottom: 1.5rem;
+  margin: 0px;
   font-family: Butler SemiBold, serif;
-  font-size: 3rem;
+  font-size: var(--text-h2);
+  line-height: var(--leading-tight);
 }
 
 h3 {
-  font-family: Work Sans SemiBold, sans-serif;
-  font-size: 1.5rem;
+  margin: 0px;
+  font-family: Butler SemiBold, serif;
+  font-size: var(--text-title);
+  line-height: var(--leading-snug);
 }
 
 body {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 var(--gutter);
   max-width: 1550px;
-  @media (min-width: 1024px) {
-    padding: 0 75px;
+}
+
+/* The h3 level is the one sans heading: semibold Work Sans, tracked in slightly */
+
+.type-h3 {
+  font-size: var(--text-h3);
+  line-height: var(--leading-tight);
+  font-family: 'Work Sans SemiBold', sans-serif;
+  letter-spacing: -0.015em;
+}
+
+/* Every section after the hero sits one rhythm step below the last */
+
+.section {
+  margin-top: var(--space-section);
+}
+
+/* Title, optional intro and tabs, then one heading step to the content */
+
+.section-head {
+  display: grid;
+  gap: 12px;
+  margin-bottom: var(--space-heading);
+}
+
+.section-intro {
+  max-width: 44ch;
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body);
+  padding: 0;
+}
+
+.tabs {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+  row-gap: 0.5rem;
+}
+
+@media (min-width: 1024px) {
+  .tabs {
+    -moz-column-gap: 3rem;
+         column-gap: 3rem;
+  }
+}
+
+.tab {
+  border-bottom-width: 2px;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+}
+
+@media (min-width: 1024px) {
+  .tab {
+    font-size: var(--text-body-lg);
+    line-height: var(--leading-body);
   }
 }
 
@@ -1163,29 +1260,56 @@ img {
 }
 
 input,
-textarea,
-label {
+textarea {
   margin-bottom: 1rem;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   border-width: 2px;
   --tw-border-opacity: 1;
   border-color: rgb(187 82 47 / var(--tw-border-opacity));
   background-color: transparent;
   padding: 1rem;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
 }
 
+/* Matches the solid pill buttons in the hero and project cards */
+
 form > button {
-  width: auto;
-  border-radius: 0.25rem;
+  align-self: flex-start;
+  border-radius: 9999px;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(187 82 47 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgb(187 82 47 / var(--tw-bg-opacity));
-  padding: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-family: Work Sans SemiBold, sans-serif;
+  font-size: var(--text-small);
+  line-height: var(--leading-snug);
   --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  color: rgb(255 246 251 / var(--tw-text-opacity));
+  transition-property: background-color,border-color,transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 form > button:hover {
-  opacity: 0.8;
+  --tw-translate-y: -0.125rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  --tw-border-opacity: 1;
+  border-color: rgb(143 58 31 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(143 58 31 / var(--tw-bg-opacity));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  form > button {
+    transition-property: none;
+  }
 }
 
 input::-moz-placeholder, textarea::-moz-placeholder {
@@ -1233,6 +1357,7 @@ textarea::placeholder {
 }
 
 .blog-all-link {
+  margin-top: 0.75rem;
   display: inline-flex;
   min-height: 44px;
   align-items: center;
@@ -1241,6 +1366,8 @@ textarea::placeholder {
   --tw-border-opacity: 1;
   border-color: rgb(187 82 47 / var(--tw-border-opacity));
   font-family: Work Sans Medium, sans-serif;
+  font-size: var(--text-small);
+  line-height: var(--leading-snug);
 }
 
 .blog-list {
@@ -1263,8 +1390,8 @@ textarea::placeholder {
 
 @media (min-width: 1024px) {
   .blog-list > li {
-    padding-top: 1.75rem;
-    padding-bottom: 1.75rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 }
 
@@ -1980,21 +2107,44 @@ textarea::placeholder {
   --about-peach: #f8d9cb;
 }
 
+/* The hero already ends in breathing room, so About needs a smaller step */
+
+.about.section {
+  margin-top: var(--space-block);
+  @media (min-width: 1024px) {
+    margin-top: var(--space-heading);
+  }
+}
+
+/* On phones the title leads, then the portrait, then the story */
+
+.about-story {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-story h2 {
+  order: -1;
+  margin-bottom: var(--space-heading);
+}
+
 .about-art {
   display: block;
   max-width: 420px;
-  margin: 0 auto 24px;
+  margin: 0 auto var(--space-heading);
 }
 
 .about-lede {
-  font-family: 'Butler SemiBold', serif;
-  font-size: 1.5rem;
-  line-height: 1.3;
-  padding-bottom: 20px;
+  font-size: var(--text-h3);
+  line-height: var(--leading-tight);
+  font-family: 'Work Sans SemiBold', sans-serif;
+  letter-spacing: -0.015em;
+  padding-bottom: 24px;
 }
 
 .about-copy p {
-  line-height: 1.7;
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body);
 }
 
 /* The portrait floats right beside the lede and copy, which step in around the arch. Type scales with the viewport so the copy and portrait end together */
@@ -2023,12 +2173,8 @@ textarea::placeholder {
     shape-margin: 18px;
   }
 
-  .about-lede {
-    font-size: clamp(1.75rem, 3vw, 2.75rem);
-  }
-
-  .about-copy p {
-    font-size: clamp(1.0625rem, 1.35vw, 1.25rem);
+  .about-story {
+    display: block;
   }
 }
 
@@ -2151,25 +2297,29 @@ textarea::placeholder {
 }
 
 .about-brands {
-  margin-top: 20px;
-  padding-top: 22px;
-  border-top: 1.5px solid #BB522F;
+  margin-top: var(--space-block);
 }
+
+/* The label sits in the middle of the rule, captioning the ticker below */
 
 .about-brands__title {
-  margin-bottom: 0.5rem;
-  font-family: Butler SemiBold, serif;
-  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-family: Work Sans SemiBold, sans-serif;
+  font-size: var(--text-eyebrow);
+  line-height: var(--leading-snug);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
-@media (min-width: 1024px) {
-  .about-brands__title {
-    font-size: 2rem;
-  }
-}
-
-.about-brands__title {
-  line-height: 1.1;
+.about-brands__title::before,
+.about-brands__title::after {
+  content: '';
+  flex: 1;
+  height: 1.5px;
+  background: #BB522F;
 }
 
 .about-brands__ticker {
@@ -2232,9 +2382,10 @@ textarea::placeholder {
 }
 
 .about-brands__name {
-  font-family: 'Work Sans SemiBold', sans-serif;
-  font-size: 0.8125rem;
+  font-size: var(--text-eyebrow);
+  line-height: var(--leading-snug);
   letter-spacing: 0.16em;
+  font-family: 'Work Sans SemiBold', sans-serif;
   text-transform: uppercase;
   opacity: 0.8;
   transition:
@@ -2280,30 +2431,6 @@ textarea::placeholder {
 
 /* Bytes */
 
-.bytes-head {
-  margin-bottom: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  -moz-column-gap: 1.25rem;
-       column-gap: 1.25rem;
-}
-
-@media (min-width: 1024px) {
-  .bytes-head {
-    margin-bottom: 3rem;
-  }
-}
-
-.bytes-head h2 {
-  margin-bottom: 0px;
-}
-
-.bytes-subtitle {
-  font-size: 1.25rem;
-  padding-bottom: 0;
-}
-
 .bytes-list {
   display: grid;
   margin: 0;
@@ -2323,14 +2450,12 @@ textarea::placeholder {
   grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
   gap: 24px;
-  padding-block: 26px;
+  padding-block: 24px;
   border-top: 1.5px solid #bb522f;
 }
 
 .bytes-item p {
   padding-bottom: 0;
-  font-size: 1.0625rem;
-  line-height: 1.7;
 }
 
 /* Only rules between facts: none above the first or below the last in each column */
@@ -2417,19 +2542,7 @@ textarea::placeholder {
   --wave-ratio: 0.26;
   --wave-tile-ratio: calc(1511 / 409);
   container-type: inline-size;
-  margin-bottom: 2rem;
-  margin-left: -24px;
-  margin-right: -24px;
-  margin-top: 0.5rem;
-}
-
-@media (min-width: 1024px) {
-  .wave-divider {
-    margin-bottom: 4rem;
-    margin-left: -75px;
-    margin-right: -75px;
-    margin-top: 8rem;
-  }
+  margin: var(--space-section) calc(-1 * var(--gutter)) var(--space-block);
 }
 
 .wave-divider__star {
@@ -2770,18 +2883,6 @@ textarea::placeholder {
     margin-bottom: 0px;
   }
 
-  .lg\:mb-4 {
-    margin-bottom: 1rem;
-  }
-
-  .lg\:mr-16 {
-    margin-right: 4rem;
-  }
-
-  .lg\:mt-12 {
-    margin-top: 3rem;
-  }
-
   .lg\:block {
     display: block;
   }
@@ -2822,31 +2923,20 @@ textarea::placeholder {
     grid-template-columns: minmax(0,1fr) minmax(0,2fr);
   }
 
+  .lg\:content-start {
+    align-content: flex-start;
+  }
+
   .lg\:gap-16 {
     gap: 4rem;
-  }
-
-  .lg\:gap-24 {
-    gap: 6rem;
-  }
-
-  .lg\:gap-6 {
-    gap: 1.5rem;
   }
 
   .lg\:gap-\[clamp\(32px\2c 5cqw\2c 80px\)\] {
     gap: clamp(32px,5cqw,80px);
   }
 
-  .lg\:text-6xl {
-    font-size: 4rem;
-  }
-
-  .lg\:text-lg {
-    font-size: 1.25rem;
-  }
-
-  .lg\:text-xl {
-    font-size: 1.5rem;
+  .lg\:gap-x-6 {
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
   }
 }

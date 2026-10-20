@@ -71,15 +71,15 @@ const Blog = ({ articles = [] }) => {
   const mediumUrl = socials.find(({ title }) => title === 'Medium').url
 
   return (
-    <section id="blog" className="blog my-8 py-4 lg:flex lg:gap-16">
-      <div className="mb-8 lg:mb-0 lg:w-[340px] lg:shrink-0">
+    <section id="blog" className="blog section lg:flex lg:gap-16">
+      <div className="section-head lg:mb-0 lg:w-[340px] lg:shrink-0 lg:content-start">
         <h2>{en.blog.title}</h2>
-        <p className="text-lg">{en.blog.description}</p>
+        <p className="section-intro">{en.blog.description}</p>
         <a
           href={mediumUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="blog-all-link"
+          className="blog-all-link justify-self-start"
         >
           {en.blog.viewAll}
           <ArrowIcon className="blog-arrow !h-4 !w-4" />
@@ -96,14 +96,12 @@ const Blog = ({ articles = [] }) => {
               className="blog-item"
             >
               <MoonIcon phase={moonPhases[index % moonPhases.length]} />
-              <span className="flex min-w-0 grow flex-col gap-2">
-                <span className="blog-title font-workSansSemibold text-lg lg:text-xl">
-                  {article.title}
-                </span>
+              <div className="flex min-w-0 grow flex-col gap-2">
+                <h3 className="blog-title type-h3">{article.title}</h3>
                 {article.summary && (
-                  <span className="max-w-2xl">{article.summary}</span>
+                  <p className="max-w-2xl p-0">{article.summary}</p>
                 )}
-              </span>
+              </div>
               <ArrowIcon className="blog-arrow" />
             </a>
           </li>

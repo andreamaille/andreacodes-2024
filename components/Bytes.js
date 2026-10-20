@@ -27,10 +27,10 @@ const Bytes = () => {
   }, [])
 
   return (
-    <section className="bytes my-16" id="bytes" ref={sectionRef}>
-      <div className="bytes-head">
+    <section className="bytes section" id="bytes" ref={sectionRef}>
+      <div className="section-head">
         <h2>{en.bytes.title}</h2>
-        <p className="bytes-subtitle">{en.bytes.subtitle}</p>
+        <p className="section-intro">{en.bytes.subtitle}</p>
       </div>
       <ul className="bytes-list">
         {bytes.map((byte) => (

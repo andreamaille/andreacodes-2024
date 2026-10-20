@@ -54,7 +54,7 @@ const ContactForm = () => {
         className="h-48"
       />
       <ValidationError prefix="Message" field="message" errors={state.errors} />
-      <button type="submit" disabled={state.submitting} className="w-auto">
+      <button type="submit" disabled={state.submitting}>
         {en.global.submit}
       </button>
     </form>
@@ -158,9 +158,7 @@ const Footer = () => {
           <FooterArt />
         </div>
         <div className="md:w-[55%]">
-          <h2 className="text-3xl leading-[1.2] lg:text-6xl">
-            {en.footer.title}
-          </h2>
+          <h2 className="mb-heading text-display">{en.footer.title}</h2>
           <ContactForm />
         </div>
       </div>
