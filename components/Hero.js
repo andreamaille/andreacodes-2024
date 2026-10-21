@@ -435,19 +435,6 @@ const Hero = () => {
             </span>
           ))}
 
-          <a
-            className="hero-cue hero-fx-in"
-            style={{ '--at': '2.1s' }}
-            href="#about"
-          >
-            <span>{en.global.scroll}</span>
-            <span className="hero-cue__dots" aria-hidden="true">
-              {[0, 1, 2, 3].map((dotIndex) => (
-                <i key={dotIndex} style={{ '--n': dotIndex }} />
-              ))}
-            </span>
-          </a>
-
           <div className="hero-fx" aria-hidden="true"></div>
         </div>
       </div>
